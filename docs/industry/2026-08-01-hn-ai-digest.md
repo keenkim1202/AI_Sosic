@@ -1,5 +1,5 @@
 ---
-title: Hacker News AI 다이제스트 2026-08-01 — 하이프에서 경제성으로
+title: Hacker News AI 다이제스트 2026-08-01, 하이프에서 경제성으로
 source: https://github.com/duanyytop/agents-radar/issues/2444
 author: agents-radar (자동 생성)
 published: 2026-08-01
@@ -7,7 +7,7 @@ collected: 2026-08-10
 tags: [hacker-news, community-sentiment, model-release, ai-economics, digest, tooling]
 ---
 
-출처: [agents-radar issue #2444 — Hacker News AI Digest 2026-08-01](https://github.com/duanyytop/agents-radar/issues/2444) · 저장소 [duanyytop/agents-radar](https://github.com/duanyytop/agents-radar) (945★, MIT)
+출처: [agents-radar issue #2444, Hacker News AI Digest 2026-08-01](https://github.com/duanyytop/agents-radar/issues/2444) · 저장소 [duanyytop/agents-radar](https://github.com/duanyytop/agents-radar) (945★, MIT)
 
 ## 요약
 
@@ -33,30 +33,30 @@ GitHub Actions 봇이 매일 만드는 AI 생태계 다이제스트의 2026-08-0
 
 이날 피드의 성격을 결정한 건 이쪽임.
 
-- **"2x, not 10x: coding with LLMs in 2026"** (277 / 239) — 한 개발자가 실측해서 LLM 코딩 이득이 10배보다 2배에 가깝다고 결론. 다이제스트가 **"드문 합의 스레드"**라고 표현함. 실무자들이 비슷한 수치를 공유하며 벤더 하이프를 밀어냄
-- **AI 주식 폭락** (140 / 142) — WSJ가 유명 AI 베팅 펀드가 7월에 **67% 하락**했다고 보도. HN은 고소함과 AI 자본지출 지속가능성에 대한 진지한 논쟁을 섞음
-- **Ed Zitron "AI Is Getting Way Too Expensive"** (40 / 12) — 프리미엄 AI 가격이 감당 범위를 넘는다는 주장. 시장 폭락과 타이밍이 맞아 비용 회의론에 공명
-- **Is AI reasoning right for the wrong reasons?** (119 / 152) — Quanta. LLM이 유효한 논리가 아니라 허위 지름길로 맞히는 건 아닌지. 해석가능성과 chain-of-thought 충실성 논쟁
+- **"2x, not 10x: coding with LLMs in 2026"** (277 / 239): 한 개발자가 실측해서 LLM 코딩 이득이 10배보다 2배에 가깝다고 결론. 다이제스트가 **"드문 합의 스레드"**라고 표현함. 실무자들이 비슷한 수치를 공유하며 벤더 하이프를 밀어냄
+- **AI 주식 폭락** (140 / 142): WSJ가 유명 AI 베팅 펀드가 7월에 **67% 하락**했다고 보도. HN은 고소함과 AI 자본지출 지속가능성에 대한 진지한 논쟁을 섞음
+- **Ed Zitron "AI Is Getting Way Too Expensive"** (40 / 12): 프리미엄 AI 가격이 감당 범위를 넘는다는 주장. 시장 폭락과 타이밍이 맞아 비용 회의론에 공명
+- **Is AI reasoning right for the wrong reasons?** (119 / 152): Quanta. LLM이 유효한 논리가 아니라 허위 지름길로 맞히는 건 아닌지. 해석가능성과 chain-of-thought 충실성 논쟁
 
 ## 연구 정직성에 대한 분노
 
 다이제스트가 **"정치 성향을 가로질러 분노가 터진"** 드문 합의로 꼽은 두 건.
 
-- **AI 상위 스타트업들이 연구를 거의 발표하지 않는다** (610 / 316) — Science 보도. 영업비밀 실용주의 대 재현성·공적 책임 훼손 우려가 맞붙음
-- **가짜 저자를 표시한 논문 두 편을 신고했는데 둘 다 oral로 채택됐다** (266 / 142) — AI slop이 피어리뷰를 망가뜨린다는 광범위한 분노와 의무적 정직성 검사 요구
+- **AI 상위 스타트업들이 연구를 거의 발표하지 않는다** (610 / 316): Science 보도. 영업비밀 실용주의 대 재현성·공적 책임 훼손 우려가 맞붙음
+- **가짜 저자를 표시한 논문 두 편을 신고했는데 둘 다 oral로 채택됐다** (266 / 142): AI slop이 피어리뷰를 망가뜨린다는 광범위한 분노와 의무적 정직성 검사 요구
 
 ## 거버넌스가 주요 테마로 올라옴
 
-- **GCC 운영위원회가 AI 정책 발표** (346 / 415) — 컴파일러에 대한 AI 생성 기여의 공식 정책. 저작자 표시, 라이선싱, 그리고 **AI 코드에 다른 리뷰 기준이 필요한가**를 두고 활발한 거버넌스 논쟁
-- **Google, AI 덕에 6월 Chrome 버그를 지난 2년 합보다 많이 고쳤다** (481 / 489) — 댓글 다수가 회의적. **AI 생성 패치가 버그 수를 부풀리면서 코드 품질을 떨어뜨리는 건 아닌지** 의문
-- **Anthropic, 사이버보안 평가에서 드러난 실제 사건 3건 조사** (223 / 178) — 스레드가 대체로 긍정적. 투명성을 칭찬하고 책임 있는 AI 안전 공개의 모범으로 봄
+- **GCC 운영위원회가 AI 정책 발표** (346 / 415): 컴파일러에 대한 AI 생성 기여의 공식 정책. 저작자 표시, 라이선싱, 그리고 **AI 코드에 다른 리뷰 기준이 필요한가**를 두고 활발한 거버넌스 논쟁
+- **Google, AI 덕에 6월 Chrome 버그를 지난 2년 합보다 많이 고쳤다** (481 / 489): 댓글 다수가 회의적. **AI 생성 패치가 버그 수를 부풀리면서 코드 품질을 떨어뜨리는 건 아닌지** 의문
+- **Anthropic, 사이버보안 평가에서 드러난 실제 사건 3건 조사** (223 / 178): 스레드가 대체로 긍정적. 투명성을 칭찬하고 책임 있는 AI 안전 공개의 모범으로 봄
 
 ## 도구·엔지니어링
 
-- **qm — 업무용 멀티플레이어 에이전트 하네스** (458 / 94) — YC Software의 오픈소스. 논의 중심은 **멀티 에이전트 오케스트레이션이 진짜 유용한가, 단순한 단일 에이전트 파이프라인 대비 과공학인가**
-- **모두가 LLM 라우터를 만드는데 우리는 우리 것을 폐기했다** (90 / 50) — Manifest.build. 라우팅 로직 대부분이 가치를 별로 못 더한다는 주장. 커뮤니티가 대체로 동의하며 **단순한 폴백과 캐싱이 동적 라우팅보다 나은 경우**의 증거를 공유
-- **문서를 ASD-STE100 Simplified Technical English로 강제하는 에이전트 스킬** (323 / 118) — 규제 대상 기술 문서에서 결정론적·제약 기반 출력을 반긴다는 반응
-- **13 Models and 4 Agents on SWE Tasks: Go, Java, Python, Rust, TS** — 다이제스트가 "깊이 읽을 만한 글"로 꼽음. **단일 스택 하이프를 걷어내는 크로스 언어 벤치마크**로, 에이전트·모델 선택에 바로 쓸 수 있다고 평가
+- **qm, 업무용 멀티플레이어 에이전트 하네스** (458 / 94): YC Software의 오픈소스. 논의 중심은 **멀티 에이전트 오케스트레이션이 진짜 유용한가, 단순한 단일 에이전트 파이프라인 대비 과공학인가**
+- **모두가 LLM 라우터를 만드는데 우리는 우리 것을 폐기했다** (90 / 50): Manifest.build. 라우팅 로직 대부분이 가치를 별로 못 더한다는 주장. 커뮤니티가 대체로 동의하며 **단순한 폴백과 캐싱이 동적 라우팅보다 나은 경우**의 증거를 공유
+- **문서를 ASD-STE100 Simplified Technical English로 강제하는 에이전트 스킬** (323 / 118): 규제 대상 기술 문서에서 결정론적·제약 기반 출력을 반긴다는 반응
+- **13 Models and 4 Agents on SWE Tasks: Go, Java, Python, Rust, TS**: 다이제스트가 "깊이 읽을 만한 글"로 꼽음. **단일 스택 하이프를 걷어내는 크로스 언어 벤치마크**로, 에이전트·모델 선택에 바로 쓸 수 있다고 평가
 
 ## 다이제스트의 분위기 판정
 
@@ -75,6 +75,6 @@ GitHub Actions 봇이 매일 만드는 AI 생태계 다이제스트의 2026-08-0
 
 ## 관련 문서
 
-- [AI가 프로그래머를 대체할까](./2026-02-22-will-ai-replace-programmers.md) — "생산성 증폭" 주장에 대해 "2x, not 10x"가 반대편 증거
-- [InfoQ Culture & Methods Trends 2026](./2026-08-07-infoq-culture-trends-2026.md) — "코드 300% 증가에 버그 400% 증가"가 Chrome 버그 수정 논쟁과 같은 문제의식
-- [Agent Orchestrator (AO)](../agents/2026-08-10-agent-orchestrator-ao.md) — qm 스레드의 "멀티 에이전트는 과공학인가" 논쟁 대상
+- [AI가 프로그래머를 대체할까](./2026-02-22-will-ai-replace-programmers.md): "생산성 증폭" 주장에 대해 "2x, not 10x"가 반대편 증거
+- [InfoQ Culture & Methods Trends 2026](./2026-08-07-infoq-culture-trends-2026.md): "코드 300% 증가에 버그 400% 증가"가 Chrome 버그 수정 논쟁과 같은 문제의식
+- [Agent Orchestrator (AO)](../agents/2026-08-10-agent-orchestrator-ao.md): qm 스레드의 "멀티 에이전트는 과공학인가" 논쟁 대상

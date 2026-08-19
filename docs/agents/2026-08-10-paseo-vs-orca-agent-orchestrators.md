@@ -1,5 +1,5 @@
 ---
-title: Paseo vs Orca — 멀티 코딩 에이전트 오케스트레이터 비교
+title: Paseo vs Orca, 멀티 코딩 에이전트 오케스트레이터 비교
 source:
   - https://github.com/getpaseo/paseo
   - https://github.com/stablyai/orca
@@ -36,7 +36,7 @@ tags: [coding-agent, orchestration, ade, worktree, opensource, tooling]
 
 ## Paseo
 
-_(스크린샷 생략 — 원 저장소 README 참고)_
+_(스크린샷 생략. 원 저장소 README 참고)_
 
 > "Run agents in parallel on your own machines. Ship from your phone or your desk."
 
@@ -61,7 +61,7 @@ paseo --host workstation.local:6767 run "run the full test suite"
 
 ## Orca
 
-_(스크린샷 생략 — 원 저장소 README 참고)_
+_(스크린샷 생략. 원 저장소 README 참고)_
 
 > "Run Codex, ClaudeCode, OpenCode or Pi side-by-side — each in its own worktree, tracked in one place."
 
@@ -121,5 +121,5 @@ Orca 쪽이 맞는 경우:
 
 ## 관련 문서
 
-- [Prompt Caching In Agents](./2026-07-22-prompt-caching-in-agents.md) — 에이전트를 병렬로 굴릴 때 실제 비용이 어디서 나오는지
-- [Agent Orchestrator (AO)](./2026-08-10-agent-orchestrator-ao.md) — 같은 범주의 세 번째 선택지
+- [Prompt Caching In Agents](./2026-07-22-prompt-caching-in-agents.md): 에이전트를 병렬로 굴릴 때 실제 비용이 어디서 나오는지
+- [Agent Orchestrator (AO)](./2026-08-10-agent-orchestrator-ao.md): 같은 범주의 세 번째 선택지

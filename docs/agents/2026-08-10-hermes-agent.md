@@ -1,5 +1,5 @@
 ---
-title: Hermes Agent — 자기개선 루프를 실제로 돌리는 에이전트
+title: Hermes Agent, 자기개선 루프를 실제로 돌리는 에이전트
 source: https://github.com/NousResearch/hermes-agent
 author: Nous Research
 collected: 2026-08-10

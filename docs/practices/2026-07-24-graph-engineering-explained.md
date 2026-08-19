@@ -1,5 +1,5 @@
 ---
-title: Graph Engineering 해설 — 언제 쓰고 언제 쓰지 말아야 하나
+title: Graph Engineering 해설, 언제 쓰고 언제 쓰지 말아야 하나
 source: https://x.com/AnatoliKopadze/status/2080668775796314331
 author: Anatoli Kopadze (@AnatoliKopadze)
 published: 2026-07-24
@@ -7,7 +7,7 @@ collected: 2026-08-10
 tags: [claude-code, workflow, multi-agent, orchestration, cost, verification]
 ---
 
-출처: [Graph Engineering explained: what it is, when to use it and when not to — @AnatoliKopadze](https://x.com/AnatoliKopadze/status/2080668775796314331) (X 롱폼 아티클)
+출처: [Graph Engineering explained: what it is, when to use it and when not to, @AnatoliKopadze](https://x.com/AnatoliKopadze/status/2080668775796314331) (X 롱폼 아티클)
 
 ## 요약
 
@@ -48,7 +48,7 @@ AI 자기 검토를 테스트한 결과는 다 같음. **모델은 자기 실수
 
 **3. 조용한 노드 실패.** 사슬에서는 실패 하나가 전부를 멈춰서 짜증나지만 명백함. 그래프에서는 200개 중 죽은 노드 하나가 완성돼 보이는 리포트에 슬쩍 들어감. 해법은 모든 머지 단계가 **입력 개수를 기대값과 대조해서 차이를 플래그**하는 것. 절반의 데이터로 조용히 진행하지 않게.
 
-## 앵커 — 아무도 듣고 싶어 하지 않는 부분
+## 앵커, 아무도 듣고 싶어 하지 않는 부분
 
 이 글의 진짜 기여가 여기임.
 
@@ -80,7 +80,7 @@ AI 자기 검토를 테스트한 결과는 다 같음. **모델은 자기 실수
 - 단계들이 진짜로 서로 의존함. 순차 작업에 그래프를 억지로 씌우면 속도 이득 0에 비용만 추가
 - 판별법은 가짜 엣지 테스트. **엣지 없는 두 작업을 못 찾으면 만들 그래프가 없음.** 그건 루프고, 루프도 괜찮음
 
-## 비용 — Bun 재작성 사례
+## 비용, Bun 재작성 사례
 
 가장 중요한 숫자들이 여기 있음. 저자가 공개 사례라며 든 것.
 
@@ -121,7 +121,7 @@ AI 자기 검토를 테스트한 결과는 다 같음. **모델은 자기 실수
 
 ## 관련 문서
 
-- [Graph Engineering with Claude](./2026-07-20-graph-engineering-with-claude.md) — 같은 주제의 14단계 구현 가이드
-- [Eval Engineering](./2026-08-01-eval-engineering-merge-gate.md) — 여기서 말하는 앵커를 머지 게이트로 제도화한 이야기
-- [Prompt Caching In Agents](../agents/2026-07-22-prompt-caching-in-agents.md) — 에이전트 함대의 청구서가 어디서 불어나는지
-- [Harness · Loop · Graph](./2026-07-28-loop-graph-harness.md) — 여기서 말하는 앵커를 세 계층 관점으로 재배치. graph 앞에 loop가 와야 하는 이유
+- [Graph Engineering with Claude](./2026-07-20-graph-engineering-with-claude.md): 같은 주제의 14단계 구현 가이드
+- [Eval Engineering](./2026-08-01-eval-engineering-merge-gate.md): 여기서 말하는 앵커를 머지 게이트로 제도화한 이야기
+- [Prompt Caching In Agents](../agents/2026-07-22-prompt-caching-in-agents.md): 에이전트 함대의 청구서가 어디서 불어나는지
+- [Harness · Loop · Graph](./2026-07-28-loop-graph-harness.md): 여기서 말하는 앵커를 세 계층 관점으로 재배치. graph 앞에 loop가 와야 하는 이유

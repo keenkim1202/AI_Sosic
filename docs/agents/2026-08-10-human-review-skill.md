@@ -1,5 +1,5 @@
 ---
-title: Human Review — HTML·Markdown을 눈으로 고쳐 에이전트에 넘기는 스킬
+title: Human Review, HTML·Markdown을 눈으로 고쳐 에이전트에 넘기는 스킬
 source: https://github.com/petergyang/human-review
 author: Peter Yang
 collected: 2026-08-10

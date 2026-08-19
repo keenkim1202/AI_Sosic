@@ -1,5 +1,5 @@
 ---
-title: Claude Cowork 세팅 — 폴더를 버리고 Skills + Projects로
+title: Claude Cowork 세팅, 폴더를 버리고 Skills + Projects로
 source: https://x.com/rubenhassid/status/2072561437407674566
 author: Ruben Hassid (@rubenhassid)
 published: 2026-07-02
@@ -7,7 +7,7 @@ collected: 2026-08-10
 tags: [claude-cowork, skills, projects, token-cost, productivity, non-developer]
 ---
 
-출처: [How to learn 80% of Claude Cowork in <20 minutes — @rubenhassid](https://x.com/rubenhassid/status/2072561437407674566) (X 롱폼 아티클)
+출처: [How to learn 80% of Claude Cowork in <20 minutes, @rubenhassid](https://x.com/rubenhassid/status/2072561437407674566) (X 롱폼 아티클)
 
 ## 요약
 
@@ -130,7 +130,7 @@ Claude가 답만 하면 되는 폼을 만들어줌. 답하고 나면 Claude가 �
 
 ## 관련 문서
 
-- [Prompt Caching In Agents](../agents/2026-07-22-prompt-caching-in-agents.md) — 히스토리 재독 비용의 실제 구조. "31배"가 캐시를 빼고 센 수치라는 것도 여기서 확인됨
-- [Prompting Claude Opus 5](../prompting/2026-08-10-prompting-claude-opus-5.md) — AskUserQuestion과 effort 선택에 대한 공식 권고
-- [Claude로 업무 자동화하기](./2026-08-07-automate-your-life-with-claude.md) — 같은 결의 개인 자동화 글. 이쪽은 Skills 설계에 더 집중
-- [Claude Cowork 공식 문서 정리](./2026-08-10-claude-cowork-official-docs.md) — 같은 주제의 공식 문서판. 이 글의 "폴더를 버려라"와 공식 Projects 설계가 어긋나는 지점을 그쪽에서 짚음
+- [Prompt Caching In Agents](../agents/2026-07-22-prompt-caching-in-agents.md): 히스토리 재독 비용의 실제 구조. "31배"가 캐시를 빼고 센 수치라는 것도 여기서 확인됨
+- [Prompting Claude Opus 5](../prompting/2026-08-10-prompting-claude-opus-5.md): AskUserQuestion과 effort 선택에 대한 공식 권고
+- [Claude로 업무 자동화하기](./2026-08-07-automate-your-life-with-claude.md): 같은 결의 개인 자동화 글. 이쪽은 Skills 설계에 더 집중
+- [Claude Cowork 공식 문서 정리](./2026-08-10-claude-cowork-official-docs.md): 같은 주제의 공식 문서판. 이 글의 "폴더를 버려라"와 공식 Projects 설계가 어긋나는 지점을 그쪽에서 짚음

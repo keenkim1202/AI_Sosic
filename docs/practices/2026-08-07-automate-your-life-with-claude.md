@@ -1,5 +1,5 @@
 ---
-title: Claude로 업무 자동화하기 — 워크플로 감사에서 배포까지
+title: Claude로 업무 자동화하기, 워크플로 감사에서 배포까지
 source: https://x.com/milesdeutscher/status/2085736739973533708
 author: Miles Deutscher (@milesdeutscher)
 published: 2026-08-07
@@ -7,7 +7,7 @@ collected: 2026-08-10
 tags: [claude, automation, skills, workflow, productivity, personal-ops]
 ---
 
-출처: [How to Automate Your Life With Claude (Full System) — @milesdeutscher](https://x.com/milesdeutscher/status/2085736739973533708) (X 롱폼 아티클)
+출처: [How to Automate Your Life With Claude (Full System), @milesdeutscher](https://x.com/milesdeutscher/status/2085736739973533708) (X 롱폼 아티클)
 
 ## 요약
 
@@ -51,8 +51,8 @@ Notion이나 Obsidian 같은 세컨드 브레인이 죽는 이유는 도구가 �
 
 저자의 폴더는 두 부분임.
 
-- **비즈니스 브레인 폴더** — 미팅, 재무 등 에이전트가 알아야 할 것 전부
-- **Specs 폴더** — 앞 단계에서 만든 스펙·스킬·SOP
+- **비즈니스 브레인 폴더**: 미팅, 재무 등 에이전트가 알아야 할 것 전부
+- **Specs 폴더**: 앞 단계에서 만든 스펙·스킬·SOP
 
 여기부터가 실용적인 부분임. 에이전트는 마크다운 스펙 파일을 잘 읽는데 사람은 안 그럼. 스킬이랑 워크플로가 많아지면 추적이 어려워지니까 시각적 마인드맵을 만듦.
 
