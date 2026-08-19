@@ -1,5 +1,5 @@
 ---
-title: Agent Orchestrator (AO) — 병렬 코딩 에이전트 감독 IDE
+title: Agent Orchestrator (AO), 병렬 코딩 에이전트 감독 IDE
 source: https://github.com/Untrivial-ai/agent-orchestrator
 author: Untrivial AI
 collected: 2026-08-10

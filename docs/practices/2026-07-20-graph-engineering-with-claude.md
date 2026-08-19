@@ -1,5 +1,5 @@
 ---
-title: Graph Engineering with Claude — 선형 에이전트를 그래프로 바꾸는 14단계
+title: Graph Engineering with Claude, 선형 에이전트를 그래프로 바꾸는 14단계
 source: https://x.com/0xCodez/status/2079165300625330317
 author: Codez (@0xCodez)
 published: 2026-07-20
@@ -7,7 +7,7 @@ collected: 2026-08-10
 tags: [claude-code, workflow, multi-agent, orchestration, parallel, subagent]
 ---
 
-출처: [Graph Engineering with Claude: 14-Step roadmap from 0 to graph architect — @0xCodez](https://x.com/0xCodez/status/2079165300625330317) (X 롱폼 아티클)
+출처: [Graph Engineering with Claude: 14-Step roadmap from 0 to graph architect, @0xCodez](https://x.com/0xCodez/status/2079165300625330317) (X 롱폼 아티클)
 
 ## 요약
 
@@ -84,6 +84,6 @@ tags: [claude-code, workflow, multi-agent, orchestration, parallel, subagent]
 
 ## 관련 문서
 
-- [Prompt Caching In Agents](../agents/2026-07-22-prompt-caching-in-agents.md) — 서브에이전트를 대량으로 띄울 때 실제 청구가 어디서 발생하는지
-- [Eval Engineering](./2026-08-01-eval-engineering-merge-gate.md) — 여기서 말하는 "검증자 노드"를 머지 게이트 수준으로 끌어올린 이야기
-- [Harness · Loop · Graph](./2026-07-28-loop-graph-harness.md) — graph가 세 계층 중 어디에 앉는지, 그리고 graph를 너무 일찍 만들면 안 되는 이유
+- [Prompt Caching In Agents](../agents/2026-07-22-prompt-caching-in-agents.md): 서브에이전트를 대량으로 띄울 때 실제 청구가 어디서 발생하는지
+- [Eval Engineering](./2026-08-01-eval-engineering-merge-gate.md): 여기서 말하는 "검증자 노드"를 머지 게이트 수준으로 끌어올린 이야기
+- [Harness · Loop · Graph](./2026-07-28-loop-graph-harness.md): graph가 세 계층 중 어디에 앉는지, 그리고 graph를 너무 일찍 만들면 안 되는 이유

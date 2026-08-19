@@ -1,8 +1,8 @@
 ---
-title: 에이전트 생태계 레포 지형도 — 스킬, 하네스, 메모리
+title: 에이전트 생태계 레포 지형도, 스킬, 하네스, 메모리
 source: https://github.com/search?q=topic%3Aagent-skills&type=repositories
 collected: 2026-08-10
-tags: [claude-code, codex, agent-skills, plugin, harness, memory, ecosystem, github]
+tags: [claude-code, codex, agent-skills, harness, memory, ecosystem, github]
 ---
 
 출처: GitHub Search API로 `topic:claude-code`, `topic:agent-skills`, `topic:claude-skills`, `topic:claude-plugin`, `topic:mcp-server`를 훑고 2026-08-10 기준 메타데이터를 직접 받아 정리함
@@ -112,7 +112,7 @@ GitHub API에는 트렌딩 페이지가 없음. 그래서 **생성일 대비 별
 
 | 이 지형도의 항목 | 이미 정리된 문서 |
 |---|---|
-| graphify | [Semantica](../infra/2026-08-10-semantica-context-graph.md) — 같은 문제의식인데 graphify가 훨씬 가벼움 |
+| graphify | [Semantica](../infra/2026-08-10-semantica-context-graph.md): 같은 문제의식인데 graphify가 훨씬 가벼움 |
 | claude-mem, planning-with-files | [Memory Engineer](../practices/2026-08-02-memory-engineer.md) |
 | caveman, token-optimizer | [대규모 AI 코딩 비용 관리](../practices/2026-08-07-managing-ai-coding-costs.md) 레버 4 |
 | cc-haha, cc-switch | [Paseo vs Orca](./2026-08-10-paseo-vs-orca-agent-orchestrators.md), [Agent Orchestrator](./2026-08-10-agent-orchestrator-ao.md) |

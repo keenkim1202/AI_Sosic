@@ -1,5 +1,5 @@
 ---
-title: InfoQ Culture & Methods Trends 2026 — 코드가 흔해지면 판단이 희소해진다
+title: InfoQ Culture & Methods Trends 2026, 코드가 흔해지면 판단이 희소해진다
 source:
   - https://www.infoq.com/articles/culture-trends-2026/
   - https://www.infoq.com/podcasts/infoq-culture-trends-2026/
@@ -9,7 +9,7 @@ collected: 2026-08-10
 tags: [culture, engineering-management, ai-adoption, cognitive-load, junior-engineers, ethics, sustainability]
 ---
 
-출처: [InfoQ Culture and Methods Trends Report 2026 (아티클)](https://www.infoq.com/articles/culture-trends-2026/) · [같은 리포트 팟캐스트](https://www.infoq.com/podcasts/infoq-culture-trends-2026/) — 동일 패널, 동일 날짜라 한 문서로 정리함
+출처: [InfoQ Culture and Methods Trends Report 2026 (아티클)](https://www.infoq.com/articles/culture-trends-2026/) · [같은 리포트 팟캐스트](https://www.infoq.com/podcasts/infoq-culture-trends-2026/). 동일 패널, 동일 날짜라 한 문서로 정리함
 
 ## 요약
 
@@ -17,7 +17,7 @@ InfoQ 패널 8명이 2026년 소프트웨어 문화를 정리한 리포트임. �
 
 ## 가장 인용할 만한 문장
 
-> "If you failed at agile, you will fail catastrophically at AI." — Jim Highsmith (Shane Hastie 인용)
+> "If you failed at agile, you will fail catastrophically at AI." (Jim Highsmith, Shane Hastie 인용)
 
 애자일 기본기가 조직에 박혀 있지 않은 곳이 많은데, 그 위에 AI가 만든 속도를 얹으려 하고 있음. 빠른 피드백 루프, 관측성, 가치 전달이라는 토대 없이. 이 리포트가 계속 돌아오는 지점임.
 
@@ -48,7 +48,7 @@ Sonar의 2026년 서베이가 이 리포트의 핵심 수치를 제공함.
 
 HumanLayer의 *Why Software Factories Fail* 에세이를 인용하며, 장기적 코드베이스 품질을 위해 모델에 상당한 사람 조종이 필요하다고 주장함. 새로 떠오르는 모델은 엔지니어가 **골든 패스와 아키텍처 프리미티브**를 만들어 제품·디자인 팀이 안전하게 커밋할 수 있게 하는 것.
 
-## 팀 구조 — 투 피자에서 원 피자로
+## 팀 구조, 투 피자에서 원 피자로
 
 전통적 two-pizza 팀이 **한 사람 + AI** 구성으로 줄어듦. 갈리는 기준은 리스크 프로필임.
 
@@ -125,6 +125,6 @@ HumanLayer의 *Why Software Factories Fail* 에세이를 인용하며, 장기적
 
 ## 관련 문서
 
-- [Eval Engineering](../practices/2026-08-01-eval-engineering-merge-gate.md) — 이 리포트가 말하는 "검증 공백"을 실제 게이트로 만드는 방법
-- [AI가 프로그래머를 대체할까](./2026-02-22-will-ai-replace-programmers.md) — 주니어 채용 압축이라는 같은 주제를 다른 각도에서
-- [Graph Engineering 해설](../practices/2026-07-24-graph-engineering-explained.md) — 여기서 말하는 "앵커"가 리포트의 custodianship과 같은 문제의식
+- [Eval Engineering](../practices/2026-08-01-eval-engineering-merge-gate.md): 이 리포트가 말하는 "검증 공백"을 실제 게이트로 만드는 방법
+- [AI가 프로그래머를 대체할까](./2026-02-22-will-ai-replace-programmers.md): 주니어 채용 압축이라는 같은 주제를 다른 각도에서
+- [Graph Engineering 해설](../practices/2026-07-24-graph-engineering-explained.md): 여기서 말하는 "앵커"가 리포트의 custodianship과 같은 문제의식

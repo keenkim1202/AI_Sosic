@@ -1,5 +1,5 @@
 ---
-title: Semantica — 설명 가능한 AI를 위한 그래프 네이티브 인프라
+title: Semantica, 설명 가능한 AI를 위한 그래프 네이티브 인프라
 source: https://github.com/semantica-agi/semantica
 author: Semantica AGI
 collected: 2026-08-10

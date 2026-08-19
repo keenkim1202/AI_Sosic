@@ -1,5 +1,5 @@
 ---
-title: 대규모 AI 코딩 비용 관리 — Databricks의 4가지 레버
+title: 대규모 AI 코딩 비용 관리, Databricks의 4가지 레버
 source: https://www.databricks.com/blog/managing-ai-coding-costs-scale
 author: Patrick Wendell, Akshat Bhatia, Vinay Gaba, Erich Elsen, Ivan Zhou (Databricks)
 published: 2026-08-07
@@ -7,7 +7,7 @@ collected: 2026-08-10
 tags: [ai-cost, coding-agent, routing, prompt-caching, finops, gateway]
 ---
 
-출처: [Managing AI Coding Costs at Scale — Databricks](https://www.databricks.com/blog/managing-ai-coding-costs-scale) · [HN 토론](https://news.ycombinator.com/item?id=49214468) (307p / 263c)
+출처: [Managing AI Coding Costs at Scale, Databricks](https://www.databricks.com/blog/managing-ai-coding-costs-scale) · [HN 토론](https://news.ycombinator.com/item?id=49214468) (307p / 263c)
 
 ## 요약
 
@@ -83,6 +83,6 @@ iOS나 앱 개발에서 워크트리 여러 개에 에이전트를 병렬로 굴
 
 ## 관련 문서
 
-- [Prompt Caching In Agents](../agents/2026-07-22-prompt-caching-in-agents.md) — 레버 4의 캐싱 부분을 원리부터 다룸. cache write 비용과 5분 TTL 문제
-- [Graph Engineering 해설](./2026-07-24-graph-engineering-explained.md) — Bun 재작성 $165,000 사례. 레버가 없을 때 청구서가 어디까지 가는지
-- [Prompting Claude Opus 5](../prompting/2026-08-10-prompting-claude-opus-5.md) — effort를 낮추는 것도 레버 4에 속함
+- [Prompt Caching In Agents](../agents/2026-07-22-prompt-caching-in-agents.md): 레버 4의 캐싱 부분을 원리부터 다룸. cache write 비용과 5분 TTL 문제
+- [Graph Engineering 해설](./2026-07-24-graph-engineering-explained.md): Bun 재작성 $165,000 사례. 레버가 없을 때 청구서가 어디까지 가는지
+- [Prompting Claude Opus 5](../prompting/2026-08-10-prompting-claude-opus-5.md): effort를 낮추는 것도 레버 4에 속함

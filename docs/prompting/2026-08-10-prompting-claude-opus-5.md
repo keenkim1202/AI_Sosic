@@ -1,12 +1,12 @@
 ---
-title: Prompting Claude Opus 5 — 공식 프롬프팅 가이드
+title: Prompting Claude Opus 5, 공식 프롬프팅 가이드
 source: https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5
 author: Anthropic
 collected: 2026-08-10
 tags: [claude, opus-5, prompt-engineering, effort, subagent, thinking]
 ---
 
-출처: [Prompting Claude Opus 5 — Claude Docs](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5)
+출처: [Prompting Claude Opus 5, Claude Docs](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5)
 
 ## 요약
 
@@ -131,4 +131,4 @@ thinking 태그를 이름으로 콕 집어 언급하면 오히려 효과가 떨�
 
 ## 관련 문서
 
-- [Prompt Caching In Agents](../agents/2026-07-22-prompt-caching-in-agents.md) — reasoning level 변경은 툴 정의 변경이랑 마찬가지로 프롬프트 캐시를 무효화함. 실서비스에서 effort를 동적으로 바꾸면 캐시 비용을 물게 됨
+- [Prompt Caching In Agents](../agents/2026-07-22-prompt-caching-in-agents.md): reasoning level 변경은 툴 정의 변경이랑 마찬가지로 프롬프트 캐시를 무효화함. 실서비스에서 effort를 동적으로 바꾸면 캐시 비용을 물게 됨

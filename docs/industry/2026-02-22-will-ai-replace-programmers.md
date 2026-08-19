@@ -1,5 +1,5 @@
 ---
-title: AI가 프로그래머를 대체할까 — AI 넷에게 직접 물어본 결과
+title: AI가 프로그래머를 대체할까, AI 넷에게 직접 물어본 결과
 source: https://medium.com/@ignatovich.dm/will-ai-replace-programmers-in-2026-2027-i-asked-the-ais-themselves-60f1a84fce96
 author: "@ignatovich.dm (Frontend Highlights)"
 published: 2026-02-22
@@ -7,7 +7,7 @@ collected: 2026-08-10
 tags: [ai-and-jobs, swe-bench, junior-engineers, jevons-paradox, career]
 ---
 
-출처: [Will AI Replace Programmers in 2026–2027? I Asked the AIs Themselves — Medium](https://medium.com/@ignatovich.dm/will-ai-replace-programmers-in-2026-2027-i-asked-the-ais-themselves-60f1a84fce96)
+출처: [Will AI Replace Programmers in 2026–2027? I Asked the AIs Themselves, Medium](https://medium.com/@ignatovich.dm/will-ai-replace-programmers-in-2026-2027-i-asked-the-ais-themselves-60f1a84fce96)
 
 ## 요약
 
@@ -33,9 +33,9 @@ Grok, Gemini, Claude, ChatGPT 넷에게 같은 프롬프트를 주고 답을 비
 
 **코딩 ≠ 소프트웨어 엔지니어링.** 네 모델이 각각 이 구분을 강조했다고 함. 남는 사람 몫은 요구사항 번역, 제약 조건 하의 아키텍처 결정, 분산 시스템 디버깅, 팀 간 조율.
 
-## 역사적 패턴 — 제번스 역설
+## 역사적 패턴, 제번스 역설
 
-과거 자동화 물결(IDE, Stack Overflow, 클라우드 플랫폼)은 프로그래머 수요를 **줄이지 않고 늘렸음.** **제번스 역설(Jevons Paradox)** — 비용이 낮아지면 소프트웨어를 더 많이 만들게 됨.
+과거 자동화 물결(IDE, Stack Overflow, 클라우드 플랫폼)은 프로그래머 수요를 **줄이지 않고 늘렸음.** **제번스 역설(Jevons Paradox)**. 비용이 낮아지면 소프트웨어를 더 많이 만들게 됨.
 
 ## 2026~2027 시나리오
 
@@ -78,5 +78,5 @@ Grok, Gemini, Claude, ChatGPT 넷에게 같은 프롬프트를 주고 답을 비
 
 ## 관련 문서
 
-- [InfoQ Culture & Methods Trends 2026](./2026-08-07-infoq-culture-trends-2026.md) — 같은 주제를 서베이 수치와 패널 논의로. 주니어 학습 유연성 논의가 특히 겹침
-- [Hacker News AI 다이제스트 2026-08-01](./2026-08-01-hn-ai-digest.md) — "2x, not 10x" 논쟁이 이 글의 생산성 증폭 주장에 대한 반대편 증거
+- [InfoQ Culture & Methods Trends 2026](./2026-08-07-infoq-culture-trends-2026.md): 같은 주제를 서베이 수치와 패널 논의로. 주니어 학습 유연성 논의가 특히 겹침
+- [Hacker News AI 다이제스트 2026-08-01](./2026-08-01-hn-ai-digest.md): "2x, not 10x" 논쟁이 이 글의 생산성 증폭 주장에 대한 반대편 증거

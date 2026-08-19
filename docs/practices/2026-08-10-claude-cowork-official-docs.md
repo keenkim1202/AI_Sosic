@@ -1,5 +1,5 @@
 ---
-title: Claude Cowork 공식 문서 정리 — Projects, Dispatch, 권한, 플러그인
+title: Claude Cowork 공식 문서 정리, Projects, Dispatch, 권한, 플러그인
 source:
   - https://claude.com/docs/cowork/overview
   - https://claude.com/docs/cowork/guide/projects
@@ -23,10 +23,10 @@ tags: [claude-cowork, projects, dispatch, permissions, plugins, skills, connecto
 
 핵심 능력 넷을 공식 문서가 이렇게 꼽음.
 
-- **컴퓨터에서 직접 작동** — 수동 업로드·다운로드 없이 로컬 파일을 읽고 씀
-- **Claude in Chrome 연동** — [Chrome](https://claude.com/chrome)과 짝지어 웹사이트 작업을 자동화
-- **서브에이전트 조율** — 복잡한 작업을 작은 태스크로 쪼개 병렬 워크스트림으로 처리
-- **완성된 산출물** — 수식이 동작하는 Excel, PowerPoint, 형식이 잡힌 문서
+- **컴퓨터에서 직접 작동**: 수동 업로드·다운로드 없이 로컬 파일을 읽고 씀
+- **Claude in Chrome 연동**: [Chrome](https://claude.com/chrome)과 짝지어 웹사이트 작업을 자동화
+- **서브에이전트 조율**: 복잡한 작업을 작은 태스크로 쪼개 병렬 워크스트림으로 처리
+- **완성된 산출물**: 수식이 동작하는 Excel, PowerPoint, 형식이 잡힌 문서
 
 ## 어디서 쓰나
 
@@ -47,7 +47,7 @@ tags: [claude-cowork, projects, dispatch, permissions, plugins, skills, connecto
 
 즉 세션 자체는 살아남지만, **로컬 자원에 의존하는 단계는 데스크톱이 없으면 진행되지 못함.** 마운트한 프로젝트 폴더를 읽거나 쓰는 작업이 여기 해당함.
 
-## Projects — 반복 작업의 단위
+## Projects, 반복 작업의 단위
 
 여기가 공식 문서에서 가장 중요한 부분임. 반복되는 작업 영역에 필요한 것을 한 데 모음.
 
@@ -66,9 +66,9 @@ tags: [claude-cowork, projects, dispatch, permissions, plugins, skills, connecto
 
 좌측 **Projects**에서 `+`. 시작점 세 가지 중 고름.
 
-- **Start from scratch** — 새 폴더로 빈 프로젝트
-- **Import a project** — 기존 claude.ai 프로젝트를 Cowork로 가져옴
-- **Use an existing folder** — 이미 작업하던 폴더를 가리킴
+- **Start from scratch**: 새 폴더로 빈 프로젝트
+- **Import a project**: 기존 claude.ai 프로젝트를 Cowork로 가져옴
+- **Use an existing folder**: 이미 작업하던 폴더를 가리킴
 
 ### 작동 방식
 
@@ -90,7 +90,7 @@ claude.ai 프로젝트를 Cowork 프로젝트에 **링크**해서 지식을 끌�
 
 Archive는 프로젝트를 목록에서 없애고 메타데이터(이름, 지침, 링크, 메모리)를 삭제함. **붙여둔 로컬 폴더는 건드리지 않음.** 파일은 디스크에 그대로 남음.
 
-## Dispatch — 백그라운드 위임
+## Dispatch, 백그라운드 위임
 
 Pro 또는 Max 플랜과 최신 데스크톱 앱이 필요함. 고수준 지시를 받아 백그라운드에서 수행하는 장기 실행 에이전트임.
 
@@ -257,7 +257,7 @@ truncate가 싸고, 없으면 이어붙이는 편이 나음. 남은 턴 수는 �
 
 ## 관련 문서
 
-- [Claude Cowork 세팅](./2026-07-02-claude-cowork-setup.md) — 같은 주제의 커뮤니티 가이드. 토큰 절약 6가지가 여기 있음
-- [Harness · Loop · Graph](./2026-07-28-loop-graph-harness.md) — Cowork의 Projects·권한·체크포인트가 harness 계층, Dispatch와 스케줄이 loop 계층에 해당함
-- [Prompt Caching In Agents](../agents/2026-07-22-prompt-caching-in-agents.md) — 스킬·커넥터를 세션 시작 시 동기화한다는 설계가 캐시 관점에서 왜 합리적인지
-- [Prompting Claude Opus 5](../prompting/2026-08-10-prompting-claude-opus-5.md) — Global Instructions와 프로젝트 Instructions에 무엇을 쓸지
+- [Claude Cowork 세팅](./2026-07-02-claude-cowork-setup.md): 같은 주제의 커뮤니티 가이드. 토큰 절약 6가지가 여기 있음
+- [Harness · Loop · Graph](./2026-07-28-loop-graph-harness.md): Cowork의 Projects·권한·체크포인트가 harness 계층, Dispatch와 스케줄이 loop 계층에 해당함
+- [Prompt Caching In Agents](../agents/2026-07-22-prompt-caching-in-agents.md): 스킬·커넥터를 세션 시작 시 동기화한다는 설계가 캐시 관점에서 왜 합리적인지
+- [Prompting Claude Opus 5](../prompting/2026-08-10-prompting-claude-opus-5.md): Global Instructions와 프로젝트 Instructions에 무엇을 쓸지

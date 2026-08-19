@@ -1,5 +1,5 @@
 ---
-title: Prompt Caching In Agents — 코딩 에이전트의 프롬프트 캐시
+title: Prompt Caching In Agents, 코딩 에이전트의 프롬프트 캐시
 source: https://earendil.com/posts/prompt-caching/
 author: Earendil Engineering
 published: 2026-07-22
@@ -7,7 +7,7 @@ collected: 2026-08-10
 tags: [prompt-caching, kv-cache, coding-agent, llm-cost, inference]
 ---
 
-출처: [Prompt Caching In Agents — EARENDIL](https://earendil.com/posts/prompt-caching/)
+출처: [Prompt Caching In Agents, EARENDIL](https://earendil.com/posts/prompt-caching/)
 
 ## 요약
 
@@ -105,4 +105,4 @@ model request → run tests for 7 minutes → model request
 
 ## 관련 문서
 
-- [Prompting Claude Opus 5](../prompting/2026-08-10-prompting-claude-opus-5.md) — effort 바꾸면 캐시 깨지는 문제와 연결됨
+- [Prompting Claude Opus 5](../prompting/2026-08-10-prompting-claude-opus-5.md): effort 바꾸면 캐시 깨지는 문제와 연결됨

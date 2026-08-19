@@ -88,3 +88,4 @@ fastlane/test_output
 *.bak
 scratch/
 tmp/
+pr-body.md

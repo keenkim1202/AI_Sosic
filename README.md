@@ -4,6 +4,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 각 문서에 원문 출처 링크와 요약을 함께 담습니다.
 ## 에이전트 · 툴링
 
+**[Xcode에 에이전틱 코딩이 정식 탑재됨](docs/agents/2026-02-03-xcode-agentic-coding.md)** · 2026-08-19
+
+- 터미널에 코딩 에이전트 띄워 두고 Xcode랑 왔다 갔다 하던 거, 이제 안 해도 됨
+- Xcode 26.3이 붙인 건 **Claude Agent SDK**. 축소판이 아니라 Claude Code와 같은 하네스임
+- Xcode 27은 에이전트 3사를 다 받는데 **Apple Silicon 전용**. Intel 빌드 머신 있으면 지금 계획에 넣을 것
+
 **[팀 공유 AI 하네스 만들기](docs/agents/2026-08-10-hq-team-ai-harness.md)** · 2026-08-11
 
 - 같은 모델이 회사마다 다르게 느껴지는 건 모델이 아니라 **하네스**가 다른 것임
@@ -66,7 +72,7 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 - **`parallel()` vs `pipeline()`** 모르고 쓰면 벽시계 시간 그냥 버리는 거임
 - loop-until-dry가 영영 안 멈추는 진짜 이유
 
-**[Graph Engineering 해설 — 언제 쓰지 말아야 하나](docs/practices/2026-07-24-graph-engineering-explained.md)** · 2026-08-10
+**[Graph Engineering 해설, 언제 쓰지 말아야 하나](docs/practices/2026-07-24-graph-engineering-explained.md)** · 2026-08-10
 
 - Bun 런타임 재작성에 **약 $165,000**. 11일, 최대 64 에이전트 동시 (저자가 인용한 공개 사례, 원출처 미확인)
 - 노드가 서로를 감시하는데 아무것도 검증되지 않는 함정. **앵커**가 없으면 그럼
@@ -140,23 +146,29 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 
 ## 업계 동향
 
+**[Apple의 2026 AI 플랫폼](docs/industry/2026-06-08-apple-ai-platform-for-ios.md)** · 2026-08-19
+
+- 작년에 붙인 Foundation Models 코드 안 버려도 됨. 백엔드만 갈아끼우는 구조가 됨
+- **Core AI가 Core ML 후계**로 발표됨. 신규 뉴럴넷 작업을 Core ML로 시작할 이유가 없어짐
+- 다운로드 **200만 미만**이면 Private Cloud Compute 서버 모델이 무료. AI 기능 단가 계산이 사라짐
+
 **[InfoQ Culture & Methods Trends 2026](docs/industry/2026-08-07-infoq-culture-trends-2026.md)** · 2026-08-10
 
 - GitHub PR이 10억에서 **140억으로 14배** 늘어난다는 전망. 사람 규모로 설계된 리뷰가 무의미해짐
 - 커밋 코드 **42%가 AI 생성**인데 **96%가 안 믿고 48%만 검증**함
-- "애자일에 실패했으면 AI에는 파국적으로 실패한다" — Jim Highsmith
+- "애자일에 실패했으면 AI에는 파국적으로 실패한다" (Jim Highsmith)
 
 **[Hacker News AI 다이제스트 2026-08-01](docs/industry/2026-08-01-hn-ai-digest.md)** · 2026-08-10
 
 - 신모델 3종 쏟아진 날에 AI 주식 **67% 폭락** 기사가 나란히 올라옴
-- **"2x, not 10x"** — LLM 코딩 이득 실측 글이 드물게 합의를 얻음
+- **"2x, not 10x"**: LLM 코딩 이득 실측 글이 드물게 합의를 얻음
 - 관심축이 능력 스케일링에서 **경제성·신뢰성·거버넌스로** 이동
 
 **[AI Trends 2026](docs/industry/2026-04-01-ai-trends-2026.md)** · 2026-08-10
 
 - **EU AI Act 일반 적용일이 2026-08-02.** 유럽 대상 제품이면 달력에 박아둘 날짜
 - 통제 없는 에이전트는 "confident chaos generators"가 됨
-- 파일럿 고르는 기준은 하나 — 반복량 많은 통증점. 드문 일은 오버헤드를 못 갚음
+- 파일럿 고르는 기준은 하나. 반복량 많은 통증점. 드문 일은 오버헤드를 못 갚음
 
 **[AI가 프로그래머를 대체할까](docs/industry/2026-02-22-will-ai-replace-programmers.md)** · 2026-08-10
 
