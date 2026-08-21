@@ -10,7 +10,7 @@ tags: [apple, ios, app-store, app-review, privacy, consent, compliance]
 
 ## 요약
 
-앱에 AI 기능을 붙이면 프레임워크 문제보다 **심사 조항**에 먼저 걸림. 핵심은 **5.1.2(i)**임. 개인정보를 서드파티 AI에 보내려면 **어디로 가는지 명확히 공개하고 명시적 동의를 먼저 받아야 함.** 약관이나 개인정보처리방침에 묻어두는 건 공개로 안 쳐줌. 여기에 챗봇을 정면으로 다루는 **4.7 묶음**, 실행 코드 반입을 막는 **2.5.2**, 연령등급 **2.3.6**이 같이 걸림. 2026-06-08자 개정으로 **개발자 프로그램 라이선스 계약(DPLA)에 AI·ML 항목이 신설**돼서 Foundation Models를 쓰면 심사 지침 말고 계약서도 봐야 함.
+앱에 AI 기능을 붙이면 프레임워크 문제보다 **심사 조항**에 먼저 걸림. 핵심은 **5.1.2(i)**임. 개인정보를 서드파티 AI에 보내려면 **어디로 가는지 명확히 공개하고 명시적 동의를 먼저 받아야 함.** 약관이나 개인정보처리방침에 묻어두는 건 공개로 안 쳐줌. 여기에 **남이 만든 챗봇을 앱 안에 얹을 때만** 걸리는 **4.7 묶음**, 실행 코드 반입을 막는 **2.5.2**, 연령등급 **2.3.6**이 따라옴. 2026-06-08자 개정으로 **개발자 프로그램 라이선스 계약(DPLA)에 AI·ML 항목이 신설**돼서 Foundation Models를 쓰면 심사 지침 말고 계약서도 봐야 함.
 
 ## 5.1.2(i), 서드파티 AI로 개인정보를 보낼 때
 
@@ -36,9 +36,18 @@ tags: [apple, ios, app-store, app-review, privacy, consent, compliance]
 
 ## 4.7, 챗봇을 이름으로 지목하는 조항
 
-4.7의 제목 자체가 "Mini apps, mini games, streaming games, **chatbots**, plug-ins, and game emulators"임. 앱에 대화형 AI를 넣으면 여기 들어감.
+4.7의 제목 자체가 "Mini apps, mini games, streaming games, **chatbots**, plug-ins, and game emulators"임. 다만 **적용 범위를 조항 첫 문장이 먼저 좁힘.**
 
-> "You are responsible for all such software offered in your app, including ensuring that such software complies with these Guidelines and all applicable laws."
+> "Apps may offer certain software that is **not embedded in the binary**, specifically HTML5 and JavaScript mini apps and mini games, streaming games, chatbots, and plug-ins... You are responsible for all such software offered in your app, including ensuring that such software complies with these Guidelines and all applicable laws."
+
+즉 4.7이 겨냥하는 건 **앱이 담아 제공하는, 바이너리에 내장되지 않은 소프트웨어**임. 갈라 보면 이렇게 됨.
+
+| 만드는 것 | 4.7 해당 |
+|---|---|
+| 서드파티나 사용자가 만든 **챗봇을 앱 안에서 골라 쓰게 하는** 구조, 미니앱·플러그인 형태로 얹은 대화형 소프트웨어 | 해당 |
+| 앱이 직접 구현한 네이티브 대화 기능. 원격 LLM API를 앱 코드에서 호출하는 경우 포함 | **해당 아님** |
+
+⚠️ **네이티브 챗봇 기능을 만들면서 4.7의 요구를 자동으로 떠안을 필요는 없음.** 그 경우는 5.1.2, 1.2, 2.3.6 같은 조항이 각자의 조건으로 따로 걸리는 것이고, 4.7의 플랫폼형 요구(필터·신고·차단·연령 게이팅 일괄 적용)가 그대로 옮겨오지 않음. 반대로 앱 안에 다른 곳의 챗봇을 얹는 순간 아래가 전부 붙음.
 
 하위 조항이 실제로 걸리는 지점임.
 
@@ -49,7 +58,9 @@ tags: [apple, ios, app-store, app-review, privacy, consent, compliance]
 | **4.7.3** | **매 건마다 명시적 사용자 동의 없이** 데이터나 프라이버시 권한을 공유하지 말 것 |
 | **4.7.5** | 앱 연령등급을 넘는 소프트웨어를 식별할 방법과, **확인되거나 신고된 연령 기반 접근 제한 장치** |
 
-4.7.1의 필터·신고·차단 셋은 1.2(사용자 생성 콘텐츠)와 같은 요구임. **생성형 출력을 사용자 생성 콘텐츠와 같은 급으로 다루는 게 이 지침의 태도**라고 읽는 편이 맞음. 챗봇 하나 붙였는데 신고 버튼과 차단 기능까지 만들어야 하는 이유가 여기임.
+4.7.1의 필터·신고·차단 셋은 1.2(사용자 생성 콘텐츠)의 요구와 같음. **남이 만든 대화형 소프트웨어를 얹는 것을 사용자 생성 콘텐츠와 같은 급으로 다루는 게 이 지침의 태도**라고 읽는 편이 맞음.
+
+네이티브 기능이라도 **사용자가 생성 결과를 공유하거나 봇을 만들어 남에게 노출할 수 있으면** 1.2가 독립적으로 걸림. 판단 기준은 "대화형이냐"가 아니라 **"다른 사용자에게 닿는 콘텐츠가 생기느냐"**임.
 
 ## 2.5.2, 모델 파일을 원격에서 받을 때
 
@@ -87,7 +98,7 @@ tags: [apple, ios, app-store, app-review, privacy, consent, compliance]
 
 1. 프롬프트·첨부로 **밖으로 나가는 데이터** 전부 목록화. 온디바이스 / PCC / 서드파티 셋으로 분류
 2. 서드파티가 하나라도 있으면 **제공자 이름과 데이터 항목을 명시한 동의 화면**과 철회 경로 설계 (5.1.2(i))
-3. 대화형이면 **필터·신고·차단·연령 제한** 넷을 기능 목록에 추가 (4.7.1, 4.7.5, 1.2)
+3. **남이 만든 챗봇·미니앱을 얹는 구조인지** 확인. 맞으면 필터·신고·차단·연령 제한 넷이 붙음 (4.7). 네이티브 기능이면 대신 **생성 결과가 다른 사용자에게 닿는지**로 1.2 해당 여부를 판단
 4. 기존 사용자 데이터를 학습·평가에 쓸 계획이면 **재사용 동의**를 따로 받을 것 (5.1.2(ii))
 5. Health·Home·AR·사진 출처 데이터가 섞이면 **광고·마이닝 경로에서 분리** (5.1.2(vi))
 6. 모델을 원격에서 받을 계획이면 **2.5.2 해당 여부를 먼저 확인**
@@ -101,6 +112,7 @@ tags: [apple, ios, app-store, app-review, privacy, consent, compliance]
 | [Foundation Models 실전](../practices/2026-08-21-foundation-models-in-practice.md) | 여기서 말하는 온디바이스 / PCC / 서드파티 경계가 그쪽에서는 API 선택 문제로 나타남 |
 | [Apple의 2026 AI 플랫폼](./2026-06-08-apple-ai-platform-for-ios.md) | 같은 발표의 프레임워크 쪽. 이 문서는 그걸 실제로 출시할 때 걸리는 관문 |
 | [사람이 에이전트 명령 승인에서 위협 3건 중 1건을 놓친다](../security/2026-08-05-agent-approval-miss-rates.md) | 4.7.3의 "매 건마다 명시적 동의"가 승인 피로를 그대로 만들어냄. 승인 횟수를 줄이는 설계가 결국 필요함 |
+| [Foundation Models 실전](../practices/2026-08-21-foundation-models-in-practice.md) | 네이티브로 직접 구현하면 4.7을 피하는 대신 컨텍스트·한도 제약을 직접 떠안게 됨 |
 
 ## 짚어야 할 것
 
