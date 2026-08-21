@@ -87,6 +87,7 @@ GitHub API에는 트렌딩 페이지가 없음. 그래서 **생성일 대비 별
 - [hesreallyhim/awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) 52,019★
 - [VoltAgent/awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills) 29,913★, 스킬 1,000개 이상 큐레이션
 - [VoltAgent/awesome-openclaw-skills](https://github.com/VoltAgent/awesome-openclaw-skills) 51,855★, 5,400개 이상 필터링
+- [duanyytop/agents-radar](https://github.com/duanyytop/agents-radar) 945★, MIT. 디렉터리가 아니라 **매일 자동 발행되는 다이제스트**임. GitHub·ArXiv·HN·HuggingFace·Product Hunt 등 10개 소스를 GitHub Actions로 몰아 이슈로 내보냄. 정기 구독처럼 쓰면 소스 10개를 대체함. 단 항목 요약은 LLM이 쓴 것이라 관심 가는 건 원문으로 가야 함
 
 ## 도입할 때 판단 기준
 
@@ -115,7 +116,7 @@ GitHub API에는 트렌딩 페이지가 없음. 그래서 **생성일 대비 별
 | graphify | [Semantica](../infra/2026-08-10-semantica-context-graph.md): 같은 문제의식인데 graphify가 훨씬 가벼움 |
 | claude-mem, planning-with-files | [Memory Engineer](../practices/2026-08-02-memory-engineer.md) |
 | caveman, token-optimizer | [대규모 AI 코딩 비용 관리](../practices/2026-08-07-managing-ai-coding-costs.md) 레버 4 |
-| cc-haha, cc-switch | [Paseo vs Orca](./2026-08-10-paseo-vs-orca-agent-orchestrators.md), [Agent Orchestrator](./2026-08-10-agent-orchestrator-ao.md) |
+| cc-haha, cc-switch | [에이전트 오케스트레이터 3종 비교](./2026-08-10-agent-orchestrators.md) |
 
 ## 유효기간
 

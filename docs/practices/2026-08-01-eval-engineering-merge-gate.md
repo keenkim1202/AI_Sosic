@@ -144,6 +144,6 @@ tags: [eval, llm-judge, agent, ci, code-review, guardrail]
 
 ## 관련 문서
 
-- [Graph Engineering with Claude](./2026-07-20-graph-engineering-with-claude.md): 여기서 말하는 검증을 그래프의 엣지 위 검증자 노드로 구현하는 이야기
+- [Graph Engineering](./2026-07-20-graph-engineering.md): 여기서 말하는 검증을 그래프의 엣지 위 검증자 노드로 구현하는 이야기
 - [Prompting Claude Opus 5](../prompting/2026-08-10-prompting-claude-opus-5.md): Opus 5는 자기 검증을 알아서 하니까 검증 지시를 오히려 빼라는 공식 권고. 여기서 말하는 "근거는 모델 바깥에서" 원칙과 같은 방향
 - [Harness · Loop · Graph](./2026-07-28-loop-graph-harness.md): 이 문서 전체가 loop 계층의 실무 매뉴얼에 해당함. 계층 지도에서 어디에 앉는지

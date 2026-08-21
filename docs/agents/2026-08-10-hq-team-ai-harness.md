@@ -161,7 +161,7 @@ HQ/companies/your-company/
 | 회사 기억을 쓰기 경로로 쌓는 구조, 지식 가드닝 | [Memory Engineer](../practices/2026-08-02-memory-engineer.md) |
 | 작고 안정적인 진입점 + 필요할 때 꺼내는 깊은 맥락 | [Prompt Caching In Agents](./2026-07-22-prompt-caching-in-agents.md) |
 | 경험에서 스킬을 만들고 사용 중에 개선하는 루프 | [Hermes Agent](./2026-08-10-hermes-agent.md) |
-| 폴더를 버리라는 주장과의 정면 대비 | [Claude Cowork 세팅](../practices/2026-07-02-claude-cowork-setup.md), [Claude Cowork 공식 문서 정리](../practices/2026-08-10-claude-cowork-official-docs.md) |
+| 폴더를 버리라는 주장과의 정면 대비 | [Claude Cowork](../practices/2026-08-10-claude-cowork.md) |
 | 배포 전 사람 검토 게이트 | [Human Review](./2026-08-10-human-review-skill.md) |
 | 반복량 많은 통증점부터 자동화하기 | [Claude로 업무 자동화하기](../practices/2026-08-07-automate-your-life-with-claude.md) |
 | 공유 하네스에 나쁜 지시가 섞일 때의 위험 | [사람이 에이전트 명령 승인에서 위협 3건 중 1건을 놓친다](../security/2026-08-05-agent-approval-miss-rates.md) |

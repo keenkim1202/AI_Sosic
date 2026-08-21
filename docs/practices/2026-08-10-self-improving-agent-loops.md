@@ -130,7 +130,7 @@ agents-cli eval compare \
 |---|---|
 | 결과를 어떻게 증명하나. loop 계층 그 자체 | [Harness · Loop · Graph](./2026-07-28-loop-graph-harness.md) |
 | 판정자 점수를 그대로 믿으면 안 되는 이유, 게이트 설계 | [Eval Engineering](./2026-08-01-eval-engineering-merge-gate.md) |
-| 검증 앵커 없는 자기개선 루프가 무너지는 방식 | [Graph Engineering 해설](./2026-07-24-graph-engineering-explained.md) |
+| 검증 앵커 없는 자기개선 루프가 무너지는 방식 | [Graph Engineering](./2026-07-20-graph-engineering.md) |
 | 경험에서 스킬을 만들고 사용 중에 개선하는 루프 | [Hermes Agent](../agents/2026-08-10-hermes-agent.md) |
 | 사람이 게이트를 어디에 두는가 | [Human Review](../agents/2026-08-10-human-review-skill.md) |
 | 자동 평가를 CI에 붙일 때의 비용 | [대규모 AI 코딩 비용 관리](./2026-08-07-managing-ai-coding-costs.md) |

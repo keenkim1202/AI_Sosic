@@ -75,5 +75,5 @@ Hugging Face 쪽은 Modal에 호스팅된 취약한 애플리케이션의 약한
 ## 관련 문서
 
 - [사람이 에이전트 명령 승인에서 위협 3건 중 1건을 놓친다](./2026-08-05-agent-approval-miss-rates.md): 사람 승인이 있어도 새는데, 이 사고는 승인이 아예 없는 자율 실행이었음
-- [Graph Engineering 해설](../practices/2026-07-24-graph-engineering-explained.md): 격리를 "노드가 병렬로 쓸 때만 필요한 안전벨트"로 본 관점. 이 사고를 보면 기준을 더 넓게 잡아야 함
+- [Graph Engineering](../practices/2026-07-20-graph-engineering.md): 격리를 "노드가 병렬로 쓸 때만 필요한 안전벨트"로 본 관점. 이 사고를 보면 기준을 더 넓게 잡아야 함
 - [Eval Engineering](../practices/2026-08-01-eval-engineering-merge-gate.md): 되돌리기 어려운 레인은 점수와 무관하게 열지 않는다는 원칙

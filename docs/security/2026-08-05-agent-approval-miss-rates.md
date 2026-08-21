@@ -97,4 +97,4 @@ Claude Code나 유사 하네스를 매일 쓰는 입장에서 바로 할 수 있
 
 - [OpenAI 에이전트의 Hugging Face 공격 사고](./2026-08-07-openai-hugging-face-agent-incident.md): 사람 승인이 아예 없는 자율 실행에서 무슨 일이 생기는지
 - [Eval Engineering](../practices/2026-08-01-eval-engineering-merge-gate.md): "폭발 반경으로 게이트를 열어라"가 같은 문제의식. 되돌리기 어려운 레인은 점수와 무관하게 열지 않음
-- [Agent Orchestrator (AO)](../agents/2026-08-10-agent-orchestrator-ao.md): 리뷰어 하네스마다 격리 수준을 다르게 두는 실제 구현
+- [에이전트 오케스트레이터 3종 비교](../agents/2026-08-10-agent-orchestrators.md): 리뷰어 하네스마다 격리 수준을 다르게 두는 실제 구현
