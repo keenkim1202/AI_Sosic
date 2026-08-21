@@ -108,6 +108,21 @@ HumanLayer의 *Why Software Factories Fail* 에세이를 인용하며, 장기적
 | **Neuralwatt** | 전력 소비 기반 가격 모델 |
 | **Context Stores** | 도메인 의도와 제약을 담은 버전 관리 지식 그래프 (Stella Berhe 등) |
 
+## 곁들여 읽을 프레임, 제번스 역설
+
+리포트 밖 이야기지만 같은 논쟁에서 계속 쓰이는 틀이라 여기 붙여 둠. 출처는 [Will AI Replace Programmers in 2026-2027? I Asked the AIs Themselves](https://medium.com/@ignatovich.dm/will-ai-replace-programmers-in-2026-2027-i-asked-the-ais-themselves-60f1a84fce96) (@ignatovich.dm, 2026-02-22)임. ⚠️ **그 글의 수치는 저자가 AI 모델에게 물어 받은 답이라 환각일 수 있어 인용하면 안 되고**, 아래 두 가지 정성적 정리만 건질 값어치가 있음.
+
+**제번스 역설.** 과거 자동화 물결(IDE, Stack Overflow, 클라우드 플랫폼)은 프로그래머 수요를 줄이지 않고 늘렸음. 비용이 낮아지면 소프트웨어를 더 많이 만들게 됨. 이 리포트의 "AI가 일을 줄이는 게 아니라 강화한다"와 같은 방향임.
+
+**취약·견딤 프로필.** 대체 논쟁을 직군 단위로 내려 놓으면 이렇게 갈림.
+
+| | 프로필 |
+|---|---|
+| **취약** | 고립된 CRUD를 하는 주니어, 시스템 사고 없는 부트캠프 졸업자 |
+| **견딤** | 아키텍트, 도메인 전문가, AI 증강 엔지니어, 보안 전문가 |
+
+리포트의 주니어 논의와 붙여 읽으면, 압축되는 건 직업이 아니라 **시스템 사고가 빠진 진입 경로**라는 게 분명해짐.
+
 ## 결론
 
 패널은 2026년의 중심 과제를 근본적으로 사람 문제로 규정함. 코드가 흔해지면 판단이 희소해짐. AI의 적절한 범위를 정하는 일, 책임을 검증하는 일, 협업적 창의성을 보존하는 일, 주니어를 키우는 일, 환경적으로 비싼 도구를 의도적으로 쓰는 일.
@@ -126,5 +141,4 @@ HumanLayer의 *Why Software Factories Fail* 에세이를 인용하며, 장기적
 ## 관련 문서
 
 - [Eval Engineering](../practices/2026-08-01-eval-engineering-merge-gate.md): 이 리포트가 말하는 "검증 공백"을 실제 게이트로 만드는 방법
-- [AI가 프로그래머를 대체할까](./2026-02-22-will-ai-replace-programmers.md): 주니어 채용 압축이라는 같은 주제를 다른 각도에서
-- [Graph Engineering 해설](../practices/2026-07-24-graph-engineering-explained.md): 여기서 말하는 "앵커"가 리포트의 custodianship과 같은 문제의식
+- [Graph Engineering](../practices/2026-07-20-graph-engineering.md): 여기서 말하는 "앵커"가 리포트의 custodianship과 같은 문제의식

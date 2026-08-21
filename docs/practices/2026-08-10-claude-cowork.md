@@ -1,21 +1,22 @@
 ---
-title: Claude Cowork 공식 문서 정리, Projects, Dispatch, 권한, 플러그인
+title: Claude Cowork, 공식 문서와 커뮤니티 세팅 가이드
 source:
   - https://claude.com/docs/cowork/overview
   - https://claude.com/docs/cowork/guide/projects
   - https://claude.com/docs/cowork/guide/dispatch
   - https://claude.com/docs/cowork/guide/plugins
   - https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork
-author: Anthropic
+  - https://x.com/rubenhassid/status/2072561437407674566
+author: Anthropic, Ruben Hassid (@rubenhassid)
 collected: 2026-08-10
-tags: [claude-cowork, projects, dispatch, permissions, plugins, skills, connectors]
+tags: [claude-cowork, projects, dispatch, permissions, plugins, skills, connectors, token-cost]
 ---
 
-출처: [Cowork Overview](https://claude.com/docs/cowork/overview) · [Projects](https://claude.com/docs/cowork/guide/projects) · [Dispatch](https://claude.com/docs/cowork/guide/dispatch) · [Plugins](https://claude.com/docs/cowork/guide/plugins) · [Help Center 시작 가이드](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork)
+출처: [Cowork Overview](https://claude.com/docs/cowork/overview) · [Projects](https://claude.com/docs/cowork/guide/projects) · [Dispatch](https://claude.com/docs/cowork/guide/dispatch) · [Plugins](https://claude.com/docs/cowork/guide/plugins) · [Help Center 시작 가이드](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork) · [How to learn 80% of Claude Cowork in <20 minutes, @rubenhassid](https://x.com/rubenhassid/status/2072561437407674566) (2026-07-02)
 
 ## 요약
 
-공식 문서 기준 Cowork 사용법임. 한 문장으로는 **터미널을 열지 않고 Claude Code와 같은 에이전틱 아키텍처를 쓰는 것**. 실무에서 알아야 할 축은 넷임. 반복 작업을 담는 **Projects**, 백그라운드로 돌리는 **Dispatch**, 안전을 가르는 **권한 3모드**, 그리고 능력을 늘리는 **플러그인**. 커뮤니티 가이드([Cowork 세팅](./2026-07-02-claude-cowork-setup.md))와 어긋나는 지점도 짚음.
+공식 문서 기준 Cowork 사용법임. 한 문장으로는 **터미널을 열지 않고 Claude Code와 같은 에이전틱 아키텍처를 쓰는 것**. 실무에서 알아야 할 축은 넷임. 반복 작업을 담는 **Projects**, 백그라운드로 돌리는 **Dispatch**, 안전을 가르는 **권한 3모드**, 그리고 능력을 늘리는 **플러그인**. 뒤쪽 절반은 커뮤니티 세팅 가이드(Ruben Hassid)를 붙이고, 공식 문서와 어긋나는 지점을 갈라 정리함. 실무에서 가장 값어치 하는 건 그쪽의 **토큰 절약 6가지**고, 그중 1번은 무조건이 아님.
 
 ## 무엇인가
 
@@ -200,19 +201,112 @@ Cowork는 일반 채팅보다 사용량을 더 씀. 복잡한 다단계 작업�
 - 라이브 artifacts와 로컬 MCP 플러그인 같은 일부 기능은 Claude Desktop이 필요함
 - 프로젝트 범위를 벗어난 세션 간 메모리 지속성은 아직 없음
 
-## 커뮤니티 가이드와 어긋나는 지점
+## 커뮤니티 세팅 가이드
 
-이 저장소에 [Ruben Hassid의 Cowork 세팅](./2026-07-02-claude-cowork-setup.md) 문서가 있는데, 공식 문서와 정면으로 갈리는 부분이 있음.
+Cowork 가이드로 2천만 조회를 받은 Ruben Hassid가 **"내 예전 글을 읽지 마라"**로 시작하는 글임. 파일과 폴더 중심 세팅이 기업 현장에서 깨졌고, 대신 **Skills + Projects 두 개만** 쓰라는 게 결론. 공식 문서와 갈리는 지점은 다음 절에서 따로 짚음.
 
-**"폴더를 버려라" 대 Projects 중심 설계.** Hassid는 폴더가 새고 파일 유지가 불가능하다며 폴더를 버리고 Skills + Projects만 쓰라고 함. 그런데 공식 문서의 Projects는 **로컬 폴더를 붙이는 것이 핵심 기능**임. Dispatch도 프로젝트 폴더로 라우팅함.
+### 왜 예전 방식을 버렸나
 
-읽어보면 둘이 완전히 모순은 아님. Hassid가 비판한 건 **직접 관리하는 임의의 폴더 구조와 수동 유지가 필요한 about-me 파일**이고, 공식 Projects는 폴더를 붙이되 **지침과 메모리를 시스템이 관리**함. Hassid의 "about-me 파일을 스킬로 바꿔라"는 조언은 공식 구조에서는 프로젝트 Instructions와 Memory가 대신하는 셈임.
+저자는 원래 "파일과 폴더" 전도사였음. LinkedIn 절반이 자기 때문에 그렇게 쓰고 있다고 인정함. 그런데 수백 명 규모 기업에 워크숍을 다니면서 그 시스템이 깨졌음. 이유는 둘.
 
-**"설정을 다 끄는 게 최선"이라는 주장.** Hassid는 Global Instructions를 비우라고 하는데, 공식 문서는 톤·형식·역할을 Global Instructions에 두라고 안내함. 컨텍스트를 많이 주면 창의성이 죽는다는 건 Hassid의 경험이고 공식 입장이 아님. 브레인스토밍과 반복 문서 작성에 서로 다른 세팅을 쓰는 게 실용적일 것으로 보임.
+- **폴더가 샌다.** "내 output 폴더 절대 확인하지 마"라고 해도 Claude가 종종 확인함. 그러면 낡은 출력이 컨텍스트를 오염시킴
+- **파일 유지가 불가능하다.** 본업이 있는 사람이 매주 몇 시간씩 "about-me" 파일을 갱신할 수 없음. 처음엔 좋았다가 고통스러운 병목이 됨
+
+저자의 다른 주장 하나도 흥미로움. **AI에 지시를 너무 많이 주면 안 됨.** 컨텍스트를 과하게 주면 매번 똑같은 답만 나오고 창의성이 사라짐. 같은 계약서를 반복 작성할 때는 괜찮지만, 브레인스토밍에는 안 맞음.
+
+### Skills와 Projects 구분
+
+| | Skills | Projects |
+|---|---|---|
+| 정체 | **호출하는 능력** | **찾아가는 장소** |
+| 이동성 | 어느 채팅에나 따라감. Gemini, ChatGPT 같은 다른 AI에도 감 | 그 안에 머묾 |
+| 내용 | 슬래시 명령으로 호출 (`/linkedin-post`) | 저자 표현으로는 "파일 + 지시가 계속 로드되고 기억함", 팀과 공유 가능 |
+
+**구분 기준이 단순함.**
+
+> 남에게 가르칠 수 있는 기술이면 → Skill
+> 특정 맥락(고객, 캠페인)이면 → Project
+
+팀에 이 차이를 가르쳐야 함. 안 그러면 몇 개 Project로 끝날 게 수백 개 Skill이 되거나, 공유 Skill이어야 할 게 수십 개 Project가 됨.
+
+⚠️ 표의 "파일 + 지시가 계속 로드됨"과 "프로젝트 안의 모든 채팅이 그 프로젝트 전체 컨텍스트를 가진다"는 저자 표현으로 읽어야 함. 위 [Projects](#projects-반복-작업의-단위) 절이 설명하는 실제 동작은 **폴더 마운트와 공통 Instructions, 프로젝트 범위 Memory**이고, 과거 채팅 전체가 매 세션의 모델 컨텍스트에 주입된다는 얘기가 아님. 폴더가 **접근 가능하게 마운트되는 것**과 파일 전부가 매 호출 컨텍스트에 들어가는 것은 다름.
+
+**스킬 만드는 방법 세 가지**
+
+- Claude의 `/skill-creator`로 질문에 답하며 만들기
+- 저자가 만든 무료 도구 `makemyskill.com`
+- 진행 중인 채팅 상단의 대화 이름을 클릭 → "Turn into skill"
+
+**팀 공유의 함정.** Projects를 공유하려면 Cowork가 아니라 **Chat에서** 만들어야 함. 만든 뒤 오른쪽 위에서 공유 설정하고, 그다음 Cowork로 작업을 시작함. 저자도 "이상한 거 안다"고 씀.
+
+**아직 불편한 점 둘.** 스킬이 설명(description)만으로 자동 발동함. 저자는 호출할 때만 켜지길 원하는데 끌 수 없음. 그리고 Projects에 업로드 가능한 파일 수 제한이 있음.
+
+### AskUserQuestion 트릭
+
+저자가 자기 최고의 트릭이라고 부르는 것. 프롬프트를 잘 못 쓰는 문제 대부분을 이걸로 해결함.
+
+```text
+I need to [작업, 예: "write a PR brief for the launch of my company"]
+for [성공 기준, 예: "to get more leads"].
+First, use the tool AskUserQuestion to get more info.
+```
+
+Claude가 답만 하면 되는 폼을 만들어줌. 답하고 나면 Claude가 어떻게 답할지 더 깊이 생각함. 첫 프롬프트만이 아니라 **계속 이어서 쓸 수 있음.** 실패가 불가능할 만큼 컨텍스트를 줄 때까지 Claude가 계속 인터뷰함.
+
+### 병목은 사람이다
+
+전형적인 Cowork 세션을 저자가 초 단위로 쪼갬. 프롬프트 타이핑 30초, Cowork가 스킬 읽기 50초, 계획 생성 50초, AskUserQuestion으로 질문 50초. 그다음 사람이 답함. 커스텀 답변은 **하나당 60초~2분.** 질문 8개면 **8~15분 동안 사람이 느린 부분**임.
+
+> Cowork는 15초에 10만 단어를 읽고 90초에 스프레드시트를 만듦. 그런데 분당 60단어로 타이핑하는 사람을 기다려야 함. 사람은 분당 150단어로 말할 수 있음.
+
+그래서 받아쓰기 도구를 씀. 속도만이 아니라 **말할 때 훨씬 많은 컨텍스트를 주기 때문**임. 저자는 세 곳에서 말로 함. 최초 프롬프트, AskUserQuestion 답변 중 컨텍스트가 필요한 것, 그리고 피드백과 방향 전환. 타이핑하던 "톤이 틀렸어, 덜 격식적으로"가 말로는 "톤이 너무 딱딱해. 200명 회사를 운영하는 친구한테 문자 보내는 느낌이었으면 해. 데이터는 두고 캐주얼하게. 2번 섹션만 다시"가 됨.
+
+### 토큰 절약 6가지
+
+**1. 후속 메시지 대신 대화를 재시작함.** Claude는 메시지를 세지 않고 토큰을 셈. 메시지를 보낼 때마다 **전체 대화 히스토리를 다시 읽음.** 저자는 30번째 메시지가 1번째보다 **31배** 비싸다고 씀. 교환당 약 500토큰이면 20메시지에 105K, 30메시지에 232K를 태운다는 계산도 같이 제시함. 방법은 "아니 내 말은..."을 보내지 말고 이전 메시지에서 **"Restart the conversation from here"**를 누르거나 자기 프롬프트를 편집하는 것.
+
+⚠️ 위 두 수치가 서로 안 맞음. 교환당 500토큰이면 1번째 요청의 입력은 500, 30번째는 15,000이라 **30배**임. 누적 232,500토큰은 저자가 말한 232K와 맞으니 누적 계산은 성립함. **배수를 그대로 인용하기보다 "히스토리가 선형으로 쌓인다"는 방향만 취하는 게 안전함.** 이 항목이 언제 이득인지는 다음 절에서 캐시를 넣고 다시 따짐.
+
+**2. 20메시지마다 새 세션.** 긴 대화는 토큰 화로임. 한 개발자가 자기 사용량을 추적했더니 **98.5%가 히스토리 재독에 쓰이고 실제 출력은 1.5%**였음. 세션이 길어지면 Claude에게 요약을 `.md`로 만들게 하고, 새 세션의 첫 메시지로 붙여넣음.
+
+**3. 작업을 한 메시지로 묶음.** 프롬프트 3개 = 컨텍스트 3번 재로드. 한 프롬프트에 3개 작업 = 1번 재로드.
+
+**4. 빠른 작업엔 Opus 대신 Sonnet.** 문법 검사, 브레인스토밍, 서식, 짧은 답변. 기술적으로는 Haiku가 더 쌈. 초안과 단순 작업을 Sonnet·Haiku로 돌리면 **예산의 30~70%**가 깊은 작업용으로 남음.
+
+**5. ABOUT ME 파일을 지움.** 버리는 게 아니라 **스킬로 바꿈.** 그러면 원할 때만 호출함.
+
+**6. 하루에 걸쳐 분산함.** Claude는 5시간 롤링 윈도우를 씀. 아침 세션에 한도를 다 태우면 하루 용량 대부분이 안 쓰이고 남음. 아침·오후·저녁 2~3세션으로 쪼개고, 평일 태평양시 **오전 5~11시 피크**를 피함. 저자 본인은 "이론상 멋지지만 실제로 안 한다"고 솔직히 씀.
+
+**1~3번은 Cowork 전용 원리가 아니라 대화형 LLM 전반에 통함.** 반면 4번(모델 선택), 5번(스킬), 6번(5시간 롤링 윈도우)은 특정 제품·플랜 기능이라 그대로 옮겨지지 않음.
+
+### 첫 20분
+
+- 0~3분: 설정 비우고 전부 끔
+- 3~8분: 계속 하는 일로 첫 Skill 만들기
+- 8~13분: 첫 Project 만들기 (고객 PDF, 엑셀 업로드)
+- 13~17분: 프로젝트 안에서 스킬을 써보며 감 잡기
+- 17~20분: 저자의 스킬 라이브러리 받기
+
+### 이 글을 읽을 때
+
+- **자기 홍보가 매우 많은 글임.** 유료 도구, 뉴스레터, 컨설팅, 추천 링크가 본문에 계속 나옴. 걸러 읽어야 함
+- **개발자가 아닌 사람**을 대상으로 쓴 글임. 코드가 산출물이면 Claude Code를 쓰라고 저자도 명시함
+- "AI에 컨텍스트를 너무 주면 창의성이 죽는다"는 주장은 검증된 게 아니라 저자 경험임. 다만 [Prompt Caching](../agents/2026-07-22-prompt-caching-in-agents.md) 관점에서 보면 시스템 프롬프트를 가볍게 유지하는 건 비용 면에서도 이득임
+- Cowork 세부 UI 설명은 원문 스크린샷에 의존하는 부분이 많아서 여기 다 옮기지 않았음
+
+## 공식 문서와 어긋나는 지점
+
+위 커뮤니티 가이드와 공식 문서가 정면으로 갈리는 부분이 있음.
+
+**"폴더를 버려라" 대 Projects 중심 설계.** 저자는 폴더가 새고 파일 유지가 불가능하다며 폴더를 버리고 Skills + Projects만 쓰라고 함. 그런데 공식 문서의 Projects는 **로컬 폴더를 붙이는 것이 핵심 기능**임. Dispatch도 프로젝트 폴더로 라우팅함.
+
+읽어보면 둘이 완전히 모순은 아님. 저자가 비판한 건 **직접 관리하는 임의의 폴더 구조와 수동 유지가 필요한 about-me 파일**이고, 공식 Projects는 폴더를 붙이되 **지침과 메모리를 시스템이 관리**함. "about-me 파일을 스킬로 바꿔라"는 조언은 공식 구조에서는 프로젝트 Instructions와 Memory가 대신하는 셈임.
+
+**"설정을 다 끄는 게 최선"이라는 주장.** 저자는 Global Instructions를 비우라고 하는데, 공식 문서는 톤·형식·역할을 Global Instructions에 두라고 안내함. 컨텍스트를 많이 주면 창의성이 죽는다는 건 저자의 경험이고 공식 입장이 아님. 브레인스토밍과 반복 문서 작성에 서로 다른 세팅을 쓰는 게 실용적일 것으로 보임.
 
 **토큰 절약 6가지는 대체로 유효하지만 1번은 무조건이 아님.** "후속 메시지 대신 대화 재시작"이 항상 이득이라고 읽으면 틀림.
 
-Hassid의 "30번째 메시지가 1번째보다 31배 비싸다"는 계산은 **캐시를 빼고 센 것**임. 캐시가 살아 있으면 그 히스토리 재독은 정상 input이 아니라 할인된 cache-read로 청구됨. 그리고 [Prompt Caching](../agents/2026-07-22-prompt-caching-in-agents.md)이 지적하듯 **rewind와 fork는 토큰 시퀀스를 바꾸는 행위**이고, 히스토리를 재작성하는 즉시 비용이 미래 절약분을 넘을 수 있음.
+"30번째 메시지가 1번째보다 31배 비싸다"는 계산은 **캐시를 빼고 센 것**임. 캐시가 살아 있으면 그 히스토리 재독은 정상 input이 아니라 할인된 cache-read로 청구됨. 그리고 [Prompt Caching](../agents/2026-07-22-prompt-caching-in-agents.md)이 지적하듯 **rewind와 fork는 토큰 시퀀스를 바꾸는 행위**이고, 히스토리를 재작성하는 즉시 비용이 미래 절약분을 넘을 수 있음.
 
 정확히 따지면 이렇게 갈림.
 
@@ -257,7 +351,7 @@ truncate가 싸고, 없으면 이어붙이는 편이 나음. 남은 턴 수는 �
 
 ## 관련 문서
 
-- [Claude Cowork 세팅](./2026-07-02-claude-cowork-setup.md): 같은 주제의 커뮤니티 가이드. 토큰 절약 6가지가 여기 있음
 - [Harness · Loop · Graph](./2026-07-28-loop-graph-harness.md): Cowork의 Projects·권한·체크포인트가 harness 계층, Dispatch와 스케줄이 loop 계층에 해당함
 - [Prompt Caching In Agents](../agents/2026-07-22-prompt-caching-in-agents.md): 스킬·커넥터를 세션 시작 시 동기화한다는 설계가 캐시 관점에서 왜 합리적인지
-- [Prompting Claude Opus 5](../prompting/2026-08-10-prompting-claude-opus-5.md): Global Instructions와 프로젝트 Instructions에 무엇을 쓸지
+- [Prompting Claude Opus 5](../prompting/2026-08-10-prompting-claude-opus-5.md): AskUserQuestion과 effort 선택, Global Instructions와 프로젝트 Instructions에 무엇을 쓸지
+- [Claude로 업무 자동화하기](./2026-08-07-automate-your-life-with-claude.md): 같은 결의 개인 자동화 글. 이쪽은 Skills 설계에 더 집중

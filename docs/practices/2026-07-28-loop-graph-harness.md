@@ -178,7 +178,7 @@ harness
 
 **3단계. Loop.** 실패의 기대비용이 검증비용보다 클 때. [Eval Engineering](./2026-08-01-eval-engineering-merge-gate.md)이 이 단계의 실무 매뉴얼임. 판정자 편향, 경로 채점, 폭발 반경 기준 게이팅이 전부 loop 설계에 속함.
 
-**4단계. Graph.** 의미 있는 분기와 병렬 전문가와 승인이 생겼을 때. [Graph Engineering with Claude](./2026-07-20-graph-engineering-with-claude.md)가 구현이고 [Graph Engineering 해설](./2026-07-24-graph-engineering-explained.md)이 비용과 한계임. 후자의 Bun 재작성 $165,000 사례가 이 단계의 청구서를 보여줌.
+**4단계. Graph.** 의미 있는 분기와 병렬 전문가와 승인이 생겼을 때. [Graph Engineering](./2026-07-20-graph-engineering.md)이 구현과 비용·한계를 같이 다룸. 그 글의 Bun 재작성 $165,000 사례가 이 단계의 청구서를 보여줌.
 
 **교차 관심사.** [Memory Engineer](./2026-08-02-memory-engineer.md)는 harness의 영속성에 속하지만 loop의 상태 설계와도 맞물림. [비용 관리](./2026-08-07-managing-ai-coding-costs.md)는 네 단계 전부에 걸림.
 

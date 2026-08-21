@@ -58,7 +58,7 @@ README와 릴리스 노트만으로는 이 답이 안 나옴. 직접 돌려보�
 
 **cron 스케줄러 내장.** 자연어로 일간 리포트, 야간 백업, 주간 감사를 무인 실행하고 결과를 아무 플랫폼으로 배달함.
 
-**위임과 병렬화.** 격리된 서브에이전트를 띄워 병렬 작업을 돌리고, Python 스크립트가 RPC로 툴을 호출해 멀티스텝 파이프라인을 **zero-context-cost turn**으로 접음. [Graph Engineering](../practices/2026-07-20-graph-engineering-with-claude.md)의 "조율은 코드라서 토큰이 안 든다"와 같은 발상임.
+**위임과 병렬화.** 격리된 서브에이전트를 띄워 병렬 작업을 돌리고, Python 스크립트가 RPC로 툴을 호출해 멀티스텝 파이프라인을 **zero-context-cost turn**으로 접음. [Graph Engineering](../practices/2026-07-20-graph-engineering.md)의 "조율은 코드라서 토큰이 안 든다"와 같은 발상임.
 
 ## 다른 코딩 에이전트를 조종하는 계층
 
@@ -123,9 +123,9 @@ open PR 2만 개는 이례적임. 다만 릴리스 노트를 보면 해석이 �
 | Hermes의 요소 | 관련 문서 |
 |---|---|
 | 학습 루프, 세션 검색, 사용자 모델링 | [Memory Engineer](../practices/2026-08-02-memory-engineer.md) |
-| 서브에이전트 + RPC로 컨텍스트 비용 없는 조율 | [Graph Engineering with Claude](../practices/2026-07-20-graph-engineering-with-claude.md) |
+| 서브에이전트 + RPC로 컨텍스트 비용 없는 조율 | [Graph Engineering](../practices/2026-07-20-graph-engineering.md) |
 | 스킬 로스터가 prefix에 들어가는 문제 | [에이전트 생태계 레포 지형도](./2026-08-10-agent-ecosystem-repos.md), [Prompt Caching In Agents](./2026-07-22-prompt-caching-in-agents.md) |
-| 다른 에이전트를 조종하는 계층 | [Paseo vs Orca](./2026-08-10-paseo-vs-orca-agent-orchestrators.md), [Agent Orchestrator](./2026-08-10-agent-orchestrator-ao.md) |
+| 다른 에이전트를 조종하는 계층 | [에이전트 오케스트레이터 3종 비교](./2026-08-10-agent-orchestrators.md) |
 | `curl \| bash`, 백신 예외, 명령 승인 | [사람이 에이전트 명령 승인에서 위협 3건 중 1건을 놓친다](../security/2026-08-05-agent-approval-miss-rates.md) |
 
 ## 유효기간

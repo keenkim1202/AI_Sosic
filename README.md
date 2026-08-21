@@ -22,17 +22,11 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 - Anthropic 기본 캐시 **TTL이 5분**. 테스트 7분 돌리고 오면 그 사이 재사용 구간이 끝남 (1시간 TTL을 택한 환경은 예외)
 - 캐시 깨지는 8가지 원인, 그리고 오래된 tool result 지우는 게 오히려 손해인 이유
 
-**[Paseo vs Orca](docs/agents/2026-08-10-paseo-vs-orca-agent-orchestrators.md)** · 2026-08-10
+**[에이전트 오케스트레이터 3종 비교](docs/agents/2026-08-10-agent-orchestrators.md)** · 2026-08-10
 
-- **40.8k vs 13k**, MIT vs AGPL. 근데 별 수로 고르면 안 됨
-- 웹UI랑 Docker 필요하면 Paseo 말고 답이 없음
-- 프론트 작업 많으면 Orca의 Design Mode가 거의 반칙. 4문항 결정 트리 포함
-
-**[Agent Orchestrator (AO)](docs/agents/2026-08-10-agent-orchestrator-ao.md)** · 2026-08-10
-
-- CI 깨질 때마다 에이전트한테 로그 복붙해서 물어 나른 적 있으면 이거임
-- CI 실패·리뷰 코멘트·머지 충돌을 담당 세션으로 자동 라우팅
-- **리뷰어 하네스 24종**, 격리 수준이 다 달라서 그 표만 봐도 값어치 함
+- CI 깨질 때마다 에이전트한테 로그 복붙해서 물어 나른 적 있으면 AO 항목부터 볼 것
+- Paseo·Orca·AO. **40.8k vs 13k vs 9.1k**, MIT·AGPL·Apache. 근데 별 수로 고르면 안 됨
+- 웹UI·Docker면 Paseo, 프론트 비중 높으면 Orca의 Design Mode. **5문항 결정 트리** 포함
 
 **[Hermes Agent](docs/agents/2026-08-10-hermes-agent.md)** · 2026-08-10
 
@@ -66,17 +60,11 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 - harness는 일할 자리, loop는 증명, graph는 다음에 허용되는 것. **증상으로 범인 계층 찾는 표** 포함
 - 어디서 시작해 어떻게 쌓을지 4단계. loop 없이 graph를 만들면 안 되는 이유
 
-**[Graph Engineering with Claude](docs/practices/2026-07-20-graph-engineering-with-claude.md)** · 2026-08-10
+**[Graph Engineering](docs/practices/2026-07-20-graph-engineering.md)** · 2026-08-10
 
 - 네 에이전트 지금 일렬 종대로 서 있음. 그중 절반은 기다릴 이유가 없었고
 - **`parallel()` vs `pipeline()`** 모르고 쓰면 벽시계 시간 그냥 버리는 거임
-- loop-until-dry가 영영 안 멈추는 진짜 이유
-
-**[Graph Engineering 해설, 언제 쓰지 말아야 하나](docs/practices/2026-07-24-graph-engineering-explained.md)** · 2026-08-10
-
-- Bun 런타임 재작성에 **약 $165,000**. 11일, 최대 64 에이전트 동시 (저자가 인용한 공개 사례, 원출처 미확인)
-- 노드가 서로를 감시하는데 아무것도 검증되지 않는 함정. **앵커**가 없으면 그럼
-- 그래프를 **쓰지 말아야 할** 5가지 경우까지 솔직하게 정리
+- Bun 재작성 **약 $165,000** 청구서와, 그래프를 **쓰지 말아야 할** 5가지 경우까지
 
 **[Eval Engineering](docs/practices/2026-08-01-eval-engineering-merge-gate.md)** · 2026-08-10
 
@@ -90,17 +78,11 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 - 문제는 에이전트가 잊는 게 아니라 **의도적으로 잊지 않는다**는 것
 - Stanford·Microsoft·Anthropic·Nvidia 네 렌즈로 15단계
 
-**[Claude Cowork 공식 문서 정리](docs/practices/2026-08-10-claude-cowork-official-docs.md)** · 2026-08-10
+**[Claude Cowork](docs/practices/2026-08-10-claude-cowork.md)** · 2026-08-10
 
-- Projects, Dispatch, 권한 3모드, 플러그인. 공식 문서 기준 사용법
 - ⚠️ **Cowork는 Claude Code의 `~/.claude`를 읽지 않음.** 스킬을 두 곳에 따로 등록해야 함
 - Dispatch **승인 타임아웃 10분**. 자리 비운 사이 자동 거부되고, 작업은 **그 행동 없이** 계속 진행됨
-
-**[Claude Cowork 세팅](docs/practices/2026-07-02-claude-cowork-setup.md)** · 2026-08-10
-
-- 2천만 조회 낸 저자가 **"내 예전 글 읽지 마라"**로 시작함. 폴더는 버리고 Skills + Projects
-- **30번째 메시지는 1번째보다 31배 비쌈**이라는 주장. 단 캐시를 빼고 센 수치임
-- 한 개발자 추적 결과 토큰 **98.5%가 히스토리 재독**, 실제 출력은 1.5%
+- 커뮤니티 가이드의 토큰 절약 6가지와, 그중 **"대화 재시작"이 언제 손해인지** 캐시 넣고 재계산
 
 **[Claude로 업무 자동화하기](docs/practices/2026-08-07-automate-your-life-with-claude.md)** · 2026-08-10
 
@@ -156,25 +138,7 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 
 - GitHub PR이 10억에서 **140억으로 14배** 늘어난다는 전망. 사람 규모로 설계된 리뷰가 무의미해짐
 - 커밋 코드 **42%가 AI 생성**인데 **96%가 안 믿고 48%만 검증**함
-- "애자일에 실패했으면 AI에는 파국적으로 실패한다" (Jim Highsmith)
-
-**[Hacker News AI 다이제스트 2026-08-01](docs/industry/2026-08-01-hn-ai-digest.md)** · 2026-08-10
-
-- 신모델 3종 쏟아진 날에 AI 주식 **67% 폭락** 기사가 나란히 올라옴
-- **"2x, not 10x"**: LLM 코딩 이득 실측 글이 드물게 합의를 얻음
-- 관심축이 능력 스케일링에서 **경제성·신뢰성·거버넌스로** 이동
-
-**[AI Trends 2026](docs/industry/2026-04-01-ai-trends-2026.md)** · 2026-08-10
-
-- **EU AI Act 일반 적용일이 2026-08-02.** 유럽 대상 제품이면 달력에 박아둘 날짜
-- 통제 없는 에이전트는 "confident chaos generators"가 됨
-- 파일럿 고르는 기준은 하나. 반복량 많은 통증점. 드문 일은 오버헤드를 못 갚음
-
-**[AI가 프로그래머를 대체할까](docs/industry/2026-02-22-will-ai-replace-programmers.md)** · 2026-08-10
-
-- Grok·Gemini·Claude·ChatGPT 넷에게 직접 물어봄. 넷 다 "완전 대체는 없다"
-- 다만 **수치가 모델 답변이라 환각 가능**. 그대로 인용하면 안 되는 글
-- 건질 건 제번스 역설 프레임과 취약/견딤 프로필 구분
+- "애자일에 실패했으면 AI에는 파국적으로 실패한다" (Jim Highsmith). 제번스 역설과 취약/견딤 프로필도 여기 붙임
 
 ## 인프라
 
