@@ -354,4 +354,3 @@ truncate가 싸고, 없으면 이어붙이는 편이 나음. 남은 턴 수는 �
 - [Harness · Loop · Graph](./2026-07-28-loop-graph-harness.md): Cowork의 Projects·권한·체크포인트가 harness 계층, Dispatch와 스케줄이 loop 계층에 해당함
 - [Prompt Caching In Agents](../agents/2026-07-22-prompt-caching-in-agents.md): 스킬·커넥터를 세션 시작 시 동기화한다는 설계가 캐시 관점에서 왜 합리적인지
 - [Prompting Claude Opus 5](../prompting/2026-08-10-prompting-claude-opus-5.md): AskUserQuestion과 effort 선택, Global Instructions와 프로젝트 Instructions에 무엇을 쓸지
-- [Claude로 업무 자동화하기](./2026-08-07-automate-your-life-with-claude.md): 같은 결의 개인 자동화 글. 이쪽은 Skills 설계에 더 집중
