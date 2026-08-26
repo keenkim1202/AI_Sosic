@@ -49,6 +49,8 @@ Small Business Program 참가자, 즉 첫 다운로드 **200만 미만** 개발�
 
 온디바이스 3B로 안 되는 작업에 서버 추론을 붙이는 데 인프라 비용도 API 키도 필요 없다는 뜻임. 인디 앱이 AI 기능을 넣을 때 늘 걸리던 단가 계산이 사라짐. 같은 Swift API로 Claude, Gemini 같은 서드파티 모델도 호출 가능함.
 
+⚠️ 다만 **개발자에게 청구되는 비용이 없다는 것이지 무제한이라는 뜻은 아님.** 공식 문서 기준으로 사용자 한 명에게 **일일 요청 한도**가 걸리고, 한도에 다가가거나 초과했을 때 앱이 직접 상태를 보여주고 iCloud+ 업그레이드 경로를 띄우게 돼 있음. 조건과 API는 [Foundation Models 실전](../practices/2026-08-21-foundation-models-in-practice.md)에 정리했음.
+
 ## MLXLanguageModel, HuggingFace 모델 드롭인
 
 Foundation Models 프로토콜을 구현한 MLX 백엔드. `mlx-community` 의 **약 4,800개** 모델을 Foundation Models Swift API에 그대로 로드함. 파인튜닝한 자체 모델을 Apple 기본 모델 자리에 끼워 넣는 게 코드 몇 줄이 됨.
@@ -80,6 +82,8 @@ Foundation Models 프로토콜을 구현한 MLX 백엔드. `mlx-community` 의 *
 | 문서 | 겹치는 지점 |
 |---|---|
 | [Xcode에 에이전틱 코딩이 정식 탑재됨](../agents/2026-02-03-xcode-agentic-coding.md) | 같은 Apple 2026 발표의 도구 쪽. 백엔드를 교체 가능하게 만드는 패턴이 에이전트에도 똑같이 적용됨 |
+| [Foundation Models 실전](../practices/2026-08-21-foundation-models-in-practice.md) | 여기 적은 것들을 실제 API와 제약으로 확인한 문서 |
+| [Xcode 27의 에이전트 표면](../agents/2026-08-26-xcode-27-agent-surface.md) | 같은 발표의 도구 쪽이 베타 6까지 와서 실제로 무엇이 되는지 |
 
 ## 짚어야 할 것
 

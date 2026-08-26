@@ -93,7 +93,11 @@ let session = LanguageModelSession(model: PrivateCloudComputeLanguageModel())
 
 그리고 **일일 사용 한도가 앱이 다뤄야 하는 UI 문제로 들어옴.** `model.quotaUsage`로 한도 도달·근접 상태를 읽고, `limitIncreaseSuggestion`으로 iCloud+ 업그레이드 옵션을 띄우게 돼 있음. 한도 초과 시 `quotaLimitReached(_:)` 에러가 던져지고 `resetDate`로 갱신 시점을 확인함. Xcode Scheme의 Run > Options에서 **"Approaching Quota Usage Limit" / "Quota Usage Limit Reached"를 시뮬레이션**할 수 있으니 테스트 경로가 막혀 있지는 않음.
 
-⚠️ 이 저장소의 [Apple의 2026 AI 플랫폼](../industry/2026-06-08-apple-ai-platform-for-ios.md)은 Small Business Program 참가자에게 PCC가 **무료**라고 정리했는데, 공식 문서 쪽 표현은 **개발자 자격 심사 + 사용자 1인당 일일 한도 + iCloud+ 업그레이드**임. 둘이 모순은 아니지만 **"무료"를 무제한으로 읽으면 안 됨.** 비용이 아니라 한도가 제약임.
+**"무료"와 "일일 한도"는 층이 다른 얘기임.** Apple의 What's New 페이지가 이렇게 적음.
+
+> "If you're enrolled in the App Store Small Business Program and your app has fewer than **2 million** total first-time App Store downloads, you can access the next generation of Apple Foundation Models running on Private Cloud Compute **at no cloud API cost**."
+
+즉 **개발자에게 청구되는 클라우드 API 비용이 없는 것**과 **사용자 한 명이 하루에 쓸 수 있는 요청 수에 상한이 있는 것**이 동시에 성립함. 모순이 아님. 다만 설계할 때 후자를 잊으면 안 됨. 단가 계산이 사라지는 대신 **한도 도달을 다루는 UI가 요구사항으로 들어옴.**
 
 추론 레벨은 PCC에서만 쓸 수 있고 `ContextOptions(reasoningLevel:)`로 지정함. 문서 권고는 **moderate에서 시작해서 필요할 때만 deep**. 추론 텍스트도 컨텍스트 창을 먹고 최종 응답에는 안 나타나지만, 트랜스크립트에서 읽을 수 있어 프롬프트 디버깅에 쓸 수 있음.
 
