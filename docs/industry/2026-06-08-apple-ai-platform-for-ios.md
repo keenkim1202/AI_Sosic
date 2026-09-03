@@ -81,9 +81,8 @@ Foundation Models 프로토콜을 구현한 MLX 백엔드. `mlx-community` 의 *
 
 | 문서 | 겹치는 지점 |
 |---|---|
-| [Xcode에 에이전틱 코딩이 정식 탑재됨](../agents/2026-02-03-xcode-agentic-coding.md) | 같은 Apple 2026 발표의 도구 쪽. 백엔드를 교체 가능하게 만드는 패턴이 에이전트에도 똑같이 적용됨 |
+| [Xcode 27의 에이전트 표면](../agents/2026-08-26-xcode-27-agent-surface.md) | 같은 Apple 2026 발표의 도구 쪽. 백엔드를 교체 가능하게 만드는 패턴이 에이전트에도 똑같이 적용됨. 베타 6까지 와서 실제로 무엇이 되는지 |
 | [Foundation Models 실전](../practices/2026-08-21-foundation-models-in-practice.md) | 여기 적은 것들을 실제 API와 제약으로 확인한 문서 |
-| [Xcode 27의 에이전트 표면](../agents/2026-08-26-xcode-27-agent-surface.md) | 같은 발표의 도구 쪽이 베타 6까지 와서 실제로 무엇이 되는지 |
 
 ## 짚어야 할 것
 

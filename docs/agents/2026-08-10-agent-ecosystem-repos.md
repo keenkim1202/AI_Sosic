@@ -113,7 +113,6 @@ GitHub API에는 트렌딩 페이지가 없음. 그래서 **생성일 대비 별
 
 | 이 지형도의 항목 | 이미 정리된 문서 |
 |---|---|
-| graphify | [Semantica](../infra/2026-08-10-semantica-context-graph.md): 같은 문제의식인데 graphify가 훨씬 가벼움 |
 | claude-mem, planning-with-files | [Memory Engineer](../practices/2026-08-02-memory-engineer.md) |
 | caveman, token-optimizer | [대규모 AI 코딩 비용 관리](../practices/2026-08-07-managing-ai-coding-costs.md) 레버 4 |
 | cc-haha, cc-switch | [에이전트 오케스트레이터 3종 비교](./2026-08-10-agent-orchestrators.md) |

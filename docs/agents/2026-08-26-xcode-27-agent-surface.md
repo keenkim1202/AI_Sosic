@@ -1,16 +1,31 @@
 ---
 title: Xcode 27의 에이전트 표면, 플러그인·MCP·ACP
-source: https://developer.apple.com/documentation/xcode-release-notes/xcode-27-release-notes
+source:
+  - https://developer.apple.com/documentation/xcode-release-notes/xcode-27-release-notes
+  - https://www.apple.com/newsroom/2026/02/xcode-26-point-3-unlocks-the-power-of-agentic-coding/
 author: Apple
 collected: 2026-08-26
 tags: [apple, xcode, coding-agent, mcp, acp, skills, plugins, agent-security]
 ---
 
-출처: [Xcode 27 Beta 6 Release Notes](https://developer.apple.com/documentation/xcode-release-notes/xcode-27-release-notes) (베타 1~6 항목 전체 확인, 2026-08-26) · [What's New in iOS](https://developer.apple.com/ios/whats-new/)
+출처: [Xcode 27 Beta 6 Release Notes](https://developer.apple.com/documentation/xcode-release-notes/xcode-27-release-notes) (베타 1~6 항목 전체 확인, 2026-08-26) · [What's New in iOS](https://developer.apple.com/ios/whats-new/) · [Xcode 26.3 unlocks the power of agentic coding](https://www.apple.com/newsroom/2026/02/xcode-26-point-3-unlocks-the-power-of-agentic-coding/) (2026-02-03)
 
 ## 요약
 
-[Xcode에 에이전틱 코딩이 정식 탑재됨](./2026-02-03-xcode-agentic-coding.md)이 26.3 발표 기준이라면 이 문서는 **27 베타 6까지 쌓인 릴리스 노트에서 실제로 무엇이 되는지** 확인한 것임. 요지는 셋임. 첫째, 터미널 하네스의 구조가 그대로 옮겨왔음. **플러그인이 skills·MCP 서버·ACP 에이전트 설정을 담고 스킬은 슬래시 커맨드로 호출**됨. 둘째, Xcode 자신이 **MCP 서버가 되어 빌드·디버거·스킴·빌드 설정·엔타이틀먼트를 툴로 노출**하고, 베타 5부터는 **워크스페이스를 안 열어도 돎**. 셋째, 그 대가로 **코드 서명된 에이전트에게 디렉터리 트리 권한을 장기간 주는 모델**이 들어왔고, 그래서 파일시스템 접근을 감시하는 보안 계층이 같이 붙었음.
+2026-02의 Xcode 26.3이 에이전틱 코딩을 정식 탑재한 뒤 이 문서는 **27 베타 6까지 쌓인 릴리스 노트에서 실제로 무엇이 되는지** 확인한 것임. 요지는 셋임. 첫째, 터미널 하네스의 구조가 그대로 옮겨왔음. **플러그인이 skills·MCP 서버·ACP 에이전트 설정을 담고 스킬은 슬래시 커맨드로 호출**됨. 둘째, Xcode 자신이 **MCP 서버가 되어 빌드·디버거·스킴·빌드 설정·엔타이틀먼트를 툴로 노출**하고, 베타 5부터는 **워크스페이스를 안 열어도 돎**. 셋째, 그 대가로 **코드 서명된 에이전트에게 디렉터리 트리 권한을 장기간 주는 모델**이 들어왔고, 그래서 파일시스템 접근을 감시하는 보안 계층이 같이 붙었음.
+
+## 앞 단계, Xcode 26.3에서 이미 되는 것
+
+27은 아직 베타고, **오늘 쓸 수 있는 건 26.3**임. 둘을 섞어서 계획하면 안 됨.
+
+| | 상태 |
+|---|---|
+| Xcode 26.3 에이전틱 코딩 | **출시됨** (2026-02) |
+| Xcode 27 | 베타 6, 2026 가을 정식 |
+
+26.3이 붙인 건 **Claude Agent SDK**, 즉 Claude Code를 돌리는 그 하네스임. 기능 축소판이 아니라 **같은 하네스**라는 게 요지고, 서브에이전트·백그라운드 태스크·플러그인이 IDE 안에서 그대로 돎. OpenAI Codex도 같은 자리에서 고름.
+
+에이전트가 교체 가능한 부품이 된 구조인데, 이건 [Foundation Models가 모델 백엔드에 한 것](../industry/2026-06-08-apple-ai-platform-for-ios.md)과 같은 패턴임. 올해 Apple 발표를 관통하는 형태가 "프로토콜을 열고 구현체는 고르게 한다"임. 아래 27 항목들은 그 패턴이 어디까지 갔는지에 해당함.
 
 ## 플러그인, 하네스가 IDE로 들어옴
 
@@ -121,7 +136,7 @@ sudo xcrun mcp-server enable --unsafe-always-allow-all-agents
 
 | 문서 | 겹치는 지점 |
 |---|---|
-| [Xcode에 에이전틱 코딩이 정식 탑재됨](./2026-02-03-xcode-agentic-coding.md) | 26.3 발표 기준. 이 문서는 27 베타의 실제 표면 |
+| [Apple의 2026 AI 플랫폼](../industry/2026-06-08-apple-ai-platform-for-ios.md) | 같은 Apple 2026 발표의 프레임워크 쪽. 백엔드를 교체 가능하게 만드는 패턴이 에이전트에도 똑같이 적용됨 |
 | [MCP 2026-07-28 스펙](../infra/2026-07-28-mcp-stateless-spec.md) | Xcode가 붙이는 규격. stateless 전환과 툴 목록 결정적 정렬이 여기 클라이언트에도 적용됨 |
 | [팀 공유 AI 하네스 만들기](./2026-08-10-hq-team-ai-harness.md) | 플러그인·스킬을 팀 기본값으로 배포하는 문제. Xcode 플러그인이 그 배포 경로가 됨 |
 | [사람이 에이전트 명령 승인에서 위협 3건 중 1건을 놓친다](../security/2026-08-05-agent-approval-miss-rates.md) | 장기 권한 부여와 `--unsafe-always-allow-all-agents`가 만드는 표면 |
@@ -130,6 +145,7 @@ sudo xcrun mcp-server enable --unsafe-always-allow-all-agents
 
 ## 짚어야 할 것
 
+- **Xcode 27은 Apple Silicon 전용임.** Intel 빌드 머신이 남아 있으면 지금 계획에 넣어야 함
 - **릴리스 노트만 읽었고 직접 써보지 않았음.** 항목 번호는 Apple의 이슈 번호를 그대로 옮긴 것임
 - 베타 6 기준이라 **정식 출시 때 빠지거나 바뀌는 항목이 있을 수 있음.** 특히 워크스페이스 없는 MCP 서버는 릴리스 노트 본인이 "early preview"라고 적었고, `xcrun mcp-server` 유틸리티가 모든 구성에서 동작하지 않을 수 있으며 설정 적용에 Xcode 재실행이나 재부팅이 필요할 수 있다고 명시함 (181836944)
 - ACP(Agent Client Protocol) 자체의 명세는 확인하지 못했음. Xcode가 지원한다는 사실과 플러그인이 ACP 에이전트 설정을 담는다는 것까지만 확인함
