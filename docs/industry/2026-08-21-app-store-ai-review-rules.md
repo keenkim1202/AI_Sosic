@@ -109,10 +109,9 @@ tags: [apple, ios, app-store, app-review, privacy, consent, compliance]
 
 | 문서 | 겹치는 지점 |
 |---|---|
-| [Foundation Models 실전](../practices/2026-08-21-foundation-models-in-practice.md) | 여기서 말하는 온디바이스 / PCC / 서드파티 경계가 그쪽에서는 API 선택 문제로 나타남 |
+| [Foundation Models 실전](../practices/2026-08-21-foundation-models-in-practice.md) | 여기서 말하는 온디바이스 / PCC / 서드파티 경계가 그쪽에서는 API 선택 문제로 나타남. 네이티브로 직접 구현하면 4.7을 피하는 대신 컨텍스트·한도 제약을 직접 떠안게 됨 |
 | [Apple의 2026 AI 플랫폼](./2026-06-08-apple-ai-platform-for-ios.md) | 같은 발표의 프레임워크 쪽. 이 문서는 그걸 실제로 출시할 때 걸리는 관문 |
 | [사람이 에이전트 명령 승인에서 위협 3건 중 1건을 놓친다](../security/2026-08-05-agent-approval-miss-rates.md) | 4.7.3의 "매 건마다 명시적 동의"가 승인 피로를 그대로 만들어냄. 승인 횟수를 줄이는 설계가 결국 필요함 |
-| [Foundation Models 실전](../practices/2026-08-21-foundation-models-in-practice.md) | 네이티브로 직접 구현하면 4.7을 피하는 대신 컨텍스트·한도 제약을 직접 떠안게 됨 |
 
 ## 짚어야 할 것
 
