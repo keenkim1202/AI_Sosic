@@ -1,17 +1,19 @@
 ---
 title: MCP 2026-07-28 스펙, 세션을 버리고 stateless로
-source: https://blog.modelcontextprotocol.io/posts/2026-07-28/
+source:
+  - https://blog.modelcontextprotocol.io/posts/2026-07-28/
+  - https://blog.modelcontextprotocol.io/posts/mcp-roadmap/
 author: Model Context Protocol
 published: 2026-07-28
-collected: 2026-08-21
-tags: [mcp, protocol, agent-tooling, stateless, authorization, prompt-caching, migration]
+collected: 2026-09-03
+tags: [mcp, protocol, agent-tooling, stateless, authorization, prompt-caching, migration, roadmap]
 ---
 
-출처: [The 2026-07-28 Specification](https://blog.modelcontextprotocol.io/posts/2026-07-28/) · [Key Changes 전문](https://modelcontextprotocol.io/specification/2026-07-28/changelog) · [스펙 본문](https://modelcontextprotocol.io/specification/2026-07-28)
+출처: [The 2026-07-28 Specification](https://blog.modelcontextprotocol.io/posts/2026-07-28/) · [Key Changes 전문](https://modelcontextprotocol.io/specification/2026-07-28/changelog) · [스펙 본문](https://modelcontextprotocol.io/specification/2026-07-28) (스펙은 2026-08-21 확인) · [The New MCP Roadmap](https://blog.modelcontextprotocol.io/posts/mcp-roadmap/) (2026-08-22, David Soria Parra · Den Delimarsky, 2026-09-03 확인)
 
 ## 요약
 
-MCP가 **양방향 상태 유지 프로토콜에서 요청·응답 stateless로** 바뀜. `initialize`/`initialized` 핸드셰이크와 `Mcp-Session-Id` 헤더가 없어지고, 요청마다 프로토콜 버전과 클라이언트 정보를 `_meta`에 실어 보냄. 로드밸런서 뒤의 서버 인스턴스가 **상태를 공유할 필요가 없어짐**. 서버를 직접 운영하지 않더라도 알아둘 게 둘 있음. **Roots·Sampling·Logging이 폐기 예정**으로 들어갔고, 툴 목록에 **캐시 힌트(`ttlMs`, `cacheScope`)와 결정적 정렬 권고**가 생겨서 프롬프트 캐시 적중률에 직접 영향을 줌. 폐기 창은 **최소 12개월**.
+MCP가 **양방향 상태 유지 프로토콜에서 요청·응답 stateless로** 바뀜. `initialize`/`initialized` 핸드셰이크와 `Mcp-Session-Id` 헤더가 없어지고, 요청마다 프로토콜 버전과 클라이언트 정보를 `_meta`에 실어 보냄. 로드밸런서 뒤의 서버 인스턴스가 **상태를 공유할 필요가 없어짐**. 서버를 직접 운영하지 않더라도 알아둘 게 둘 있음. **Roots·Sampling·Logging이 폐기 예정**으로 들어갔고, 툴 목록에 **캐시 힌트(`ttlMs`, `cacheScope`)와 결정적 정렬 권고**가 생겨서 프롬프트 캐시 적중률에 직접 영향을 줌. 폐기 창은 **최소 12개월**. 한 달 뒤 나온 로드맵(2026-08-22)까지 같이 봄. 다음 개정은 **Tasks의 코어 승격**과 **점진적 툴 발견** 쪽으로 감.
 
 ## 왜 지금 보는가
 
@@ -93,13 +95,35 @@ Xcode 26.3이 Claude Agent SDK를 네이티브로 넣고 Xcode 27이 3사 에이
 6. Roots·Sampling·Logging 사용처를 대체 경로로 옮기기. 12개월 창이 있지만 신규 구현에는 쓰지 말 것
 7. DCR을 쓰고 있으면 CIMD 지원 여부 확인
 
+## 다음 개정판이 어디로 가는가
+
+스펙 발표 한 달 뒤인 **2026-08-22에 새 로드맵**이 나왔음. 리드 메인테이너 둘(David Soria Parra, Den Delimarsky)이 썼고 **목표 날짜나 버전은 명시하지 않음.** "앞으로 몇 달"과 "다음 스펙 릴리스와 그 이후"라고만 함. 우선순위 다섯 개인데, 이번 개정에서 stateless로 밀어낸 것들의 **뒷정리와 연장**에 해당함.
+
+| # | 영역 | 구체적으로 무엇 |
+|---|---|---|
+| 1 | **에이전틱 메시징 프리미티브** | "현대 에이전틱 워크로드는 더 이상 표준 요청·응답 패턴에 맞지 않음". 서버가 먼저 거는 이벤트(웹훅·채널)로 클라이언트 폴링을 없애고, **Tasks 확장(SEP-2663)을 코어로 승격**시키는 것이 목표. `subscriptions/listen`·진행률 알림과 어떻게 합성되는지를 워킹그룹들이 같이 검토 |
+| 2 | **HTTP 네이티브 전송 통일** | "원격 MCP 서버는 이제 다른 HTTP 워크로드와 다르지 않음". **로컬 서버의 stdio까지 Streamable HTTP로 덮어서** 배포 형태에 상관없이 전송 하나로 통일 |
+| 3 | **에이전트 신원과 엔터프라이즈 보안** | "사용자가 자리에 없는 상태에서 자기 신원을 갖고 도는 클라우드 워크로드"를 전제로 함. **DPoP([RFC 9449](https://datatracker.ietf.org/doc/html/rfc9449)) 확정과 채택**, **Workload Identity Federation**을 통한 에이전트 신원·위임 경로 정의, Enterprise-Managed Authorization 뒤의 ID-JAG 그랜트 활용, 표준 토큰 익스체인지. IETF OAuth·WIMSE 워킹그룹과 같이 감 |
+| 4 | **프리미티브 개선** | 둘임. 하나는 **툴 결과 처리 표준화**. "`tools/call` 응답이 같은 출력을 두 가지 이상의 형태로 실을 수 있는데" 클라이언트가 어느 쪽을 써야 하는지 정해진 규약이 없음. 다른 하나는 **점진적 툴 발견**. 툴 표면 전체를 미리 드러내는 대신 "서버가 작은 진입점만 제공하고 대화가 좁혀질수록 카탈로그를 더 드러내는" 방식 |
+| 5 | **SDK 개발자 경험** | 에르고노믹스, 스펙 적합성 테스트, 문서 정확도 |
+
+### 여기서 미리 대비할 것
+
+- **4번의 점진적 툴 발견이 이 저장소 관점에서 제일 중요함.** 이번 개정이 "툴 목록을 결정적 순서로 내보내라"로 캐시를 지켰다면, 점진적 발견은 **대화 중간에 툴 목록이 늘어나는 것을 프로토콜이 공식화**하는 방향임. [Prompt Caching In Agents](../agents/2026-07-22-prompt-caching-in-agents.md)의 additive tool loading이 정확히 그 문제인데, 거기 결론은 **"추가"일 때만 캐시가 살고 제거·교체·재정렬은 그대로 깬다**였음. 규격이 어느 쪽으로 정해지는지가 캐시 비용을 좌우함
+- **1번이 오면 Tasks가 확장이 아니라 코어가 됨.** 이번에 장시간 작업을 Tasks 확장 폴링으로 옮기라고 적어둔 마이그레이션 3번 항목이, 다음 개정에서는 선택이 아니게 될 가능성이 큼
+- **2번은 로컬 stdio 서버를 쓰는 쪽에 영향이 큼.** Xcode의 `xcrun mcp-server`나 Claude Code 로컬 플러그인처럼 stdio로 붙는 구성이 전송 계층에서 바뀜
+
+### 프로세스 쪽
+
+우선순위 영역마다 담당 코어 메인테이너와 워킹그룹이 배정돼 있고, **그 영역 안의 SEP는 우선 리뷰를 받고 채택 확률이 높다**고 명시함. 스펙에 넣고 싶은 게 있으면 이 다섯 개 중 하나에 붙이는 게 유리하다는 뜻임. Contributor Ladder도 정식 도입됨.
+
 ## 이 저장소의 다른 문서와 겹치는 지점
 
 | 문서 | 겹치는 지점 |
 |---|---|
 | [Prompt Caching In Agents](../agents/2026-07-22-prompt-caching-in-agents.md) | 툴 정의가 prefix에 들어가는 문제. 결정적 정렬 권고가 그 대응임 |
 | [에이전트 생태계 레포 지형도](../agents/2026-08-10-agent-ecosystem-repos.md) | "사용 가능한 것의 목록을 바꾸면 캐시가 깨진다"가 프로토콜 권고로 올라옴 |
-| [Xcode에 에이전틱 코딩이 정식 탑재됨](../agents/2026-02-03-xcode-agentic-coding.md) | IDE 안의 에이전트에 도구를 붙이는 규격이 이것임 |
+| [Xcode 27의 에이전트 표면](../agents/2026-08-26-xcode-27-agent-surface.md) | IDE 안의 에이전트에 도구를 붙이는 규격이 이것임. Xcode 자신이 MCP 서버가 되는 쪽까지 감 |
 | [사람이 에이전트 명령 승인에서 위협 3건 중 1건을 놓친다](../security/2026-08-05-agent-approval-miss-rates.md) | 인가 강화(발급자 검증, 자격증명 바인딩)가 노리는 위협면 |
 | [Claude Cowork](../practices/2026-08-10-claude-cowork.md) | 로컬 MCP 플러그인 지원과 한도. 클라이언트 쪽 제약 |
 
@@ -107,9 +131,10 @@ Xcode 26.3이 Claude Agent SDK를 네이티브로 넣고 Xcode 27이 3사 에이
 
 - **이 문서는 스펙 변경 목록을 정리한 것이고 실제 마이그레이션을 해본 기록이 아님.** 각 SDK가 언제 어떤 형태로 따라오는지는 SDK 릴리스 노트를 봐야 함
 - 이전 개정은 **2025-11-25**임. 그 사이 버전을 건너뛰고 올라오면 확인할 변경이 더 많음
-- 검색 결과 중 "MCP Apps"를 이번 릴리스 항목으로 소개하는 글이 있는데, **공식 Key Changes 문서에서는 확인되지 않았음.** 이 문서에는 넣지 않았음
+- 검색 결과 중 "MCP Apps"를 이번 릴리스 항목 또는 공식 확장으로 소개하는 글이 있는데, **공식 Key Changes 문서에도 2026-08-22 로드맵에도 나오지 않음.** 두 번 확인했고 이 문서에는 넣지 않았음
+- **로드맵은 계획이지 확정이 아님.** 목표 날짜도 버전도 명시되지 않았고, 다섯 영역 중 무엇이 다음 개정에 실제로 들어가는지는 SEP 진행 상황을 봐야 함
 - Rust SDK는 베타임. 프로덕션 전제로 잡으면 안 됨
 
 ## 유효기간
 
-**2026-08-21 확인 기준**임. 스펙 자체는 `2026-07-28`로 고정된 개정판이라 문언은 안 바뀌지만, SDK 지원 범위와 클라이언트(Claude Code, Xcode 등) 적용 시점은 계속 움직임. 다시 볼 때는 [폐기 기능 레지스트리](https://modelcontextprotocol.io/specification/2026-07-28/deprecated)로 12개월 창이 어디까지 왔는지 확인하는 편이 나음.
+스펙 부분은 **2026-08-21**, 로드맵 부분은 **2026-09-03 확인 기준**임. 스펙 자체는 `2026-07-28`로 고정된 개정판이라 문언은 안 바뀌지만, SDK 지원 범위와 클라이언트(Claude Code, Xcode 등) 적용 시점은 계속 움직임. 다시 볼 때는 [폐기 기능 레지스트리](https://modelcontextprotocol.io/specification/2026-07-28/deprecated)로 12개월 창이 어디까지 왔는지 확인하고, 로드맵 절은 다섯 영역의 SEP가 실제로 스펙에 들어갔는지로 대조하는 편이 나음. **로드맵 절은 다음 개정판이 나오면 통째로 낡음.**
