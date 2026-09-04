@@ -55,6 +55,11 @@ jobs:
     timeout-minutes: 30
     permissions:
       contents: read
+      # claude-code-action 은 GitHub 토큰을 받으려고 OIDC 토큰을 먼저 요청한다.
+      # 이게 없으면 "Could not fetch an OIDC token" 으로 3회 재시도 후 실패한다.
+      # 저장소 쓰기 권한을 주는 것이 아니라 이 실행의 신원 토큰을 발급받는 것이라,
+      # contents: read 경계는 그대로다.
+      id-token: write
 
     steps:
       - name: Checkout repository
