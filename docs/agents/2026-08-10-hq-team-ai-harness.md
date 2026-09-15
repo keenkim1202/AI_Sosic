@@ -174,7 +174,7 @@ HQ/companies/your-company/
 | 작고 안정적인 진입점 + 필요할 때 꺼내는 깊은 맥락 | [Prompt Caching In Agents](./2026-07-22-prompt-caching-in-agents.md) |
 | 경험에서 스킬을 만들고 사용 중에 개선하는 루프 | [Hermes Agent](./2026-08-10-hermes-agent.md) |
 | 폴더를 버리라는 주장과의 정면 대비 | [Claude Cowork](../practices/2026-08-10-claude-cowork.md) |
-| 배포 전 사람 검토 게이트 | [Human Review](./2026-08-10-human-review-skill.md) |
+| 리뷰 후 sync 라는 정책과, 증거를 읽는 자동 게이트의 대비 | [Eval Engineering](../practices/2026-08-01-eval-engineering-merge-gate.md) |
 | 공유 하네스에 나쁜 지시가 섞일 때의 위험 | [사람이 에이전트 명령 승인에서 위협 3건 중 1건을 놓친다](../security/2026-08-05-agent-approval-miss-rates.md) |
 
 ## 짚어야 할 것

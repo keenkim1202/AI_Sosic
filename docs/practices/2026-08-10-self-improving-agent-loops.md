@@ -132,7 +132,6 @@ agents-cli eval compare \
 | 판정자 점수를 그대로 믿으면 안 되는 이유, 게이트 설계 | [Eval Engineering](./2026-08-01-eval-engineering-merge-gate.md) |
 | 검증 앵커 없는 자기개선 루프가 무너지는 방식 | [Graph Engineering](./2026-07-20-graph-engineering.md) |
 | 경험에서 스킬을 만들고 사용 중에 개선하는 루프 | [Hermes Agent](../agents/2026-08-10-hermes-agent.md) |
-| 사람이 게이트를 어디에 두는가 | [Human Review](../agents/2026-08-10-human-review-skill.md) |
 | 자동 평가를 CI에 붙일 때의 비용 | [대규모 AI 코딩 비용 관리](./2026-08-07-managing-ai-coding-costs.md) |
 
 특히 [Eval Engineering](./2026-08-01-eval-engineering-merge-gate.md)과 나란히 읽을 값어치가 큼. 그쪽은 **판정자 자체가 편향된다**는 걸 수치로 보여주고(같은 출력에 판정자만 바꿔 93.3% → 39.5%), 이쪽은 **그 판정자를 누가 움직일 수 있느냐**를 규칙 6으로 막음. 두 문서를 합치면 판정자 선택과 기준선 보호가 별개 문제라는 게 분명해짐.
