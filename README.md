@@ -128,6 +128,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 
 ## 업계 동향
 
+**[iOS 27 · Xcode 27 정식 출시](docs/industry/2026-09-14-ios-27-ai-apis-shipped.md)** · 2026-09-15
+
+- 두 문서에 "정식 출시 때 다시 보라"고 적어둔 그 시점이 지나갔음
+- **Xcode 27(27A266a)과 iOS 27.0(24A437)이 같은 날.** PCC 무료 조건은 **Small Business Program 가입 + 다운로드 200만 미만** 그대로
+- 새로 확인된 표면 셋은 View Annotations·App Intents Testing·Evaluations. 대신 **Siri AI 한국어는 10월**
+
 **[앱에 AI를 붙일 때 걸리는 App Store 심사 조항](docs/industry/2026-08-21-app-store-ai-review-rules.md)** · 2026-08-21
 
 - 서드파티 AI에 개인정보 보내면 **제공자 이름과 데이터 항목을 대고 사전 동의.** 약관에 묻어두면 공개로 안 쳐줌
