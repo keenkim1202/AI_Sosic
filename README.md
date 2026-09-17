@@ -132,7 +132,7 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 
 - 두 문서에 "정식 출시 때 다시 보라"고 적어둔 그 시점이 지나갔음
 - **Xcode 27(27A266a)과 iOS 27.0(24A437)이 같은 날.** PCC 무료 조건은 **Small Business Program 가입 + 다운로드 200만 미만** 그대로
-- 새로 확인된 표면 셋은 View Annotations·App Intents Testing·Evaluations. 대신 **Siri AI 한국어는 10월**
+- **Apple 이 만든 `SpotlightSearchTool` 을 기본 설정으로 붙이면 온디바이스 컨텍스트가 넘침.** 프롬프트를 넣기도 전에
 
 **[앱에 AI를 붙일 때 걸리는 App Store 심사 조항](docs/industry/2026-08-21-app-store-ai-review-rules.md)** · 2026-08-21
 
