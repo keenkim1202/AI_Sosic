@@ -4,6 +4,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 각 문서에 원문 출처 링크와 요약을 함께 담습니다.
 ## 에이전트 · 툴링
 
+**[.xcproj JSON 프로젝트 포맷](docs/agents/2026-09-16-xcproj-json-project-format.md)** · 2026-09-19
+
+- 에이전트한테 타깃 추가 시켰다가 `project.pbxproj` 머지 충돌 풀어본 적 있으면 이거임
+- Apple이 pbxproj를 갈아엎으면서 이유에 **"easier for coding agents to edit"**를 적었음. 타깃 멤버십을 **파일 쪽에** 적어서 **diff hunk 하나**로 끝나게 만듦
+- 포맷 모델이 **Apache-2.0으로 공개**됐고 그게 **Xcode 자신의 구현**임. 단 `.xcproj`는 **Xcode 27 이상만 열림**
+
 **[Xcode 27의 에이전트 표면](docs/agents/2026-08-26-xcode-27-agent-surface.md)** · 2026-08-26
 
 - 플러그인이 **skills·MCP 서버·ACP 설정**을 담고 스킬은 슬래시 커맨드. 터미널 하네스가 그대로 IDE로 옴
