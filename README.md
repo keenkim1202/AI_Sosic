@@ -48,6 +48,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 
 ## 방법론
 
+**[서버측 compaction](docs/practices/2026-09-20-claude-api-compaction.md)** · 2026-09-20
+
+- 히스토리를 직접 잘랐다가 캐시가 통째로 날아간 적 있으면 이 자리임
+- 재작성 비용이 대화 길이가 아니라 **요약 길이**로 상한이 잡힘. 대신 **`usage.input_tokens`가 compaction 몫을 빼고 나와서** 비용 대시보드가 조용히 과소 보고함
+- 요약을 백그라운드로 돌리는 **on-demand 모드**가 2026-09-14에 붙었음 (베타 헤더 `compact-2026-09-04`)
+
 **[Foundation Models 실전](docs/practices/2026-08-21-foundation-models-in-practice.md)** · 2026-08-21
 
 - 온디바이스 컨텍스트가 **4,096토큰**. 그런데 **한국어는 한 글자가 대략 한 토큰**이라 영어 감각으로 잡으면 터짐
