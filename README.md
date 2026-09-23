@@ -48,6 +48,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 
 ## 방법론
 
+**[툴 정의를 메시지 안에 넣기](docs/practices/2026-09-22-inline-tool-definitions.md)** · 2026-09-23
+
+- 툴 하나 갈아끼우려고 `tools` 건드렸다가 대화 전체가 재청구된 적 있으면 여기임
+- 대화 중간 system 메시지에 **툴 정의 전체를 값으로** 실으면 prefix가 안 깨짐. 스키마 교체와 회수도 같이 append 연산이 됨
+- 함정은 하나. **`tools`에 non-deferred 툴이 하나도 없으면** 첫 인라인 정의에서 전체 캐시 미스가 남
+
 **[서버측 compaction](docs/practices/2026-09-20-claude-api-compaction.md)** · 2026-09-20
 
 - 히스토리를 직접 잘랐다가 캐시가 통째로 날아간 적 있으면 이 자리임
