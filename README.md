@@ -48,6 +48,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 
 ## 방법론
 
+**[Cache diagnostics](docs/practices/2026-09-23-prompt-cache-diagnostics.md)** · 2026-09-26
+
+- 코드는 한 글자도 안 바꿨는데 턴마다 캐시가 깨지는 걸 눈으로 찾고 있으면 이 자리임
+- 이 저장소의 **"히트율 낮을 때 확인할 8가지" 중 4개에만 API가 이름을 붙임.** 나머지는 `null`이나 `unavailable`로 떨어짐
+- 프롬프트 캐싱 문서가 **Swift와 Go의 JSON 키 순서 무작위화**를 캐시 깨는 원인으로 지목해 둠
+
 **[서버측 compaction](docs/practices/2026-09-20-claude-api-compaction.md)** · 2026-09-20
 
 - 히스토리를 직접 잘랐다가 캐시가 통째로 날아간 적 있으면 이 자리임
