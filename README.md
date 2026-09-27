@@ -54,6 +54,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 
 ## 방법론
 
+**[거절 청구와 fallback](docs/practices/2026-09-24-refusal-billing-and-fallback.md)** · 2026-09-27
+
+- 에러율 대시보드만 보고 있으면 이 지출은 안 보임. 거절은 5xx 가 아니라 **HTTP 200**임
+- **2026-09-24부터** 출력 전 거절도 `bio`·`frontier_llm`·`reasoning_extraction` 이면 그 모델 **정가로 청구**됨
+- 다른 모델로 재시도하면 캐시를 처음부터 씀. 그 차액을 메우는 **크레딧 토큰은 5분**짜리
+
 **[Cache diagnostics](docs/practices/2026-09-23-prompt-cache-diagnostics.md)** · 2026-09-26
 
 - 코드는 한 글자도 안 바꿨는데 턴마다 캐시가 깨지는 걸 눈으로 찾고 있으면 이 자리임
