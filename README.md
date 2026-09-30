@@ -124,6 +124,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 
 ## 프롬프트 엔지니어링
 
+**[/doctor prompt-audit](docs/prompting/2026-09-25-claude-md-prompt-audit.md)** · 2026-09-30
+
+- CLAUDE.md 에 왜 넣었는지 기억나지 않는 줄이 있으면 이 자리임
+- **낡은 모델용 지시·없는 경로 참조·파일 간 모순** 셋을 찾아 리포트로 내고, 말하기 전까지 파일은 안 바뀜
+- 단 **`prompt-audit` 을 붙이면 평소 `/doctor` 체크업은 안 돎.** 번들 스킬을 꺼둔 환경에서는 아예 없는 기능임
+
 **[Prompting Claude Opus 5](docs/prompting/2026-08-10-prompting-claude-opus-5.md)** · 2026-08-10
 
 - **프롬프트에서 "스스로 검증해라"를 지우면 품질 그대로인데 토큰이 줄어듦.** 외부 테스트나 리뷰를 빼라는 얘기는 아님
