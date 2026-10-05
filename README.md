@@ -66,6 +66,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 
 ## 방법론
 
+**[App Intents Testing](docs/practices/2026-10-05-app-intents-testing-and-onscreen-context.md)** · 2026-10-05
+
+- 뷰에 엔티티 붙여놓고 Siri한테 말 걸어보는 걸로 검증을 대신하고 있었으면 이 자리임
+- 출시 문구가 iOS 27 신규라고 부른 **View Annotations는 실은 iOS 18.4** 도입임. 27에 진짜 새로 생긴 건 **`AppIntentsTesting`(27.0)** 과 그 안의 `viewAnnotations()`
+- 온스크린 컨텍스트는 Apple Intelligence로 흐르지 **앱 자신의 `LanguageModelSession`을 채워주지 않음.** 4K 예산을 쓰는 쪽과 안 쓰는 쪽이 갈림
+
 **[Foundation Models 가용성 대조](docs/practices/2026-09-28-foundation-models-availability-audit.md)** · 2026-09-28
 
 - 이 저장소가 "전부 Beta"로 적어둔 네 항목이 지금도 베타인지 심볼 페이지로 확인함
