@@ -116,6 +116,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 
 ## 에이전트 보안
 
+**[에이전트 웹 egress 통제 3층](docs/security/2026-10-07-managed-agents-web-egress.md)** · 2026-10-09
+
+- 환경 만들 때 `networking` 빼먹었으면 그 샌드박스는 지금 **`unrestricted`** 로 돌고 있음. 콘솔 폼은 반대로 Limited 로 시작함
+- `allowed_hosts` 가 Anthropic 서버에서 도는 `web_search`·`web_fetch` 까지 덮게 됐고, `web_fetch` 는 **세션에 이미 나온 URL 만** 가져옴
+- 툴 목록은 서브도메인을 덮는데 `allowed_hosts` 는 정확히 한 호스트만 덮음. **넓은 쪽을 환경에 적는 감각으로 쓰면 세션 생성이 400**
+
 **[macOS Full Disk Access 제한 예고](docs/security/2026-10-02-macos-full-disk-access-controls.md)** · 2026-10-03
 
 - 백업·동기화 때문에 FDA 를 켜 둔 Mac 에서 코딩 에이전트를 돌리고 있으면 이 자리임
