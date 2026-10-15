@@ -84,6 +84,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 
 ## 방법론
 
+**[Claude API OpenTelemetry 내보내기](docs/practices/2026-10-14-claude-api-opentelemetry.md)** · 2026-10-15
+
+- 트레이스를 켜고 토큰을 합산했는데 숫자가 두 배로 나왔으면 span kind 부터 볼 것
+- `gen_ai.usage.*`가 **compaction 몫을 빼고 나옴.** 이 저장소가 `usage.input_tokens`에 적어둔 과소 보고가 텔레메트리 층에서 그대로 반복됨
+- 문서가 직접 선을 그음. **내보낸 스팬은 사용량의 완전한 기록이 아님.** 그리고 일곱 언어 목록에 **Swift 가 없음**
+
 **[thinking 블록의 세 가지 바인딩](docs/practices/2026-10-12-preserved-thinking-bindings.md)** · 2026-10-12
 
 - 히스토리를 고쳤더니 400이 났으면 그건 운이 좋은 쪽임. 안 나는 경우가 더 무서움
