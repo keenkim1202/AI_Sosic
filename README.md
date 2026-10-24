@@ -4,6 +4,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 각 문서에 원문 출처 링크와 요약을 함께 담습니다.
 ## 에이전트 · 툴링
 
+**[Agent Skills 가 Linux Foundation 으로](docs/agents/2026-10-22-agent-skills-standard-aaif.md)** · 2026-10-24
+
+- 스킬을 Claude Code 에도 Cowork 에도 Xcode 에도 따로 등록해 본 적 있으면 원인이 여기 적혀 있음
+- 명세가 정하는 건 `SKILL.md` 와 필드 여섯뿐임. **스킬이 어디 있어야 하는지는 정하지 않음.** `.agents/skills/` 는 관례
+- 보안 가이드와 버전 번호가 **아직 로드맵에 있음.** 그런데 스킬은 `scripts/` 를 들고 오고 그걸 에이전트가 실행함
+
 **[Xcode 27.2 RC, 에이전트가 커버리지를 읽게 됨](docs/agents/2026-10-19-xcode-27-2-rc-coverage-mcp.md)** · 2026-10-23
 
 - 에이전트가 스크린샷으로 "됐습니다"만 보고하는 게 답답했으면 이 자리임
