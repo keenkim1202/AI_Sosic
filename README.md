@@ -4,6 +4,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 각 문서에 원문 출처 링크와 요약을 함께 담습니다.
 ## 에이전트 · 툴링
 
+**[Claude for Foundation Models](docs/agents/2026-10-25-claude-for-foundation-models.md)** · 2026-10-25
+
+- 온디바이스 4K 컨텍스트에 막혀서 백엔드 세울 궁리를 하고 있었으면 이 자리임
+- `LanguageModelSession` 의 `model:` 만 갈면 Claude 가 붙고, **App Attest 로 앱에 키도 백엔드도 없이** 과금이 워크스페이스로 감
+- 대신 **프롬프트 캐시 제어·토큰 카운팅·배치·베타 헤더가 이 경로에는 없음**
+
 **[Agent Skills 가 Linux Foundation 으로](docs/agents/2026-10-22-agent-skills-standard-aaif.md)** · 2026-10-24
 
 - 스킬을 Claude Code 에도 Cowork 에도 Xcode 에도 따로 등록해 본 적 있으면 원인이 여기 적혀 있음
