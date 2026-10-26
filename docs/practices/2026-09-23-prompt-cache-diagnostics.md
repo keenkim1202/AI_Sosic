@@ -99,7 +99,9 @@ tags: [claude, prompt-caching, kv-cache, llm-cost, coding-agent, swift]
 
 `unavailable`의 설명에 프롬프트 영향 파라미터 목록이 들어 있음. `tool_choice`, `thinking`, `context_management`, `output_config`, `output_format`, 그리고 **활성 `anthropic-beta` 헤더의 집합**임.
 
-프롬프트 캐싱 문서의 무효화 표를 나란히 놓으면 어긋남이 보임. 그 표는 `tool_choice` 변경, 이미지 추가·제거, thinking 설정 변경, `output_config.effort` 변경이 **메시지 캐시를 항상 무효화한다**고 적음. 즉 **캐시를 깨는 것이 확실한 항목들이 진단에서는 이름 없이 `unavailable`로 떨어짐.** 베타 헤더 집합이 여기 들어가 있는 것도 실무에서 걸림. 베타 기능을 켜고 끄는 플래그가 배포마다 달라지는 하네스면 미스의 원인이 헤더인데 진단은 그 말을 안 해 줌.
+프롬프트 캐싱 문서의 무효화 표를 나란히 놓으면 어긋남이 보임. 그 표는 `tool_choice` 변경, thinking 설정 변경, `output_config.effort` 변경이 **메시지 캐시를 항상 무효화한다**고 적음. 즉 **캐시를 깨는 것이 확실한 파라미터들이 진단에서는 이름 없이 `unavailable`로 떨어짐.**
+
+이미지 추가·제거는 이 목록과 섞으면 안 됨. `unavailable` 이 세는 것은 `messages` 밖의 요청 파라미터고, 이미지는 그중에 없음. 앞선 메시지에서 이미지를 빼는 것은 **`messages` 를 고친 것**이라 모델·시스템·툴이 그대로면 `messages_changed` 로 이름이 붙음(단, 대화가 길어 비교 지평을 넘으면 그때는 `unavailable` 로 떨어짐). 진단이 침묵하는 쪽을 찾을 때 이미지부터 의심하면 번지수가 틀림. 베타 헤더 집합이 여기 들어가 있는 것도 실무에서 걸림. 베타 기능을 켜고 끄는 플래그가 배포마다 달라지는 하네스면 미스의 원인이 헤더인데 진단은 그 말을 안 해 줌.
 
 그러니 순서는 이렇게 됨.
 

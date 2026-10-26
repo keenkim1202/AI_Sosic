@@ -38,9 +38,9 @@ tags: [apple, ios, foundation-models, app-store, compliance, on-device-llm]
 | 금지 문언 | 밟기 쉬운 기획 |
 |---|---|
 | "Enables dependency or spiraling user interactions detrimental to a user's mental health" | 체류 시간을 지표로 잡은 대화형 동반자·일기·상담 톤 기능. **리텐션 최적화가 그대로 이 문언에 닿음** |
-| "Provides inaccurate or dangerous outputs, or makes decisions without human supervision that have a material impact on individual rights, in high-risk domains, including in employment, medical, legal, or finance" | 건강·법률·금융 질의에 모델 답을 그대로 띄우는 화면. **사람 감독 없이 결정**하는 구조가 핵심 조건임 |
+| "Provides inaccurate or dangerous outputs, or makes decisions without human supervision that have a material impact on individual rights, in high-risk domains, including in employment, medical, legal, or finance" | 건강·법률·금융 질의에 모델 답을 그대로 띄우는 화면. 금지 갈래가 **`or` 로 둘**임: ① 부정확하거나 위험한 출력을 주는 것, ② 사람 감독 없이 개인의 권리에 중대한 영향을 미치는 결정을 하는 것. **①에는 사람 감독 단서가 안 붙으므로, 사람이 보더라도 틀린 답을 띄우는 것 자체가 걸림** |
 | "Classifies individuals based on biometric data to infer sensitive attributes" | 사진·음성에서 속성을 추정하는 기능. Vision 툴을 모델에 붙인 경로도 포함됨 |
-| "Evaluates or classifies individuals based on social behavior or personal traits that leads to detrimental or unfavorable treatment" | 사용자 점수·등급 매기기, 커뮤니티 신뢰도 자동 산정 |
+| "Evaluates or classifies individuals based on social behavior or personal traits that leads to detrimental or unfavorable treatment, either in a context unrelated to the original data or that is unjustified or disproportionate" | 사용자 점수·등급 매기기, 커뮤니티 신뢰도 자동 산정. **뒤쪽 단서가 적용 조건임**: 불리한 대우 전부가 아니라 **원래 데이터와 무관한 맥락에서 쓰거나, 정당하지 않거나 과도한** 경우로 한정됨. 신고 이력으로 신고 기능을 제한하는 것과, 같은 이력으로 무관한 혜택을 깎는 것이 갈림 |
 | "Creates or promotes adult content such as erotic chat, pornography and content meant to arouse sexual excitement" | 캐릭터 대화 앱에서 사용자가 끌고 가는 방향. **`enable others` 가 걸리는 전형적 자리** |
 | "Circumvents any safety policies, guardrails, or restrictions integrated into the Foundation Models framework" | 거부를 피하려고 프롬프트를 바꿔 재시도하는 자동 재시도 로직 |
 | "Generates, reverse engineers, summarizes, translates or otherwise reproduces the Apple artificial intelligence model training data" / "Generates citations to or otherwise identifies the Apple artificial intelligence model training data" | 모델이 무엇을 봤는지 캐보는 평가·프로빙. 학습 데이터 추정은 **평가 작업에서 해 볼 만한 일로 보이는데 금지 항목임** |
@@ -98,7 +98,7 @@ iOS 27 에서 `LanguageModel` 프로토콜이 열려 Claude·Gemini·자체 모�
 [App Store 심사 조항](./2026-08-21-app-store-ai-review-rules.md) 체크리스트의 7번("DPLA 3.3.11(A), 3.2(h) 본문 확인")을 펼치면 이렇게 됨.
 
 1. 기능 명세를 금지 항목 20개에 대고 읽음. 의도가 아니라 **사용자가 끌고 갈 수 있는 방향**으로 읽을 것. `enable others` 가 붙어 있음
-2. 의존 유발과 고위험 도메인 둘은 **지표 설계에서 갈림.** 체류 시간을 목표로 잡았는지, 건강·법률·금융 답을 사람 확인 없이 띄우는지
+2. 의존 유발과 고위험 도메인 둘을 봄. 의존 유발은 **지표 설계에서 갈림**(체류 시간을 목표로 잡았는지). 고위험 도메인은 **두 갈래를 따로** 봄: 사람 확인 없이 결정하는 구조가 있는지, 그리고 **사람이 확인하더라도 부정확하거나 위험한 답을 띄울 수 있는지**
 3. `maintain reasonable guardrails supporting` 에 대응하는 **구현물을 하나라도 지목할 수 있는지** 확인. 못 하면 조항의 절반을 안 한 것임
 4. 거부·실패 시 재시도 로직이 **실패 원인으로 분기하는지** 확인. 거부를 뚫는 재시도는 우회 항목에 닿음
 5. Apple 모델 출력을 **다른 모델의 학습·평가 데이터로 쓰는 경로가 있는지** 전부 찾음 (3.2 의 (h))

@@ -41,7 +41,7 @@ SDK 는 **Python, TypeScript, C#, Go, Java, PHP, Ruby** 일곱 언어에서 스�
 
 - **한 요청에 소스가 둘이면 하나만 더함.** SDK 스팬과 API 스팬이 **둘 다 `anthropic.messages.create`** 라서 이름으로는 구분이 안 됨. 가르는 것은 span kind 임. SDK 가 `CLIENT`, 그 자식인 API 가 `SERVER`. `service.name` 으로도 갈림 (API 쪽이 `claude-platform`)
 - **API 스팬은 `anthropic.messages.create` 아니면 그 자식 `anthropic.model_request` 중 하나만.** 둘 다 더하면 안 됨. 사용량 속성이 두 층에 겹쳐 있음
-- **compaction 은 어느 쪽에도 안 들어 있음.** SDK 스팬이면 `anthropic.usage.compaction.input_tokens` 와 `..._output_tokens` 를 더함. API 스팬이면 `anthropic.compaction` 스팬을 더하고, **그러면서 같은 스팬의 `anthropic.usage.compaction.*` 속성은 더하지 않음.** 같은 토큰임
+- **compaction 은 어느 쪽에도 안 들어 있음.** SDK 스팬이면 `anthropic.usage.compaction.input_tokens` 와 `anthropic.usage.compaction.output_tokens` 를 더함(줄여 적으면 없는 키를 조회하게 됨). API 스팬이면 `anthropic.compaction` 스팬을 더하고, **그러면서 같은 스팬의 `anthropic.usage.compaction.*` 속성은 더하지 않음.** 같은 토큰임
 - **`anthropic.messages.count_tokens` 스팬의 숫자는 사용량이 아님.** 속성 설명이 "This count isn't usage. Don't include it when you sum token usage." 라고 못 박아 둠
 - **캐시 속성은 더하지 않음.** `gen_ai.usage.input_tokens` 가 이미 캐시 읽기와 쓰기를 포함함
 
