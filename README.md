@@ -4,6 +4,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 각 문서에 원문 출처 링크와 요약을 함께 담습니다.
 ## 에이전트 · 툴링
 
+**[Foundation Models framework utilities](docs/agents/2026-09-24-foundation-models-utilities.md)** · 2026-09-24
+
+- 온디바이스 4K 창 넘긴다고 트랜스크립트 손으로 잘라본 적 있으면 여기부터
+- Apple 이 **Apache-2.0**으로 낸 패키지. 스킬을 **prompt 로 넣으면 KV 캐시가 안 깨지고 instructions 로 넣으면 대화 전체가 날아감**을 자기 문서에 표로 박아 둠
+- 대신 정식 태그가 없어 README 의 `from: "1.0.0"` 이 해석되지 않고, 같이 실린 `SKILL.md` 가 README 와 어긋나는 곳이 둘
+
 **[.xcproj JSON 프로젝트 포맷](docs/agents/2026-09-16-xcproj-json-project-format.md)** · 2026-09-20
 
 - 에이전트한테 타깃 추가 시켰다가 `project.pbxproj` 머지 충돌 풀어본 적 있으면 이거임
