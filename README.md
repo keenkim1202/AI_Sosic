@@ -72,6 +72,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 
 ## 방법론
 
+**[Core AI 로 직접 만든 모델 올리기](docs/practices/2026-10-07-core-ai-model-deployment.md)** · 2026-10-07
+
+- 첫 로딩 스피너를 "최초 설치 1회"로 설계했으면 틀렸음. **OS 업데이트마다 다시 돎**
+- 특수화 캐시가 사라지는 조건 셋 중 **OS 업데이트는 `.persistent` 로도 못 막음.** tvOS 는 `.persistent` 자체가 없음
+- 빌드 시점 컴파일은 **A17 Pro·M1 이상만** 대상임. 저사양 기기 대응으로 Core AI 를 골랐으면 그 이득을 못 받음
+
 **[Models API의 line 과 capabilities](docs/practices/2026-10-01-models-api-line-and-capabilities.md)** · 2026-10-06
 
 - 모델 ID를 문자열로 잘라서 "이게 opus 계열인가"를 판단하는 코드 들고 있으면 이 자리임
