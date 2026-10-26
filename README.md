@@ -84,6 +84,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 
 ## 방법론
 
+**[User Profiles](docs/practices/2026-10-20-user-profiles-end-customer-attribution.md)** · 2026-10-21
+
+- 내 앱 사용자 한 명의 위반이 **조직 전체 차단**으로 번지는 구조를 헤더 하나로 끊음
+- 프로필은 **과금 대상이 아님.** 대신 Bedrock·Google Cloud는 **ID 형식만 보고 조회하지 않아** 200이 와도 귀속 증거가 아님
+- 집행 상태 webhook은 등록만 되고 **Anthropic이 아직 이벤트를 쏘지 않는다고 문서가 직접 적음**
+
 **[Fast mode 정식 공개](docs/practices/2026-10-15-fast-mode-opus-5-5-ga.md)** · 2026-10-16
 
 - 출력이 느리다는 불만에 돈을 더 내기 전에, 그 느림이 첫 글자 대기인지부터 갈라야 함
