@@ -72,6 +72,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 
 ## 방법론
 
+**[Models API의 line 과 capabilities](docs/practices/2026-10-01-models-api-line-and-capabilities.md)** · 2026-10-06
+
+- 모델 ID를 문자열로 잘라서 "이게 opus 계열인가"를 판단하는 코드 들고 있으면 이 자리임
+- **2026-10-01에 `line` 필드가 붙었음.** 값은 `haiku`·`sonnet`·`opus`·`fable`·`mythos` 다섯이고 문서가 **"ID에서 추론하지 말라"**고 못 박음
+- 반대로 `tool_choice` 제약도 thinking의 `between_tools` 도 `capabilities` 에 없음. 모델별 지뢰는 여전히 손으로 들고 있어야 함
+
 **[App Intents Testing](docs/practices/2026-10-05-app-intents-testing-and-onscreen-context.md)** · 2026-10-05
 
 - 뷰에 엔티티 붙여놓고 Siri한테 말 걸어보는 걸로 검증을 대신하고 있었으면 이 자리임
