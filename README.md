@@ -170,6 +170,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 
 ## 업계 동향
 
+**[App Review Guidelines 2026-10-16 개정](docs/industry/2026-10-16-app-review-ncii-hidden-features.md)** · 2026-10-17
+
+- 온디바이스로만 돌리니 심사는 안 걸린다고 생각했으면 1.2 부터 다시 봐야 함
+- 1.2 적용 대상에 **`AI content creation apps`** 가 이름으로 들어가고, 모더레이션 미비가 **Developer Code of Conduct 위반** 경로로 올라감
+- 숨은·휴면 기능 금지가 **2.5.19 신설 조항**이 됨. 원격 플래그로 켜는 AI 기능이 여기 걸리는 자리임
+
 **[FaceTime Live Assistance API](docs/industry/2026-10-13-live-assistance-api-facetime.md)** · 2026-10-14
 
 - 자막·통역 앱을 만들다가 "통화에 어떻게 끼어들지"에서 막혔으면 이 자리임
