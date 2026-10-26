@@ -60,6 +60,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 
 ## 방법론
 
+**[Foundation Models 가용성 대조](docs/practices/2026-09-28-foundation-models-availability-audit.md)** · 2026-09-28
+
+- 이 저장소가 "전부 Beta"로 적어둔 네 항목이 지금도 베타인지 심볼 페이지로 확인함
+- `LanguageModel`·PCC·dynamic profiles·`Attachment` 는 **27.0 정식**이고, 베타는 **27.2 의 데이터 첨부 경로**로 옮겨갔음
+- PCC 무료 구간 조건이 둘이 아니라 **셋**. 벗어나면 **6개월** 안에 다른 백엔드로 옮겨야 함
+
 **[거절 청구와 fallback](docs/practices/2026-09-24-refusal-billing-and-fallback.md)** · 2026-09-27
 
 - 에러율 대시보드만 보고 있으면 이 지출은 안 보임. 거절은 5xx 가 아니라 **HTTP 200**임
