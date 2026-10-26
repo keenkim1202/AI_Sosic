@@ -164,6 +164,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 
 ## 업계 동향
 
+**[FaceTime Live Assistance API](docs/industry/2026-10-13-live-assistance-api-facetime.md)** · 2026-10-14
+
+- 자막·통역 앱을 만들다가 "통화에 어떻게 끼어들지"에서 막혔으면 이 자리임
+- 확장이 받는 건 오디오가 아니라 **`id`와 FaceTime URL 둘뿐**. 통화에 들어가는 건 그 URL을 쥔 **내 서버**임
+- 계약서가 용도를 **접근성 서비스로 한정**함. 덤으로 **3.3.11 AI·ML 조항 전문**을 옮겨 둠
+
 **[iOS 27 · Xcode 27 정식 출시](docs/industry/2026-09-14-ios-27-ai-apis-shipped.md)** · 2026-09-15
 
 - 두 문서에 "정식 출시 때 다시 보라"고 적어둔 그 시점이 지나갔음
