@@ -84,6 +84,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 
 ## 방법론
 
+**[Fast mode 정식 공개](docs/practices/2026-10-15-fast-mode-opus-5-5-ga.md)** · 2026-10-16
+
+- 출력이 느리다는 불만에 돈을 더 내기 전에, 그 느림이 첫 글자 대기인지부터 갈라야 함
+- Opus 5.5는 **$8 / $40**, 표준의 정확히 2배. 빨라지는 건 **OTPS뿐이고 TTFT는 아님**
+- **fast와 standard는 캐시 prefix를 공유하지 않음.** 공식 fallback 패턴이 그대로 캐시 미스임
+
 **[Claude API OpenTelemetry 내보내기](docs/practices/2026-10-14-claude-api-opentelemetry.md)** · 2026-10-15
 
 - 트레이스를 켜고 토큰을 합산했는데 숫자가 두 배로 나왔으면 span kind 부터 볼 것
