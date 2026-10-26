@@ -64,8 +64,8 @@ Haiku 5.5 는 Claude 4.7 이후와 같은 새 토크나이저를 씀. 같은 텍
 | `thinking: {"type": "enabled", "budget_tokens": N}` | 400 | `{"type": "adaptive"}` 로 바꾸고 `output_config.effort` 로 조절 |
 | `temperature`, `top_p`, `top_k` | 기본값 외 값은 400 | 세 개 다 빼기. `temperature` 는 `1`, `top_p` 는 `0.99` 만 허용되고 **`top_p: 1` 도 400**. 둘을 같이 보내도 400 |
 | assistant prefill (마지막 턴을 assistant 로 끝내기) | 400 | `messages` 를 user 턴으로 끝내기. 포맷 강제는 structured outputs 나 enum 필드 툴로 |
-| `computer_20250124` (Claude API·Google Cloud) | 400 | `computer_toolset_20260801` 툴셋으로 교체하고 `computer-use-2025-01-24` 헤더 제거 |
-| thinking 블록을 되돌려 보내면서 앞선 턴을 고치기 | 400 | 대화를 append-only 로 유지 |
+| `computer_20250124` | 400 | Claude API·Google Cloud 는 `computer_toolset_20260801` 툴셋으로 교체하고 `computer-use-2025-01-24` 헤더 제거. **Bedrock 은 툴셋이 아니라 `computer_20251124` 와 `computer-use-2025-11-24` 헤더** |
+| thinking 블록을 되돌려 보내면서 앞선 턴을 고치기 | 400. 단 **2026-08-31 00:00 UTC 이전에 만든 계정**은 `thinking.block_binding.prefix_mismatch_behavior` 를 보낸 요청에서만 남 | 대화를 append-only 로 유지. 기존 계정이면 지금 돌아가는 요청이 당장 깨지는 것은 아님 |
 
 `temperature: 0` 과 assistant prefill 은 앱에서 **JSON 을 안정적으로 받아내려고** 쓰던 두 손잡이임. 둘 다 사라졌으므로 같은 보장을 원하면 structured outputs 로 옮기는 수밖에 없음. Bedrock 은 structured outputs 가 없어서 툴로 대신하라고 가이드가 따로 적어 뒀음.
 

@@ -136,7 +136,9 @@ let model = ClaudeLanguageModel(
 | 토큰 카운팅 | 요청 전 토큰 계산을 못 함. 온디바이스의 `tokenCount(for:)` 같은 수단이 없음 |
 | 베타 헤더 | 베타 기능을 **직접 켤 수 없음** |
 
-첫 줄이 이 저장소에서 가장 아픈 항목임. [Prompt Caching In Agents](./2026-07-22-prompt-caching-in-agents.md)가 정리한 레버(중단점을 어디에 두는가, TTL 을 1시간으로 올리는가)가 전부 **쓸 수 없는 상태로 고정**됨. 캐시가 자동이라는 서술만 있고 배치 전략은 공개돼 있지 않으므로, 이 경로의 캐시 적중률은 **측정도 조정도 앱에서 할 수 없다**고 보는 편이 안전함. 토큰 카운팅이 없다는 것과 합치면, 비용 관측을 하려면 콘솔이나 서버측 집계에 의존해야 함.
+첫 줄이 이 저장소에서 가장 아픈 항목임. [Prompt Caching In Agents](./2026-07-22-prompt-caching-in-agents.md)가 정리한 레버(중단점을 어디에 두는가, TTL 을 1시간으로 올리는가)가 전부 **쓸 수 없는 상태로 고정**됨. 캐시가 자동이라는 서술만 있고 배치 전략은 공개돼 있지 않으므로, **조정은 앱에서 할 수 없음.**
+
+다만 **측정은 됨.** 요청 전 토큰 카운팅이 없는 것과 응답 후 사용량이 없는 것은 다른 얘기인데, 예제 [`ClaudeExample.swift`](https://github.com/anthropics/ClaudeForFoundationModels/blob/main/Examples/ClaudeExample/ClaudeExample.swift) 가 세션이 끝난 뒤 `session.usage.input.totalTokenCount`, `session.usage.input.cachedTokenCount`, `session.usage.output.totalTokenCount` 를 **클라이언트에서 그대로 읽음.** 즉 캐시 적중 토큰 비율은 앱 안에서 관측 가능하고, 콘솔이나 서버측 집계가 꼭 필요한 것은 **요청을 보내기 전에 비용을 알아야 할 때**임.
 
 베타 헤더 항목도 뒤집어 읽을 거리임. 사용자가 보낼 수는 없지만 **패키지 자신은 보냄**(사용자 프로필의 `user-profiles-2026-08-18`, 폴백의 `anthropic-beta`). 즉 "베타 기능 불가"가 아니라 **"패키지가 지원하는 베타만 가능"**이 정확한 서술임.
 

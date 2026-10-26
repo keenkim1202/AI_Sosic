@@ -40,6 +40,7 @@ tags: [claude, anthropic, policy, gateway, privacy, compliance]
 ```bash
 # 1. 가입 플로에서 한 번
 curl https://api.anthropic.com/v1/user_profiles \
+  -H 'Content-Type: application/json' \
   -H "x-api-key: $ANTHROPIC_API_KEY" \
   -H "anthropic-version: 2023-06-01" \
   -d '{"external_user_details": {"reference_id": "user-8f2a1c", "country": "KR"}}'

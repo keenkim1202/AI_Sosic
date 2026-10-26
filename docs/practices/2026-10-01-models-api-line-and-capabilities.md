@@ -43,14 +43,19 @@ tags: [claude, routing, effort, thinking, migration, tooling]
 | 키 | 하위 구조 |
 |---|---|
 | `effort` | `supported`, 그리고 `low`·`medium`·`high`·`max` 각각의 지원 여부. `xhigh` 는 **`null` 가능** |
-| `thinking` | `supported`, `types.adaptive`, `types.enabled` |
+| `thinking` | `supported`, `types.adaptive`, `types.enabled`, `types.disabled`, `types.between_tools` |
 | `context_management` | `supported`, `clear_thinking_20251015`, `clear_tool_uses_20250919`, `compact_20260112` (각각 `null` 가능) |
 | `batch` | Batch API 지원 여부 |
 | `structured_outputs` | structured output / JSON 모드 / strict tool schema 지원 여부 |
 | `image_input` | 이미지 콘텐츠 블록 수용 여부 |
 | `pdf_input` | PDF 콘텐츠 블록 수용 여부 |
 | `citations` | 인용 생성 지원 여부 |
-| `code_execution` | 코드 실행 툴 지원 여부 |
+| `server_tools` | 웹 검색과 코드 실행 **툴을 받아주는지**. `server_tools.web_search.supported`, `server_tools.code_execution.supported`. 버전 하나라도 받으면 `true`. web fetch 같은 다른 서버 툴은 안 다룸 |
+| `code_execution` | 최상위 키는 **다른 뜻임.** 코드 실행 툴 안에서 돌린 코드가 **요청의 다른 툴을 호출할 수 있는지**(programmatic tool calling). 툴 수용 여부가 아님 |
+
+마지막 두 줄을 섞으면 지원 모델을 끄게 됨. 모델 피커에서 코드 실행 툴을 가릴 때 봐야 하는 것은 **`server_tools.code_execution`** 임. 실제로 갈리는 모델이 있음: Haiku 4.5 는 `server_tools.code_execution.supported` 가 `true` 인데 최상위 `code_execution.supported` 는 `false` 임.
+
+**thinking 을 끄는 방법도 API 로 물어볼 수 있음.** 2026-10-05 릴리스 노트가 `thinking.types.disabled` 를, 10-06 이 `thinking.types.between_tools` 를 추가했음. `disabled.supported` 는 모델이 `thinking: {type: "disabled"}` 를 400 으로 거부하면 `false` 인데, **thinking 자체가 없는 모델에서는 `true`** 라서 그 둘을 구분하려면 `thinking.supported` 를 같이 봐야 함. Sonnet 5.5 는 `between_tools.supported` 가 `true`, `disabled.supported` 가 `false` 로 보고됨. `supported` 가 `true` 여도 허용되지 않는 effort 조합 때문에 400 이 날 수 있음.
 
 여기서 실제로 값어치 있는 분기는 `effort` 와 `thinking` 쪽임. 모델 비교표가 **Claude Haiku 4.5 는 effort 미지원**이라고 적고 있으니, effort 를 쓰는 코드 경로를 `capabilities.effort.supported` 로 가리면 모델 이름 하드코딩이 하나 줄어듦. 다만 **실제 응답으로 대조하지는 못했음**(아래 참조).
 
@@ -59,7 +64,6 @@ tags: [claude, routing, effort, thinking, migration, tooling]
 이 절이 이 문서의 요지임. 스키마에 **없는** 것들이고, 전부 이 저장소의 다른 문서가 "모델 바꿀 때 터지는 지점"으로 적어 둔 것들임.
 
 - **`tool_choice` 제약.** `any`·`tool` 강제 호출이 400 을 내는 모델이 늘고 있는데(Fable 5.1, Mythos 5.1, Opus 5.5, Sonnet 5.5) `capabilities` 에 해당 키가 없음
-- **thinking 을 끄는 방법.** `types` 에 있는 값은 `adaptive` 와 `enabled` 둘뿐임. Sonnet 5.5 가 선행 thinking 을 끄는 데 쓰는 `between_tools` 는 여기 없고, Opus 5.5 는 `disabled` 와 `enabled` 둘 다 400 임
 - **라이프사이클.** deprecated / retired 상태도 은퇴 예정일도 필드로 없음. 문서 쪽 정의는 **retired 면 요청이 실패**하는 것이고, 은퇴 **최소 60일 전**에 통보한다고 적혀 있음. 즉 이 API 만으로는 "이 모델 곧 죽는다"는 경고를 피커에 띄울 수 없음
 - **가격, 기본 effort, 지연시간.** 비교표에만 있음. 비용 계산을 런타임에 하려면 값을 따로 들고 있어야 함
 - **compaction 의 on-demand 모드.** `context_management` 에 나열된 전략은 셋인데 `compact_20260112` 까지임. 2026-09-14 에 붙은 최상위 `compaction` 파라미터 쪽은 전략 목록에 안 나타남

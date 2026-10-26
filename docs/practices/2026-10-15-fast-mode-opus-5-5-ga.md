@@ -13,7 +13,7 @@ tags: [claude, llm-cost, prompt-caching, inference, latency, rate-limits]
 
 요청에 `speed: "fast"` 한 줄을 넣으면 출력이 **최대 2.5배 OTPS**로 나오는 기능임. **2026-10-15에 Claude Opus 5.5에 대해 research preview를 벗어났고**, 베타 헤더 `fast-mode-2026-02-01`도 접근 신청도 더 필요 없음. Opus 5와 Opus 4.8은 아직 preview고 헤더와 신청이 그대로 필요함.
 
-값은 명시돼 있음. Opus 5.5 fast는 **$8 / $40 per MTok**이고 표준이 $4 / $20이니 **정확히 2배**임. 그런데 가격표보다 중요한 단서가 둘 더 있음. 첫째, **빨라지는 것은 OTPS뿐이고 TTFT는 아님.** 사용자가 기다리는 첫 글자까지의 시간은 그대로임. 둘째, **fast와 standard는 캐시 prefix를 공유하지 않음.** [Prompt Caching In Agents](../agents/2026-07-22-prompt-caching-in-agents.md)가 정리한 캐시 깨짐 8가지에 9번째가 붙는 것이고, 모델 ID가 그대로라 제일 안 보이는 축임.
+값은 명시돼 있음. Opus 5.5 fast는 **$8 / $40 per MTok**이고 표준이 $4 / $20이니 **정확히 2배**임. 그런데 가격표보다 중요한 단서가 둘 더 있음. 첫째, **빨라지는 것은 OTPS뿐이고 TTFT는 아님.** 사용자가 기다리는 첫 글자까지의 시간은 그대로임. 둘째, **fast와 standard는 system·messages 캐시 prefix를 공유하지 않음**(tools 캐시는 유지됨). [Prompt Caching In Agents](../agents/2026-07-22-prompt-caching-in-agents.md)가 정리한 캐시 깨짐 8가지에 9번째가 붙는 것이고, 모델 ID가 그대로라 제일 안 보이는 축임.
 
 ## 2026-10-15에 바뀐 것
 
@@ -68,13 +68,15 @@ tags: [claude, llm-cost, prompt-caching, inference, latency, rate-limits]
 
 > "Switching between fast and standard speed invalidates the prompt cache. Requests at different speeds do not share cached prefixes."
 
-목록 2번(모델·프로바이더 전환)과 같은 계열인데 성질이 더 나쁨. **모델 ID도 툴 정의도 시스템 프롬프트도 그대로인데 미스가 남.** 코드 diff로는 `speed` 한 줄만 보이고, 비용 이상은 prefix 전체 재처리로 나타남.
+목록 2번(모델·프로바이더 전환)과 같은 계열인데 성질이 더 나쁨. **모델 ID도 툴 정의도 시스템 프롬프트도 그대로인데 미스가 남.** 코드 diff로는 `speed` 한 줄만 보임.
+
+⚠️ 다만 **"캐시 전체"는 아님.** 프롬프트 캐싱 문서의 무효화 표는 speed 행에서 **tools 캐시는 유지(✓)**, system과 messages 캐시만 무효(✘)로 적음. 그래서 손실은 prefix 전체가 아니라 **시스템 프롬프트와 메시지 구간**이고, 툴 카탈로그가 큰 구성이라면 그 부분은 그대로 적중함. 위 인용문은 이 구분 없이 `invalidates the prompt cache`로만 적혀 있어서 그대로 읽으면 손실을 과대평가하게 됨.
 
 제일 밟기 쉬운 자리가 공식 문서가 권하는 fallback 패턴 그 자체임. fast rate limit을 넘기면 429가 오고, `retry-after`를 기다리기 싫으면 `speed`를 떼고 다시 보내라고 적혀 있음. 문서도 바로 Note를 붙임.
 
 > "Falling back from fast to standard speed will result in a prompt cache miss. Requests at different speeds do not share cached prefixes."
 
-10만 토큰 컨텍스트를 들고 도는 루프에서 이 fallback 한 번은 **그 요청에서 prefix 전체를 정상 input 가격으로 다시 처리하고 캐시 쓰기까지 붙는다**는 뜻임. [Prompt Caching In Agents](../agents/2026-07-22-prompt-caching-in-agents.md)의 "미스가 얼마나 비싼가" 절 산술이 그대로 적용됨.
+10만 토큰 컨텍스트를 들고 도는 루프에서 이 fallback 한 번은 **그 요청에서 system·messages 구간을 캐시 쓰기 단가로 다시 처리한다**는 뜻임. 정상 input 가격에 쓰기 비용을 **따로 더하는 것이 아님.** `usage` 가 `input_tokens` 와 `cache_creation_input_tokens` 를 분리해서 세고, 쓰기 토큰은 쓰기 단가로만 청구됨. 표준 Opus 5.5 기준 5분 쓰기는 $5/MTok(기본 input $4의 1.25배)이므로 10만 토큰 재작성은 **$0.50**이고, $0.40 + $0.50 이 아님(출력과 나머지 input 은 별도). [Prompt Caching In Agents](../agents/2026-07-22-prompt-caching-in-agents.md)의 "미스가 얼마나 비싼가" 절 산술이 그대로 적용됨.
 
 그래서 실무 규칙은 단순해짐. **speed는 세션 단위로 고정하고, 요청마다 토글하지 않음.** 토글이 필요하다면 그 경로는 애초에 캐시를 재사용하지 않는 1회성 호출이어야 함.
 

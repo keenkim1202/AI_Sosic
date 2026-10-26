@@ -85,6 +85,8 @@ Profile {
 
 즉 툴 호출을 먼저 버리고, 창을 자르고, 그래도 크면 요약함. 비싼 것을 안쪽에 두라는 순서고 소스 주석도 같은 말을 함.
 
+**다만 이 예제를 그대로 베끼면 요약은 한 번도 안 돎.** [`RollingWindow`](https://github.com/apple/foundation-models-utilities/blob/main/Sources/FoundationModelsUtilities/History/RollingWindow.swift) 가 항목을 **10개로 잘라서** 넘기는데, [`SummarizeHistory`](https://github.com/apple/foundation-models-utilities/blob/main/Sources/FoundationModelsUtilities/History/SummarizeHistory.swift) 는 `guard history.count > entryThreshold` 로 들어가고 그 임계값도 **10**임. 창이 통과시키는 최대치가 임계값과 같으니 조건이 영원히 안 맞음. 결과는 요약이 아니라 **오래된 항목이 그냥 버려지는 것**이고, 바로 아래 설명과는 반대로 동작함. 요약을 실제로 돌리려면 `entryThreshold` 를 창보다 작게 두거나(예: 창 10, 임계값 6) 두 모디파이어 중 하나만 써야 함.
+
 `summarizeHistory` 에서 눈여겨볼 것은 **`summaryPostamble`** 임. 기본값이 이럼.
 
 > "Do not begin with phrases like "Based on the context", "Based on the facts", "Based on the summary", or any reference to a summary or the facts provided. Treat the summary and facts above as things you naturally remember."
