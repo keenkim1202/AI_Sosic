@@ -4,6 +4,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 각 문서에 원문 출처 링크와 요약을 함께 담습니다.
 ## 에이전트 · 툴링
 
+**[Claude Code Mods](docs/agents/2026-10-04-claude-code-mods.md)** · 2026-10-04
+
+- `deny` 룰 걸어놨으니 안전하다고 생각하고 있으면 이 문서부터임
+- 플러그인이 이제 **Claude Code 프로세스 안에서 도는 JS 함수**를 담음. 툴 호출을 붙잡고, 시스템 프롬프트 절을 지우고, 요청 하나를 다른 모델로 보냄
+- **관리 설정 없는 개인 머신에서는 설치한 mod 가 내 `deny` 룰이 거부한 호출을 승인할 수 있음.** 설치 전 `claude plugin validate` 가 유일한 방어
+
 **[Foundation Models framework utilities](docs/agents/2026-09-24-foundation-models-utilities.md)** · 2026-09-24
 
 - 온디바이스 4K 창 넘긴다고 트랜스크립트 손으로 잘라본 적 있으면 여기부터
