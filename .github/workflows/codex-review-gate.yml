@@ -143,23 +143,43 @@ jobs:
             fi
           }
 
-          # 크레딧이 떨어지면 코덱스는 리뷰 대신 그 사실을 코멘트로 남기고 끝낸다.
-          # 기다려봐야 오지 않는 리뷰라, 게이트가 PR 을 영영 막는 것 말고는 하는 일이
-          # 없다. 마지막으로 한 말이 그것이면 통과시킨다.
-          COMMENTS=$(bot_comments)
-          if printf '%s' "$COMMENTS" | tail -1 | grep -q "reached your Codex usage limits"; then
-            DESC="코덱스 사용 한도 — 리뷰 없이 통과"
+          # 코덱스가 리뷰 대신 "못 한다" 를 코멘트로 남기고 끝내는 경우가 둘 있다.
+          # 크레딧 소진, 그리고 깃허브 커넥터가 끊긴 상태. 둘 다 기다려봐야 오지 않는
+          # 리뷰라, 게이트가 PR 을 영영 막는 것 말고는 하는 일이 없다. 마지막으로 한
+          # 말이 그것이면 통과시킨다. 통과 사유는 체크 설명에 남으니 왜 리뷰 없이
+          # 머지됐는지는 나중에도 보인다.
+          #
+          # 기다리기 전과 후에 모두 본다. 그 응답은 @codex review 코멘트가 이 잡을
+          # 띄운 뒤에 도착하므로 첫 조회에는 없을 수 있고, 봇의 응답 자체는 본문에
+          # @codex 가 없어서 이 워크플로를 다시 띄우지 않는다. 한 번만 보면 그 PR 은
+          # 수동 재실행까지 pending 으로 남는다.
+          pass_if_unavailable() {
+            local last reason fixit
+            last=$(printf '%s' "$1" | tail -1)
+            case "$last" in
+              *"reached your Codex usage limits"*)
+                reason="코덱스 사용 한도"
+                fixit="크레딧이 돌아온 뒤 리뷰를 받으려면 PR 에 \`@codex review\` 를 남겨라." ;;
+              *"connect to github"*)
+                reason="코덱스 미연결"
+                fixit="https://chatgpt.com/codex/cloud/settings/connectors 에서 깃허브를 다시 연결한 뒤 PR 에 \`@codex review\` 를 남겨라." ;;
+              *) return 0 ;;
+            esac
+            DESC="$reason — 리뷰 없이 통과"
             post_status success "$DESC"
             {
               echo "## 코덱스 리뷰 게이트"
               echo
               echo "PR #$PR_NUM · \`${HEAD_SHA:0:7}\` · **success** — $DESC"
               echo
-              echo "크레딧이 돌아온 뒤 리뷰를 받으려면 PR 에 \`@codex review\` 를 남겨라."
+              echo "$fixit"
             } >> "$GITHUB_STEP_SUMMARY"
             echo "$DESC (PR #$PR_NUM, $HEAD_SHA)"
             exit 0
-          fi
+          }
+
+          COMMENTS=$(bot_comments)
+          pass_if_unavailable "$COMMENTS"
 
           # 판정 전에 pending 을 쏜다. 기다리는 동안 체크가 초록도 빨강도 아니어야
           # "아직 리뷰 중" 이 읽힌다.
@@ -208,6 +228,7 @@ jobs:
           # 적힌 코멘트로 끝난다. 그 SHA 가 지금의 테스트 머지 커밋이면 이 상태를 본
           # 리뷰다 — 반응과 달리 커밋에 묶인 증거다.
           COMMENTS=$(bot_comments)
+          pass_if_unavailable "$COMMENTS"
           REPORTED=no
           if [ -n "$MERGE_SHA" ] && printf '%s' "$COMMENTS" | grep -q "${MERGE_SHA:0:10}"; then
             REPORTED=yes
