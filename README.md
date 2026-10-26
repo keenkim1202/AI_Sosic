@@ -48,6 +48,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 
 ## 방법론
 
+**[Apple Evaluations 프레임워크](docs/practices/2026-09-22-apple-evaluations-framework.md)** · 2026-09-22
+
+- LLM judge 편향을 커뮤니티 경험칙으로만 알고 있었으면, 플랫폼 벤더가 자기 API 문서에 적은 판이 나왔음
+- **verbosity·leniency·self-enhancement·position 네 편향과 완화책**, 그리고 judge 를 사람과 맞추는 절차가 **사람 2~3명 × 응답 20~50개 + Cohen's Kappa**로 적혀 있음
+- iOS 27.0+ 이고 **베타가 아님.** `@Test(.evaluates(...))` 로 Swift Testing 안에서 돌고 툴 호출 경로까지 채점함
+
 **[서버측 compaction](docs/practices/2026-09-20-claude-api-compaction.md)** · 2026-09-20
 
 - 히스토리를 직접 잘랐다가 캐시가 통째로 날아간 적 있으면 이 자리임
