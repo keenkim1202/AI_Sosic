@@ -116,6 +116,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 
 ## 에이전트 보안
 
+**[macOS Full Disk Access 제한 예고](docs/security/2026-10-02-macos-full-disk-access-controls.md)** · 2026-10-03
+
+- 백업·동기화 때문에 FDA 를 켜 둔 Mac 에서 코딩 에이전트를 돌리고 있으면 이 자리임
+- Apple 이 권한을 좁히는 근거로 **AI 에이전트**를 댔음. 한 스위치에 **다른 앱 데이터·Time Machine 백업·전체 사용자 관리 설정**이 묶여 있음
+- 같은 회사가 Xcode 27 에서는 서명된 에이전트에게 **트리 권한을 장기간** 주고 감시 계층은 **켜야** 돎. 시점·형태는 공지에 **없음**
+
 **[Claude를 제품마다 어떻게 격리하는가](docs/security/2026-05-25-containing-claude-across-products.md)** · 2026-10-02
 
 - 승인 프롬프트를 하루에 몇 번 누르는지 세어본 적 있으면 이 문서임. Anthropic 텔레메트리로는 **93%를 그냥 승인**했음
