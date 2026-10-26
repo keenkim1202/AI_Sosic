@@ -84,6 +84,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 
 ## 방법론
 
+**[API 버전 2026-10-21](docs/practices/2026-10-21-claude-api-version-migration.md)** · 2026-10-22
+
+- SDK 를 올렸더니 `temperature` 한 줄 때문에 전 요청이 400 나기 전에 읽을 자리
+- `2023-06-01` 이후 첫 새 버전. 와이어 변경은 셋뿐인데 **SDK 는 7개 언어가 동시에 메이저**로 뛰고 키가 **`Authorization: Bearer`** 로 옮겨감
+- 라이선스가 **MIT 에서 Apache 2.0** 으로. 그리고 에러 없이 조용히 틀리는 자리 6곳
+
 **[User Profiles](docs/practices/2026-10-20-user-profiles-end-customer-attribution.md)** · 2026-10-21
 
 - 내 앱 사용자 한 명의 위반이 **조직 전체 차단**으로 번지는 구조를 헤더 하나로 끊음
