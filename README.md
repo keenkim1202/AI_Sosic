@@ -110,6 +110,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 
 ## 에이전트 보안
 
+**[Claude를 제품마다 어떻게 격리하는가](docs/security/2026-05-25-containing-claude-across-products.md)** · 2026-10-02
+
+- 승인 프롬프트를 하루에 몇 번 누르는지 세어본 적 있으면 이 문서임. Anthropic 텔레메트리로는 **93%를 그냥 승인**했음
+- 그래서 승인 교육이 아니라 **OS 샌드박스를 깔아 프롬프트를 84% 줄임.** Seatbelt·bubblewrap·gVisor·로컬 VM이 제품별로 갈림
+- 레드팀이 직원을 피싱하자 **25회 중 24회 자격증명 유출.** 글이 드는 대책은 모델이 아니라 **egress 제어와 파일시스템 경계**, 둘 다 사후 제안임
+
 **[Managed Agents 의 auto 권한 정책](docs/security/2026-09-10-managed-agents-auto-permission.md)** · 2026-09-21
 
 - 승인 프롬프트를 사람이 다 못 본다는 건 알겠는데, 그럼 누가 보냐는 질문에 대한 Anthropic 의 답
