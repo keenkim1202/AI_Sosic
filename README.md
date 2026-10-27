@@ -84,6 +84,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 
 ## 방법론
 
+**[Claude Code 의 effort 해석 순서](docs/practices/2026-10-27-claude-code-effort-resolution.md)** · 2026-10-27
+
+- `xhigh` 로 박아 뒀는데 로그만 그렇고 실제로는 `high` 로 돌던 세션의 정체
+- v2.1.311 부터 `ultrathink` 가 **그 턴만 `xhigh`** 로 올림. `think hard` 는 **키워드가 아님**
+- Claude Code 의 기본 effort 가 API 기본값과 갈리는 모델이 **Sonnet 5.5 와 Opus 4.7** 둘
+
 **[API 버전 2026-10-21](docs/practices/2026-10-21-claude-api-version-migration.md)** · 2026-10-22
 
 - SDK 를 올렸더니 `temperature` 한 줄 때문에 전 요청이 400 나기 전에 읽을 자리
