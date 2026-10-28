@@ -84,6 +84,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 
 ## 방법론
 
+**[SelfCompact](docs/practices/2026-06-22-self-compacting-agents.md)** · 2026-10-28
+
+- compaction 을 켤지 말지 고민하고 있었으면, 먼저 볼 것은 **지금 쓰는 트리거**임
+- 루브릭을 떼고 요약 툴만 남기면 이익이 **46.4 에서 41.0** 으로 사라짐. 이기는 쪽은 요약이 아니라 **안 할 자리에서 안 하는 판정**
+- Claude API threshold 모드의 기본 트리거가 **`input_tokens` 150,000**, 이 논문이 지는 쪽으로 측정한 그 고정 임계값임
+
 **[API 버전 2026-10-21](docs/practices/2026-10-21-claude-api-version-migration.md)** · 2026-10-22
 
 - SDK 를 올렸더니 `temperature` 한 줄 때문에 전 요청이 400 나기 전에 읽을 자리
