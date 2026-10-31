@@ -84,6 +84,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 
 ## 방법론
 
+**[Usage and Cost Analytics API](docs/practices/2026-10-29-usage-cost-analytics-api.md)** · 2026-10-31
+
+- 분당 폴링으로 지출을 막던 코드를 그대로 옮기면 조용히 늦게 도는 계기판이 됨
+- 레거시의 **5분**이 **4시간(최대 24시간)**으로. 값은 **월말 뒤 약 7일까지 수정됨**
+- `amount`는 달러가 아니라 **센트 소수 6자리**, 오타난 필터 ID는 에러가 아니라 **빈 결과**
+
 **[API 버전 2026-10-21](docs/practices/2026-10-21-claude-api-version-migration.md)** · 2026-10-22
 
 - SDK 를 올렸더니 `temperature` 한 줄 때문에 전 요청이 400 나기 전에 읽을 자리
