@@ -84,6 +84,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 
 ## 방법론
 
+**[Opus 4.8 fast mode 폐기](docs/practices/2026-10-30-fast-mode-opus-4-8-deprecation.md)** · 2026-11-02
+
+- `speed: "fast"` 한 줄 때문에 **11월 30일**에 죽는 요청이 있는지 확인해 본 적 없으면 여기임
+- 모델은 **2027-05-28 이후까지 Active** 인데 기능만 사라짐. 폐기 페이지 세 목록 어디에도 없음
+- 공지 창은 **31일**. 모델 은퇴에 걸린 **60일 약속**은 기능 제거에 적용되지 않음
+
 **[Usage and Cost Analytics API](docs/practices/2026-10-29-usage-cost-analytics-api.md)** · 2026-10-31
 
 - 분당 폴링으로 지출을 막던 코드를 그대로 옮기면 조용히 늦게 도는 계기판이 됨
