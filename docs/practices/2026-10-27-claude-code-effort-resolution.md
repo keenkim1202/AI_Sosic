@@ -36,17 +36,21 @@ Claude Code 문서가 표로 적어 둔 것임.
 
 ## 해석 순서
 
-문서가 세 단계로 적고, 거기에 스킬·서브에이전트 프론트매터가 하나 더 얹힘.
+문서가 다섯 단계로 적고, 거기에 스킬·서브에이전트 프론트매터가 하나 더 얹힘.
 
 | 순위 | 출처 |
 |---|---|
-| 1 | 명시적 선택: `CLAUDE_CODE_EFFORT_LEVEL` 환경변수, `--effort` 로 실행, 세션 안의 `/effort` |
-| 2 | 설정: 모델별로 저장한 레벨 또는 `effortLevel` 키 |
-| 3 | 모델의 기본 effort |
+| 1 | `CLAUDE_CODE_EFFORT_LEVEL` 환경변수 |
+| 2 | 세션 안에서 고른 레벨: `/effort`, `/model` 피커, Agent SDK 의 `applyFlagSettings()` |
+| 3 | `--effort` 로 실행 |
+| 4 | 설정: 모델별로 저장한 레벨 또는 `effortLevel` 키 |
+| 5 | 모델의 기본 effort |
+
+**위 셋을 "명시적 선택" 하나로 묶으면 안 됨.** 세션 안의 `/effort` 가 `--effort` 보다 위고, 환경변수는 그 둘보다 위임. CI 러너가 `CLAUDE_CODE_EFFORT_LEVEL` 을 깔아 두면 세션에서 `/effort` 로 올려도 안 올라가고, 반대로 `--effort low` 로 띄운 세션은 `/effort` 로 올릴 수 있음.
 
 프론트매터는 이 줄 밖에 있음.
 
-> "Frontmatter effort applies when that skill or subagent is active, overriding the session level but not the environment variable."
+> "A skill's `effort` applies until the end of the turn it runs in, or for the forked subagent's run with `context: fork`. A subagent's `effort` applies while the subagent runs, unless its invocation overrides it. While either one applies, the skill or subagent runs at its level, whatever level you launch with, save, or pick. If `CLAUDE_CODE_EFFORT_LEVEL` is set, that level applies instead."
 
 **환경변수는 못 이기고 세션 레벨은 이김.** 서브에이전트를 `low` 로 묶어 비용을 깎는 구성이 `CLAUDE_CODE_EFFORT_LEVEL` 을 쓰는 CI 러너에서는 안 먹는다는 뜻임. [Prompting Claude Opus 5](../prompting/2026-08-10-prompting-claude-opus-5.md)가 "서브에이전트 상한을 지시로 적어라"고 한 항목이 여기서는 설정 계층 문제로 바뀜.
 
@@ -78,6 +82,8 @@ Claude Code 문서가 표로 적어 둔 것임.
 - **`think`, `think hard`, `think more` 는 키워드가 아님.** 평범한 프롬프트 텍스트로 지나감. 예전 하네스 관습을 그대로 들고 온 CLAUDE.md 나 스킬 본문에 이 문구가 남아 있으면 **아무 일도 하지 않는 토큰**임. [/doctor prompt-audit](../prompting/2026-09-25-claude-md-prompt-audit.md)이 찾는 "낡은 모델용 지시"의 전형이고, 감사가 이 패턴을 짚는지는 그 문서가 이미 미확인으로 남겨 둠
 - **대상 모델이 네 개뿐이고 Anthropic API 경로 한정임.** 게이트웨이나 Bedrock·Vertex·Foundry 를 타는 세션에서는 레벨이 안 올라감. 인컨텍스트 지시만 붙음
 - **일하는 중에 쳐도 됨.** "raises the rest of that turn" 이라 이미 돌고 있는 턴의 남은 구간을 올림. 같은 릴리스에서 무지개 표시를 **올릴 수 있는 자리에만** 띄우도록 고쳤음. 인용 안이나 파일 경로 안의 `ultrathink` 는 더 이상 색이 붙지 않음. 즉 **색이 안 붙으면 레벨은 안 올라간 것**이고, 이것이 지금 유일한 눈으로 확인하는 수단임
+
+**v2.1.316 (2026-10-31) 에서 스위치가 둘 붙었음.** `CLAUDE_CODE_DISABLE_ULTRATHINK` 가 이 키워드를 아예 끄고, `CLAUDE_CODE_SUBAGENT_EFFORT` 는 아무것도 지정하지 않은 서브에이전트가 돌 레벨을 정함(지금까지는 세션 레벨을 물려받았음). 뒤쪽은 위 프론트매터 항목과 같은 자리에 걸리는 변수라, 서브에이전트 비용을 깎는 구성이면 프론트매터보다 이쪽을 먼저 보는 게 맞음.
 
 ## 한 턴만 올리는 것이 캐시에 공짜인가
 

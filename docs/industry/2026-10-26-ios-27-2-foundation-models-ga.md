@@ -1,5 +1,5 @@
 ---
-title: iOS 27.2 정식 출시, 기기에는 정식 API 가 들어갔는데 Xcode 는 RC 로만 올라와 있음
+title: iOS 27.2 정식 출시, 데이터 첨부 세 심볼에서 베타 표시가 사라졌음
 source: https://developer.apple.com/news/releases/
 author: Apple
 published: 2026-10-26
@@ -7,7 +7,7 @@ collected: 2026-10-29
 tags: [apple, ios, xcode, foundation-models, on-device-llm, app-intents]
 ---
 
-출처: [Releases](https://developer.apple.com/news/releases/) · [iOS & iPadOS 27.2 Release Notes](https://developer.apple.com/documentation/ios-ipados-release-notes/ios-ipados-27_2-release-notes) · [macOS 27.2 Release Notes](https://developer.apple.com/documentation/macos-release-notes/macos-27_2-release-notes) · [Xcode 27.2 RC Release Notes](https://developer.apple.com/documentation/xcode-release-notes/xcode-27_2-release-notes) · [Foundation Models updates](https://developer.apple.com/documentation/updates/foundationmodels) · [App Intents updates](https://developer.apple.com/documentation/updates/appintents) · [Updates 색인](https://developer.apple.com/documentation/updates) · 심볼 페이지 [`DataAttachmentRepresentable`](https://developer.apple.com/documentation/foundationmodels/dataattachmentrepresentable) · [`DataEntryRepresentable`](https://developer.apple.com/documentation/foundationmodels/dataentryrepresentable) · [`supportsDataAttachmentType(_:)`](https://developer.apple.com/documentation/foundationmodels/languagemodel/supportsdataattachmenttype(_:)) · [Private Cloud Compute](https://developer.apple.com/private-cloud-compute/) (전부 **2026-10-29 확인**. 릴리스 노트와 심볼 페이지는 자바스크립트로 렌더링되므로 같은 경로의 `/tutorials/data/...json` 으로 본문을 받았음)
+출처: [Releases](https://developer.apple.com/news/releases/) · [iOS & iPadOS 27.2 Release Notes](https://developer.apple.com/documentation/ios-ipados-release-notes/ios-ipados-27_2-release-notes) · [macOS 27.2 Release Notes](https://developer.apple.com/documentation/macos-release-notes/macos-27_2-release-notes) · [Xcode 27.2 RC Release Notes](https://developer.apple.com/documentation/xcode-release-notes/xcode-27_2-release-notes) · [Foundation Models updates](https://developer.apple.com/documentation/updates/foundationmodels) · [App Intents updates](https://developer.apple.com/documentation/updates/appintents) · [Updates 색인](https://developer.apple.com/documentation/updates) · 심볼 페이지 [`DataAttachmentRepresentable`](https://developer.apple.com/documentation/foundationmodels/dataattachmentrepresentable) · [`DataEntryRepresentable`](https://developer.apple.com/documentation/foundationmodels/dataentryrepresentable) · [`supportsDataAttachmentType(_:)`](https://developer.apple.com/documentation/foundationmodels/languagemodel/supportsdataattachmenttype(_:)) · [Private Cloud Compute](https://developer.apple.com/private-cloud-compute/) (전부 **2026-10-29 확인**. 릴리스 노트와 심볼 페이지는 자바스크립트로 렌더링되므로 같은 경로의 `/tutorials/data/...json` 으로 본문을 받았음. Xcode 절은 **2026-11-02 에 [releases.rss](https://developer.apple.com/news/releases/rss/releases.rss) 로 재확인해 정정**했음)
 
 ## 요약
 
@@ -15,7 +15,7 @@ tags: [apple, ios, xcode, foundation-models, on-device-llm, app-intents]
 
 결과가 갈림. 풀린 것 하나. **데이터 첨부 경로 세 심볼에서 베타 표시가 사라졌음.** [Foundation Models 가용성 대조](../practices/2026-09-28-foundation-models-availability-audit.md)가 "지금 베타인 것은 데이터 첨부 경로 하나"로 적어뒀는데, 그 칸이 이제 비었음. 안 풀린 것 넷. **27.2 OS 릴리스 노트에 Foundation Models·Core AI·App Intents 절이 아예 없고**, Foundation Models updates 와 App Intents updates 페이지는 최신 절이 여전히 **June 2026** 이며, Updates 색인에 **Core AI 항목이 아직 없음.**
 
-그리고 실무에 제일 크게 걸리는 것이 하나 더 나옴. **Apple 이 Releases 에 올려둔 최신 Xcode 는 2026-10-19 의 `Xcode 27.2 RC (27B48)` 이고 27.2 정식 항목이 없음.** iOS 노트가 **"The SDK comes bundled with Xcode 27.2"** 라고 적으므로, 27.2 전용 API 를 쓰려면 지금은 RC 툴체인이 유일한 경로임. 기기 쪽은 정식인데 빌드하는 쪽이 RC 인 상태가 며칠째 유지되고 있음.
+**정정 하나가 붙음(2026-11-02).** 이 문서는 처음에 "Releases 의 최신 Xcode 가 2026-10-19 의 `Xcode 27.2 RC (27B48)` 이고 27.2 정식 항목이 없다"로 적고 그것을 실무 결론의 근거로 삼았음. 틀렸음. **`Xcode 27.2 (27B52)` 가 수집일과 같은 2026-10-29 에 올라와 있었음.** OS 정식(10-26) 과 툴체인 정식(10-29) 사이는 사흘이고, 27.2 전용 API 를 쓰는 코드도 **정식 Xcode 한 번만 올리면 됨.** 아래 Xcode 절이 그 대조임.
 
 ## 무엇이 언제 나왔나
 
@@ -29,6 +29,7 @@ Releases 목록에서 받은 빌드 번호와 날짜임.
 | tvOS 27.2 | 24K122 | 2026-10-26 |
 | visionOS 27.2 | 24N120 | 2026-10-26 |
 | watchOS 27.2 | 24S118 | 2026-10-26 |
+| Xcode 27.2 | 27B52 | **2026-10-29** |
 | Xcode 27.2 RC | 27B48 | 2026-10-19 |
 | Xcode 27.1 | 27A9275 | 2026-10-15 |
 
@@ -92,22 +93,22 @@ find ~/Library/Developer/CoreSimulator/Devices/<SOURCE_UDID>/data -name '*.sb-??
 
 `<SOURCE_UDID>` 를 복제 원본 기기로 바꿔 씀. 아래 짚어야 할 것에 적었듯 이건 파일을 지우는 명령이라 경로를 먼저 확인하고 돌리는 쪽이 맞음.
 
-## Xcode 만 RC 에 멈춰 있음
+## Xcode 정식은 사흘 뒤에 따라왔음
 
-이 문서에서 설계 판단에 제일 크게 걸리는 항목임. 확인한 것 넷임.
+**이 절은 정정된 것임.** 최초 작성(2026-10-29)은 Releases 목록에서 최신 Xcode 를 `Xcode 27.2 RC (27B48)`(2026-10-19) 로 읽고 "27.2 정식 항목이 없음"으로 적었는데, 같은 날 정식이 올라와 있었음. 2026-11-02 재확인 결과임.
 
-| 확인한 것 | 내용 |
+| 확인한 것 | 2026-11-02 기준 |
 |---|---|
-| Releases 목록 | 최신 Xcode 항목이 `Xcode 27.2 RC (27B48)` 이고 날짜가 **2026-10-19**. 그 아래가 `Xcode 27.1 (27A9275)`. **27.2 정식 항목이 없음** |
-| 릴리스 노트 목차 | Xcode 릴리스 노트 색인의 첫 항목 제목이 `Xcode 27.2 RC Release Notes` 임 |
-| Xcode 27.2 노트 Overview | "Xcode 27.2 RC includes Swift 6.4 and SDKs for iOS 27.2, iPadOS 27.2, tvOS 27.2, watchOS 27.2, macOS 27.2, and visionOS 27.2." 그리고 **macOS Tahoe 26.6 이상** 요구 |
+| Releases 목록 | `Xcode 27.2 (27B52)`, **2026-10-29**(항목 id `10292026a`). 그 아래가 `Xcode 27.1 (27A9275)`, 2026-10-15 |
+| 릴리스 노트 목차 | Xcode 릴리스 노트 색인의 첫 항목 제목이 `Xcode 27.2 Release Notes` 임. **RC 표기가 빠졌음** |
+| Xcode 27.2 노트 Overview | "Xcode 27.2 includes Swift 6.4 and SDKs for iOS 27.2, iPadOS 27.2, tvOS 27.2, watchOS 27.2, macOS 27.2, and visionOS 27.2." 그리고 **macOS Tahoe 26.6 이상** 요구 |
 | iOS 27.2 노트 Overview | "The SDK comes bundled with Xcode 27.2. For information on the compatibility requirements for Xcode 27.2, see Xcode 27.2 Release Notes." |
 
-개발자 뉴스 쪽에 27.2 SDK 제출 개방을 알리는 공지를 찾지 못했음. 2026-10-18 부터 2026-10-29 사이의 뉴스 항목은 둘뿐이고 둘 다 이 주제와 무관함(10-28 `Say hello to Touch on Mac`, 10-22 `Offer your subscriptions to businesses and schools`). 9월 사이클에서는 정식 출시 **5일 전**에 제출 개방 공지가 따로 나왔는데, 이번 마이너 릴리스에는 같은 형태의 공지가 안 보임.
+즉 기기 쪽이 정식인데 빌드하는 쪽이 RC 였던 구간은 **10-26 부터 10-29 까지 사흘**이고 이미 끝났음. 실무 결론이 뒤집힘. **27.2 도입 API 를 쓰는 코드는 CI 의 Xcode 를 27.2 정식으로 한 번만 올리면 되고, RC 를 거쳐 두 번 올릴 일이 없음.** [Xcode 27의 에이전트 표면](../agents/2026-08-26-xcode-27-agent-surface.md)이 적어둔 macOS 요건이 27.2 에서도 **26.6 이상 그대로**라 빌드 머신 OS 는 건드릴 일이 없음.
 
-**그래서 단정하지 않는 것이 맞음.** Xcode 27.2 가 정식으로 나오지 않았다는 증명이 아니라, **Apple 이 Releases 와 릴리스 노트 제목으로는 아직 그것을 RC 로만 제시하고 있다**는 것까지가 확인된 범위임.
+개발자 뉴스 쪽에 27.2 SDK 제출 개방을 알리는 공지는 여전히 찾지 못했음. 2026-10-18 부터 2026-10-29 사이의 뉴스 항목은 둘뿐이고 둘 다 이 주제와 무관함(10-28 `Say hello to Touch on Mac`, 10-22 `Offer your subscriptions to businesses and schools`). 9월 사이클에서는 정식 출시 **5일 전**에 제출 개방 공지가 따로 나왔는데, 이번 마이너 릴리스에는 같은 형태의 공지 없이 Releases 항목만 올라왔음.
 
-실무 결론은 그래도 분명함. 데이터 첨부 경로처럼 **27.2 도입 API 를 쓰는 코드를 지금 머지하면 CI 의 Xcode 를 RC 로 올려야 함.** 그리고 정식 노트가 나오면 한 번 더 올리게 됨. [Xcode 27의 에이전트 표면](../agents/2026-08-26-xcode-27-agent-surface.md)이 적어둔 macOS 요건이 27.2 RC 에서도 **26.6 이상 그대로**라 빌드 머신 OS 는 이번에 건드릴 일이 없는데, 툴체인 버전은 두 번 움직이는 모양이 됨. 27.2 전용 API 가 급하지 않으면 **정식 Xcode 항목이 올라온 뒤에 한 번만 올리는 쪽이 싸게 끝남.**
+**놓친 원인에서 가져갈 것이 하나 있음.** Releases 페이지는 자바스크립트로 그려져서 이 문서는 목록을 JSON 경로로 받아 읽었는데, 당일 올라온 항목이 그 응답에 안 들어 있었음. 같은 목록이 [releases.rss](https://developer.apple.com/news/releases/rss/releases.rss) 로도 나오고 항목마다 `pubDate` 를 들고 있음. **날짜로 다투는 판단은 이 피드로 한 번 더 대조하는 편이 맞음.**
 
 ## 갱신 페이지 셋은 아직 안 열림
 
@@ -127,7 +128,7 @@ Foundation Models updates 의 June 2026 절은 `DynamicProfile`, `LanguageModel`
 |---|---|
 | [Foundation Models 가용성 대조](../practices/2026-09-28-foundation-models-availability-audit.md) | 그 문서의 재확인 항목 둘에 답한 것. 데이터 첨부 세 심볼의 베타 표시와 PCC 자격 요건 문언 |
 | [iOS 27 · Xcode 27 정식 출시](./2026-09-14-ios-27-ai-apis-shipped.md) | 누적 릴리스 노트의 성질. 그 문서는 베타 문구가 남는 쪽, 이 문서는 변경이 안 올라오는 쪽 |
-| [Xcode 27.2 RC, 에이전트가 커버리지를 읽게 됨](../agents/2026-10-19-xcode-27-2-rc-coverage-mcp.md) | 그 문서가 읽은 RC 노트가 OS 정식 출시 뒤에도 같은 제목으로 남아 있음. `GetCodeCoverage` 항목도 그대로 하나임 |
+| [Xcode 27.2 RC, 에이전트가 커버리지를 읽게 됨](../agents/2026-10-19-xcode-27-2-rc-coverage-mcp.md) | 그 문서가 읽은 노트가 정식 출시로 제목에서 RC 만 떨어진 같은 문서임. `GetCodeCoverage` 항목도 그대로 하나임 |
 | [Xcode 27의 에이전트 표면](../agents/2026-08-26-xcode-27-agent-surface.md) | 빌드 머신 macOS 요건. 27.2 RC 에서도 26.6 이상임 |
 | [App Intents Testing](../practices/2026-10-05-app-intents-testing-and-onscreen-context.md) | App Intents 갱신 내역에 새 묶음이 생겼는지. 안 생겼음 |
 | [Core AI 로 직접 만든 모델 올리기](../practices/2026-10-07-core-ai-model-deployment.md) | Core AI updates 페이지가 열렸는지. 색인에 항목이 없음 |
@@ -136,7 +137,7 @@ Foundation Models updates 의 June 2026 절은 `DynamicProfile`, `LanguageModel`
 ## 짚어야 할 것
 
 - **베타 표시는 심볼 페이지 JSON 의 `platforms` 배열에서 읽은 것임.** 09-28 대조와 같은 방법·같은 출처라 비교는 성립하지만, 플래그가 사라진 것이 동작이 바뀌지 않는다는 보장은 아님. 시그니처가 고정됐다는 것까지로 읽어야 함
-- **Xcode 27.2 가 정식으로 나오지 않았다고 단정하는 것이 아님.** 확인한 것은 Releases 목록에 정식 항목이 없고 릴리스 노트 제목이 RC 라는 것까지임. 다운로드 페이지와 Mac App Store 쪽은 확인하지 못했음
+- **Xcode 27.2 정식 항목을 처음에 놓쳤음.** 2026-10-29 에 Releases 목록을 읽고 "정식 항목이 없음"으로 적었으나 `Xcode 27.2 (27B52)` 가 같은 날 올라와 있었음. 2026-11-02 에 `releases.rss` 의 `pubDate` 로 확인해 정정했음. 다운로드 페이지와 Mac App Store 쪽은 여전히 확인하지 않았음
 - **iOS 27.2 가 Releases 목록에 빌드 두 개로 올라와 있는 이유를 확인할 수 없었음.** 페이지가 `24B91020` 과 `24B119` 를 각각 한 줄로 적고 설명을 달지 않음
 - **확인한 심볼은 셋임.** `Attachment.init(_:)` 의 데이터 첨부 오버로드와 `supportsDataEntryType(_:)` 의 가용성은 개별 페이지로 열어보지 않았음. 가용성 대조 문서가 적어둔 계열 전체가 같은 상태라고 단정하면 안 됨
 - **시뮬레이터 복제 회피법은 파일을 지우는 명령임.** 원문이 그대로 제시한 것을 옮겼고, `<SOURCE_UDID>` 를 치환하지 않은 채 돌리면 매치가 안 되지만, 경로를 잘못 넣으면 지우는 쪽으로 동작함. 돌리기 전에 경로를 먼저 확인할 것
@@ -145,4 +146,4 @@ Foundation Models updates 의 June 2026 절은 `DynamicProfile`, `LanguageModel`
 
 ## 유효기간
 
-**2026-10-29 확인 기준이고 OS 정식 출시 사흘 뒤임.** 출시일과 빌드 번호는 고정된 기록이라 낡지 않음. 낡는 것은 Xcode 쪽 상태와 갱신 페이지의 공백임. 다시 볼 때 확인할 것 셋. **Releases 에 `Xcode 27.2` 정식 항목이 올라왔는지**, **Foundation Models updates 에 27.2 절이 생겨 데이터 첨부 경로가 목록에 들어왔는지**, 그리고 **27.3 베타에서 새 베타 표면이 생겼는지.** 셋째는 이 저장소가 베타 딱지를 추적해 온 자리가 다시 채워지는지의 문제고, 심볼 페이지 JSON 의 `platforms` 배열이 가장 빠른 신호임.
+**2026-10-29 확인 기준이고 Xcode 절만 2026-11-02 에 정정했음.** 출시일과 빌드 번호는 고정된 기록이라 낡지 않음. 낡는 것은 갱신 페이지의 공백임. 다시 볼 때 확인할 것 둘. **Foundation Models updates 에 27.2 절이 생겨 데이터 첨부 경로가 목록에 들어왔는지**, 그리고 **27.3 베타에서 새 베타 표면이 생겼는지.** 셋째는 이 저장소가 베타 딱지를 추적해 온 자리가 다시 채워지는지의 문제고, 심볼 페이지 JSON 의 `platforms` 배열이 가장 빠른 신호임.

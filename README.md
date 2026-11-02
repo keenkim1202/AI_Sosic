@@ -248,6 +248,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 
 ## 에이전트 보안
 
+**[작업 디렉터리 밖 쓰기 차단](docs/security/2026-10-30-working-directory-write-block.md)** · 2026-11-01
+
+- `deny` 룰이 계속 뚫리는 걸 보고 경로째로 막는 스위치는 없나 싶었으면 이 자리임
+- `permissions.blockWritesOutsideWorkingDirectories` 가 **`bypassPermissions` 에서도** 유지됨. 읽기 쪽 짝은 **2026-09-01** 부터 있었음
+- 울타리는 **파일 툴에만** 섬. 셸은 거부가 아니라 프롬프트로 떨어지고, 쓰기 쪽 설정은 **문서가 아직 없음**
+
 **[Claude Code 2.1.309의 권한 우회 수정 묶음](docs/security/2026-10-22-claude-code-permission-bypass-fixes.md)** · 2026-10-26
 
 - `deny` 룰에 적어 뒀으니 그 경로는 안전하다고 생각하고 있었으면 이 자리임
@@ -358,9 +364,9 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 
 **[iOS 27.2 정식 출시](docs/industry/2026-10-26-ios-27-2-foundation-models-ga.md)** · 2026-10-29
 
-- 27.2 전용 API 를 쓸지 재고 있었으면, 기기 쪽은 정식인데 빌드하는 쪽이 아직임
+- 27.2 전용 API 를 쓸지 재고 있었으면, 기기도 툴체인도 정식이라 지금 올려도 됨
 - 데이터 첨부 세 심볼이 **베타 표시 없이 27.2 도입**으로 바뀌어서, 이 저장소가 "지금 베타인 것"으로 적어둔 칸이 비었음
-- 그런데 Apple 이 올려둔 최신 Xcode 는 **10-19 의 27.2 RC(27B48)** 이고 27.2 SDK 는 그 Xcode 에 번들됨
+- OS 정식은 **10-26**, Xcode 27.2 정식(27B52)은 **10-29**. 그 사흘만 RC 가 유일한 경로였음
 
 **[Foundation Models 허용 사용 요건](docs/industry/2026-10-19-foundation-models-acceptable-use.md)** · 2026-10-19
 
