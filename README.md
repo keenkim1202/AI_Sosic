@@ -84,6 +84,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 
 ## 방법론
 
+**[Message threads](docs/practices/2026-11-02-message-threads.md)** · 2026-11-03
+
+- 대화를 서버가 들고 있게 해서 비용을 줄일 생각이었으면 먼저 볼 자리임
+- 문서가 직접 적음. **스레드는 프롬프트를 캐시해 주지 않고 가격도 레이트 리밋도 그대로**임. 줄어드는 건 요청 크기와 TTFT
+- 대가는 **마지막 요청에서 5분**이면 404, **compaction 과 토큰 카운팅이 같이 막힘**, 그리고 Fable 5.1 의 대화 중 effort 변경이 **400**
+
 **[Usage and Cost Analytics API](docs/practices/2026-10-29-usage-cost-analytics-api.md)** · 2026-10-31
 
 - 분당 폴링으로 지출을 막던 코드를 그대로 옮기면 조용히 늦게 도는 계기판이 됨
