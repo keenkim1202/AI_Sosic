@@ -362,6 +362,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 
 ## 업계 동향
 
+**[Siri AI Developer Preview](docs/industry/2026-11-03-siri-ai-developer-preview.md)** · 2026-11-04
+
+- Siri AI 가 열렸다는 소식에 일정을 잡기 전에, 지금 내보낼 수 있는 경로부터 세야 함
+- 외부 TestFlight 과 App Store 배포판에서는 **안 돎.** 제출은 **봄에 열림**
+- 앱 스킬이 `SKILL.md` 를 쓰고 Apple 이 **"Agent Skills 포맷의 부분집합"**이라고 적음. 단 `scripts/` 는 안 받음
+
 **[iOS 27.2 정식 출시](docs/industry/2026-10-26-ios-27-2-foundation-models-ga.md)** · 2026-10-29
 
 - 27.2 전용 API 를 쓸지 재고 있었으면, 기기도 툴체인도 정식이라 지금 올려도 됨
