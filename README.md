@@ -4,6 +4,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 각 문서에 원문 출처 링크와 요약을 함께 담습니다.
 ## 에이전트 · 툴링
 
+**[Xcode 27.3 beta의 에이전트 표면](docs/agents/2026-11-03-xcode-27-3-beta-renderpreview-copilot.md)** · 2026-11-05
+
+- 에이전트에게 프리뷰 스냅샷으로 검증을 맡겨 뒀으면 그 결과를 다시 봐야 함
+- **RenderPreview MCP 툴이 요청한 것과 다른 프리뷰를 렌더하던 버그**가 27.3 에서 고쳐졌음. 코드가 아니라 계측이 틀렸던 구간임
+- Coding Intelligence 절은 **Copilot 추가 한 줄**뿐이고, `GetCodeCoverage` 문언은 지금 어느 노트 페이지에도 없음
+
 **[Claude for Foundation Models](docs/agents/2026-10-25-claude-for-foundation-models.md)** · 2026-10-25
 
 - 온디바이스 4K 컨텍스트에 막혀서 백엔드 세울 궁리를 하고 있었으면 이 자리임
