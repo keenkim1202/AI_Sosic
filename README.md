@@ -84,6 +84,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 
 ## 방법론
 
+**[Claude 텍스트 워터마크](docs/practices/2026-11-03-text-watermark-sampling-settings.md)** · 2026-11-06
+
+- 래퍼가 알아서 채워 주는 `temperature` 한 줄 때문에 표식이 빠질 수 있음
+- **Sonnet 4.6** 은 비기본값 샘플링을 거절하지 않고 **워터마크만 조용히 뺌.** Fable 5.1 은 같은 값을 400 으로 막음
+- 텍스트 검출은 **private preview**, 무료 체커는 파일만 봄. 자기 출력을 자력으로 확인할 수 없음
+
 **[Usage and Cost Analytics API](docs/practices/2026-10-29-usage-cost-analytics-api.md)** · 2026-10-31
 
 - 분당 폴링으로 지출을 막던 코드를 그대로 옮기면 조용히 늦게 도는 계기판이 됨
