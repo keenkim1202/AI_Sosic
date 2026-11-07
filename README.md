@@ -248,6 +248,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 
 ## 에이전트 보안
 
+**[IP allowlisting](docs/security/2026-11-05-ip-allowlist-api-keys.md)** · 2026-11-07
+
+- 앱에 키를 안 넣는 데까지 왔는데 조직에 IP allowlist 를 켜라는 얘기가 나왔으면 이 자리임
+- 목록은 **조직 전체**를 덮고 **1,000개**까지. 목록 밖에서 온 Messages 요청은 **403 `permission_error`**
+- App Attest 로 앱에서 직접 부르는 경로와 **가정이 반대임.** 켜는 순간 지웠던 백엔드가 되살아남
+
 **[작업 디렉터리 밖 쓰기 차단](docs/security/2026-10-30-working-directory-write-block.md)** · 2026-11-01
 
 - `deny` 룰이 계속 뚫리는 걸 보고 경로째로 막는 스위치는 없나 싶었으면 이 자리임
