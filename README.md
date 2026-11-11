@@ -362,6 +362,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 
 ## 업계 동향
 
+**[연령등급 디스크립터에 virtual companion 이 들어옴](docs/industry/2026-11-02-age-rating-virtual-companion.md)** · 2026-11-11
+
+- AI 캐릭터와 대화하는 기능을 넣어뒀으면 연령등급 문항이 **11-16 부터** 그걸 묻기 시작함
+- 새 디스크립터 `Dating and Relationships` 의 정의에 **`virtual companion`** 이 들어가 있고, 붙으면 **최소 18+**
+- 전역 18+ 를 만드는 기존 항목은 `Gambling` 빼고 전부 **`Frequent`** 조건인데 이건 빈도 구분이 없음
+
 **[iOS 27.2 정식 출시](docs/industry/2026-10-26-ios-27-2-foundation-models-ga.md)** · 2026-10-29
 
 - 27.2 전용 API 를 쓸지 재고 있었으면, 기기도 툴체인도 정식이라 지금 올려도 됨
