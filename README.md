@@ -84,6 +84,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 
 ## 방법론
 
+**[Advisor tool](docs/practices/2026-04-09-advisor-tool-executor-cost.md)** · 2026-11-12
+
+- 싼 모델로 내렸는데 비싼 모델 청구가 안 줄었으면, 줄어든 게 맞고 안 보이는 자리에 있는 것임
+- 조언자가 쓴 토큰은 최상위 `usage` 에 **없음**. `usage.iterations[]` 의 `advisor_message` 에만 있음
+- **Fable 5.2 를 executor 로 쓰면 advisor 는 Fable 5.2·Mythos 5.2 둘뿐**. 싼 executor 라는 전제가 그 줄에서 사라짐
+
 **[Usage and Cost Analytics API](docs/practices/2026-10-29-usage-cost-analytics-api.md)** · 2026-10-31
 
 - 분당 폴링으로 지출을 막던 코드를 그대로 옮기면 조용히 늦게 도는 계기판이 됨
