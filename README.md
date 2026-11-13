@@ -4,6 +4,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 각 문서에 원문 출처 링크와 요약을 함께 담습니다.
 ## 에이전트 · 툴링
 
+**[Claude Code Desktop 의 iOS Simulator 창](docs/agents/2026-11-13-claude-desktop-ios-simulator-pane.md)** · 2026-11-13
+
+- 에이전트에게 온보딩 플로를 확인시키려고 computer use 를 켜 둘까 고민했으면 이 자리임
+- 창이 시뮬레이터를 직접 몰아서 **손쉬운 사용·화면 기록 권한이 필요 없고**, 기기 제어 동의는 **세션당이 아니라 기기당 1회**임
+- 대신 **스크린샷이 Anthropic 으로 가 대화 보관 설정을 따름.** 실제 계정으로 로그인한 기기를 붙이면 안 되는 이유
+
 **[Claude for Foundation Models](docs/agents/2026-10-25-claude-for-foundation-models.md)** · 2026-10-25
 
 - 온디바이스 4K 컨텍스트에 막혀서 백엔드 세울 궁리를 하고 있었으면 이 자리임
