@@ -4,6 +4,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 각 문서에 원문 출처 링크와 요약을 함께 담습니다.
 ## 에이전트 · 툴링
 
+**[Claude Code 의 Code Mode](docs/agents/2026-11-12-claude-code-code-mode.md)** · 2026-11-14
+
+- 툴 호출을 하나씩 승인해 오다가 코드 덩어리 하나를 승인하게 됐으면 먼저 읽을 자리임
+- **auto 모드 분류기는 코드를 1회 검사하고, 실행 시점에 계산되는 값은 못 본다고 문서가 직접 적음.** `deny` 룰과 `PreToolUse` 훅은 개별 호출에 그대로 걸림
+- 코드를 한 번 돌리면 **그 뒤 모든 툴 호출에서 훅 타임아웃이 거부로 바뀜.** VS Code 패널·데스크톱 앱·OTel·mod 와는 같이 못 씀
+
 **[Claude for Foundation Models](docs/agents/2026-10-25-claude-for-foundation-models.md)** · 2026-10-25
 
 - 온디바이스 4K 컨텍스트에 막혀서 백엔드 세울 궁리를 하고 있었으면 이 자리임
