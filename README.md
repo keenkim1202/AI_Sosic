@@ -248,6 +248,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 
 ## 에이전트 보안
 
+**[샌드박스가 프롬프트 면제를 잃었음](docs/security/2026-11-13-sandbox-auto-allow-default-off.md)** · 2026-11-15
+
+- 샌드박스를 켜 두면 Bash 는 안 물어본다고 알고 있었으면 이 자리임
+- `sandbox.autoAllowBashIfSandboxed` 기본값이 **`true` 에서 `false` 로** 뒤집혔음. 경계는 **v2.1.324** 인데 그 번호는 공개 릴리스로 없음
+- 반년 전 자사 글이 **프롬프트 84% 감소**를 성과로 적었던 장치임. `dontAsk` 와 `-p` 에서는 프롬프트가 **거부**로 착지함
+
 **[작업 디렉터리 밖 쓰기 차단](docs/security/2026-10-30-working-directory-write-block.md)** · 2026-11-01
 
 - `deny` 룰이 계속 뚫리는 걸 보고 경로째로 막는 스위치는 없나 싶었으면 이 자리임
