@@ -248,6 +248,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 
 ## 에이전트 보안
 
+**[macOS 27.3 beta 2 의 권한 쪼개기](docs/security/2026-11-16-macos-27-3-permission-split.md)** · 2026-11-17
+
+- 10월에 "Full Disk Access 를 조이겠다" 는 공지만 받아 두고 형태를 못 봤으면 이 자리임
+- **Device Control and Data Access 가 두 설정으로 쪼개지고** FDA 는 **폴더 단위**로 내려감. 기존 부여분은 유지, 백업·보조기술은 **엔타이틀먼트 요청** 경로
+- 10월 공지와 달리 **AI 가 한 번도 안 나옴.** 그리고 `automationmodetool` 이 표준 입력으로 암호를 더 안 받음
+
 **[작업 디렉터리 밖 쓰기 차단](docs/security/2026-10-30-working-directory-write-block.md)** · 2026-11-01
 
 - `deny` 룰이 계속 뚫리는 걸 보고 경로째로 막는 스위치는 없나 싶었으면 이 자리임
