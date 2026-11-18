@@ -84,6 +84,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 
 ## 방법론
 
+**[Linked billing](docs/practices/2026-11-17-linked-billing-customer-pays.md)** · 2026-11-18
+
+- "고객이 내니까 우리는 무제한"으로 읽고 용량 계획을 세웠으면 여기서 멈출 것
+- `bill_to: "user_profile"` 로 **돈만 고객 조직으로 넘어가고 레이트 리밋·모델 접근·데이터 보관은 내 조직 것**으로 남음
+- 고객이 건 spend cap 은 **값도 소진율도 내가 못 읽고**, 끊어도 **webhook 도 이메일도 안 옴**
+
 **[Usage and Cost Analytics API](docs/practices/2026-10-29-usage-cost-analytics-api.md)** · 2026-10-31
 
 - 분당 폴링으로 지출을 막던 코드를 그대로 옮기면 조용히 늦게 도는 계기판이 됨
