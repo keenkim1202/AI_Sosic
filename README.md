@@ -4,6 +4,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 각 문서에 원문 출처 링크와 요약을 함께 담습니다.
 ## 에이전트 · 툴링
 
+**[Xcode 27.3 beta 2 의 에이전트 표면](docs/agents/2026-11-16-xcode-27-3-beta-2-agent-tooling.md)** · 2026-11-19
+
+- 에이전트에게 번역 맡기고 `.xcstrings` diff 는 안 보고 머지해 왔으면 여기서 멈출 자리임
+- 로컬라이제이션 MCP 툴이 문자열 **추가·제거와 state 변경**까지 하게 됨. `machine_translated` 라는 감사 표식을 **에이전트가 직접 바꿀 수 있음**
+- `xctrace triage` 와 Markdown 내보내기로 **트레이스가 처음 에이전트가 읽는 텍스트**가 됨. 대신 "Apple specialist" 가 뭔지는 Apple 문서에 정의가 없음
+
 **[Claude for Foundation Models](docs/agents/2026-10-25-claude-for-foundation-models.md)** · 2026-10-25
 
 - 온디바이스 4K 컨텍스트에 막혀서 백엔드 세울 궁리를 하고 있었으면 이 자리임
