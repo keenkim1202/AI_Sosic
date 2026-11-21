@@ -84,6 +84,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 
 ## 방법론
 
+**[서브에이전트의 모델과 effort 는 누구에게서 물려받나](docs/practices/2026-11-21-subagent-model-effort-inheritance.md)** · 2026-11-21
+
+- Opus 세션에서 `/effort xhigh` 를 올려 뒀는데 리뷰어가 왜 얕게 보는지 모를 때
+- `inherit` 는 세션이 아니라 **직전 부모**임. 모델이 다르면 세션 effort 가 **아예 미적용**
+- 서브에이전트·fork·compaction 은 구독에서도 캐시 TTL **5분**. 11월에 귀속 버그 **열한 건**
+
 **[Usage and Cost Analytics API](docs/practices/2026-10-29-usage-cost-analytics-api.md)** · 2026-10-31
 
 - 분당 폴링으로 지출을 막던 코드를 그대로 옮기면 조용히 늦게 도는 계기판이 됨
