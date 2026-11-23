@@ -84,6 +84,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 
 ## 방법론
 
+**[/code-review 의 기본 대상이 브랜치 전체가 됨](docs/practices/2026-11-19-code-review-scope-and-severity.md)** · 2026-11-23
+
+- `/rewind` 를 안전망이라고 믿고 `--fix` 를 돌려 본 적 있으면 여기부터임
+- 하루 사이 두 릴리스가 **기본 대상·보고 범위·심각도 셋을 한꺼번에** 바꿨고, 정리 항목은 `/simplify` 로 넘어갔음
+- 백그라운드 리뷰의 수정은 **세션 체크포인트 밖**이라 `/rewind` 가 아니라 git 으로 되돌려야 함
+
 **[Usage and Cost Analytics API](docs/practices/2026-10-29-usage-cost-analytics-api.md)** · 2026-10-31
 
 - 분당 폴링으로 지출을 막던 코드를 그대로 옮기면 조용히 늦게 도는 계기판이 됨
