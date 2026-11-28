@@ -84,6 +84,12 @@ AI 관련 아티클과 문서, 릴리스 노트를 수집해 정리해 두는 �
 
 ## 방법론
 
+**[Claude Code 스팬의 gen_ai.usage 속성](docs/practices/2026-11-23-claude-code-gen-ai-span-usage.md)** · 2026-11-28
+
+- 표준 이름이 생겼으니 그걸 쓰자고 쿼리를 옮기려던 참이면 먼저 이 자리임
+- 한 스팬에 `input_tokens` 는 **캐시 제외**, `gen_ai.usage.input_tokens` 는 **캐시 포함**. 섞어 더하면 캐시가 두 번 들어감
+- 릴리스 노트는 추가했다고 적고 **공식 문서는 같은 날에도 "설정하지 않는다"로 적혀 있음**
+
 **[Usage and Cost Analytics API](docs/practices/2026-10-29-usage-cost-analytics-api.md)** · 2026-10-31
 
 - 분당 폴링으로 지출을 막던 코드를 그대로 옮기면 조용히 늦게 도는 계기판이 됨
